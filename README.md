@@ -1,28 +1,50 @@
-# Romerolweb.github.io
-### Hi there 
-My name is Sebastian, I am a Software Engineer👋
+# Sebastian Romero Laguna - Professional Resume
 
+[![Live Site](https://img.shields.io/badge/Live-Site-purple)](https://romerolweb.github.io/)
+[![Built with React](https://img.shields.io/badge/Built%20with-React-61DAFB)](https://reactjs.org/)
+[![Styled with Tailwind](https://img.shields.io/badge/Styled%20with-Tailwind-38B2AC)](https://tailwindcss.com/)
 
-- 💬 Ask me about Web Development and Software Engineering
-* 📫 How to reach me:
-    - https://www.linkedin.com/in/sebastian-romerol
-    - https://torre.co/Romerolweb
-- 🔭 I’m currently working working as a software developer.
-- 🎓 I studied at FET University in Colombia and participate in Salisbury University as in a research opportunity.
+Modern, responsive resume/portfolio website built with **React** and **Tailwind CSS** from CDN.
 
-- Projects in which I have collaborated:
-- FET APP (Part of a research done in Salisbury University) -> https://play.google.com/store/apps/details?id=io.ionic.fet
-- Maintrnance Management Software and Business web page -> https://coldchaincolombiasas.co
-- Help Dersk Software -> https://coldchaincolombiasas.co -> Designed and developed with a Jorge Lugo and a dev team.
-- App Mobile for Both Maintenance and the Help Desk Software -> Designed and developed with Jorge Lugo.
-- E-commerce for La Nación -> https://tienda.lanacion.com.co (This project has been updated by Alejandro and other developers since its first release).
-- DC Lawncare Web Page -> https://dclawncarellc.com
+## 🚀 Features
 
-- 🌱 I’m currently learning Web Development, playing guitar.
-- ⚡ Fun fact: I like music and learning about new topics Tech related.
--   I am from Colombia
--   I am A Christian, and I am so glad to share about **Jesus** with you. He has changed my life, and I want to share it.
+- **Modern Stack**: Built with React 18 and Tailwind CSS v3
+- **Responsive Design**: Perfect on desktop, tablet, and mobile devices
+- **Single Page Application**: Smooth scrolling between sections
+- **Interactive Components**: Dynamic navigation with active section highlighting
+- **Mobile-First**: Hamburger menu for mobile devices
+- **Professional Sections**: About, Experience, Skills, Education, Services, Contact
+- **Zero Build Process**: All dependencies loaded from CDN
 
+## 🛠️ Technologies Used
 
+- **React 18** - UI component library (via CDN)
+- **Tailwind CSS v3** - Utility-first CSS framework (via CDN)
+- **Font Awesome 6** - Icon library (via CDN)
+- **Babel Standalone** - JSX transformation in browser
 
- 
+## 📱 Sections
+
+1. **Hero** - Introduction with social links
+2. **About** - Professional summary and key stats
+3. **Experience** - Work history with tech stacks
+4. **Skills** - Technical expertise with animated progress bars
+5. **Education** - Academic background and certifications
+6. **Services** - Professional services offered
+7. **Contact** - Contact information and social media
+
+## 👨‍💻 About Me
+
+Software Engineer with 6+ years of experience in full-stack development, cloud architecture (AWS, Azure), and AI/ML technologies. Currently pursuing Master's in Information Technology at CQUniversity, Australia.
+
+### Connect With Me
+
+- 🌐 Portfolio: [romerolweb.github.io](https://romerolweb.github.io/)
+- 💼 LinkedIn: [sebastian-romerol](https://www.linkedin.com/in/sebastian-romerol/)
+- 🐙 GitHub: [Romerolweb](https://github.com/Romerolweb)
+- 🏆 Torre: [Romerolweb](https://torre.co/Romerolweb)
+- 📧 Email: sebastianromerol@outlook.es
+
+## 📄 License
+
+© 2024 Sebastian Romero Laguna. All Rights Reserved.
