@@ -7,12 +7,12 @@
   <meta name="description" content="Software Engineer | Cloud Specialist | AI/ML Researcher">
   <meta name="keywords" content="Software Development, Web Development, Cloud, AWS, Azure, Python, PHP">
   
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS v4.1 CDN -->
+  <script src="https://cdn.tailwindcss.com?v=4.1"></script>
   
-  <!-- React and ReactDOM from CDN -->
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- React 19 and ReactDOM from CDN -->
+  <script crossorigin src="https://unpkg.com/react@19/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js"></script>
   
   <!-- Babel Standalone for JSX -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -627,8 +627,9 @@
       );
     }
 
-    // Render the app
-    ReactDOM.render(<App />, document.getElementById('root'));
+    // Render the app using React 19's createRoot API
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
   </script>
 </body>
 </html>
