@@ -1,748 +1,1480 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sebastian Romero Laguna - Software Engineer</title>
+    <meta
+      name="description"
+      content="Software Engineer | Backend & Cloud Specialist"
+    />
+    <meta
+      name="keywords"
+      content="Software Development, Go, AWS, Cloud, Backend, DevOps"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- Favicon -->
+    <link href="assets/img/favicon.png" rel="icon" />
 
-  <title>Eng. Sebastian Romero Laguna CV</title>
-  <meta content="" name="description">
-  <meta content="Software Development, Web development" name="keywords">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+      :root {
+        --primary: #0ea5e9;
+        --primary-dark: #0284c7;
+        --accent: #8b5cf6;
+        --text-dark: #0f172a;
+        --text-medium: #334155;
+        --text-light: #64748b;
+        --bg-light: #f8fafc;
+        --bg-white: #ffffff;
+        --border: #e2e8f0;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+      html {
+        scroll-behavior: smooth;
+      }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: var(--bg-light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-  <!-- =======================================================
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+      /* Header */
+      header {
+        background: var(--bg-white);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
 
-<body>
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+      }
 
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-        <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-        <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-      </ul>
-    </nav><!-- .nav-menu -->
+      nav {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
 
-  </header><!-- End Header -->
+      nav a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Sebastian Romero Laguna</h1>
-      <p>I'm <span class="typed" data-typed-items="Developer, Freelancer, Software Engineer"></span></p>
-      <div class="social-links">
-        <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
-        <a href="https://github.com/Romerolweb" class="github"><i class="bx bxl-github"></i></a>
-        <a href="https://www.facebook.com/sebastianromero100ipuc" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.linkedin.com/in/sebastian-romerol/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="https://romerolweb.github.io/" class=""><i class="bx"></i></a>
-        
+      nav a:hover {
+        color: var(--primary);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(14, 165, 233, 0.1) 0%,
+          rgba(139, 92, 246, 0.1) 100%
+        );
+        opacity: 0.5;
+      }
+
+      .hero > .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero h1 {
+        font-size: 56px;
+        margin-bottom: 20px;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        line-height: 1.2;
+      }
+
+      .hero .subtitle {
+        font-size: 28px;
+        margin-bottom: 12px;
+        opacity: 0.95;
+        font-weight: 500;
+      }
+
+      .hero .location {
+        font-size: 18px;
+        opacity: 0.9;
+        margin-bottom: 40px;
+        font-weight: 400;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .social-links a {
+        color: white;
+        text-decoration: none;
+        padding: 14px 28px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        font-size: 16px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .social-links a:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Section */
+      section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        font-size: 42px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        text-align: center;
+        color: var(--text-dark);
+        letter-spacing: -0.025em;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-light);
+        font-size: 18px;
+        margin-bottom: 60px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* About */
+      .about-content {
+        background: var(--bg-white);
+        padding: 50px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-md);
+        max-width: 900px;
+        margin: 0 auto;
+        border: 1px solid var(--border);
+      }
+
+      .about-content p {
+        font-size: 20px;
+        line-height: 1.8;
+        color: var(--text-medium);
+        font-weight: 400;
+      }
+
+      /* Skills */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+      }
+
+      .skill-card {
+        background: var(--bg-white);
+        padding: 32px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .skill-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+        border-color: var(--primary);
+      }
+
+      .skill-card h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        color: var(--text-dark);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .skill-card h3::before {
+        content: "●";
+        color: var(--primary);
+        font-size: 12px;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-tag {
+        background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .skill-tag:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+
+      /* Experience */
+      .experience-list {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .experience-item {
+        background: var(--bg-white);
+        padding: 40px;
+        border-radius: 16px;
+        margin-bottom: 28px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .experience-item:hover {
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary);
+      }
+
+      .experience-item h3 {
+        font-size: 26px;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .experience-item .company {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .experience-item .meta {
+        color: var(--text-light);
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .experience-item ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .experience-item li {
+        padding-left: 28px;
+        position: relative;
+        margin-bottom: 12px;
+        color: var(--text-medium);
+        line-height: 1.7;
+        font-size: 16px;
+      }
+
+      .experience-item li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      /* Projects */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 28px;
+      }
+
+      .project-card {
+        background: var(--bg-white);
+        padding: 32px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary) 0%,
+          var(--accent) 100%
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary);
+      }
+
+      .project-card h3 {
+        font-size: 22px;
+        margin-bottom: 14px;
+        color: var(--text-dark);
+        font-weight: 700;
+      }
+
+      .project-card p {
+        color: var(--text-medium);
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .project-tag {
+        background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);
+        color: var(--text-dark);
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .project-tag:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+
+      /* Education */
+      .education-list {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .education-item {
+        background: var(--bg-white);
+        padding: 36px;
+        border-radius: 16px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .education-item:hover {
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary);
+      }
+
+      .education-item h3 {
+        font-size: 24px;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .education-item .institution {
+        font-size: 18px;
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .education-item .dates {
+        color: var(--text-light);
+        font-size: 15px;
+        margin-bottom: 16px;
+        font-weight: 500;
+      }
+
+      .education-item p {
+        color: var(--text-medium);
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      /* Contact */
+      .contact-info {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--accent) 100%
+        );
+        padding: 60px 40px;
+        border-radius: 20px;
+        box-shadow: var(--shadow-lg);
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+      }
+
+      .contact-info p {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+
+      .contact-info a {
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 700;
+        display: inline-block;
+        padding: 16px 32px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .contact-info a:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: white;
+        text-align: center;
+        padding: 48px 0;
+        margin-top: 80px;
+      }
+
+      footer p {
+        opacity: 0.9;
+        font-size: 15px;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 40px;
+        }
+
+        .hero .subtitle {
+          font-size: 22px;
+        }
+
+        .hero {
+          padding: 80px 0 60px;
+        }
+
+        nav {
+          gap: 15px;
+          font-size: 14px;
+        }
+
+        .section-title {
+          font-size: 32px;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+
+        .about-content,
+        .experience-item,
+        .education-item,
+        .project-card,
+        .skill-card {
+          padding: 24px;
+        }
+
+        .skills-grid,
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .social-links {
+          flex-direction: column;
+        }
+
+        .social-links a {
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+
+      .project-card[onclick] {
+        cursor: pointer;
+      }
+
+      .project-card[onclick]:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">SR</div>
+          <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
       </div>
-    </div>
-  </section><!-- End Hero -->
+    </header>
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>Highly motivated and results-oriented Software Engineer with 6+ years of professional expertise in full-stack development, cloud architecture, and AI/ML technologies. Master's candidate in Information  Technology at CQUniversity, specializing in cybersecurity, cloud platforms (AWS, Azure), and optimization algorithms. Passionate about leveraging data and technology to solve complex business problems. Committed to excellence, continuous learning, and creating meaningful impact through innovative solutions.</p>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Sebastian Romero Laguna</h1>
+        <div class="subtitle">
+          Software Engineer | Backend & Cloud Specialist
         </div>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>Software Engineer | DevOps Enthusiast </h3>
-            <p class="fst-italic">
-              Full-Stack Developer and Cloud Architect with expertise in designing scalable solutions. Specialized skills: Evolutionary Computation, Cybersecurity, Cloud Technologies (AWS, Azure). Currently pursuing Master's in Information Technology at CQUniversity while working as a Student Ambassador and Technical Lead.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>romerolweb.github.io</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Location:</strong> <span>Brisbane, QLD, Australia</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>sebastianromerol@outlook.es</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor in Software Engineering, Master's Candidate</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>GitHub:</strong> <span>github.com/Romerolweb</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Languages:</strong> <span>Spanish (Native), English (Fluent)</span></li>
-                </ul>
-              </div>
-            </div>
-            <p>
-              With 6+ years of hands-on experience in Typescript, PHP (OOP), Python, JavaScript, and Go, combined with expertise in cloud platforms (AWS PaaS, Azure IaaS), CI/CD pipelines (Github Actions), and modern DevOps tools (Terraform, EKS, Rancher), I deliver enterprise-grade solutions. My recent focus includes optimization algorithms, evolutionary computation, CNN applications, and hyperparameter tuning. I'm actively seeking opportunities in Australia to contribute to innovative projects while continuing my professional development in the dynamic Australian tech environment.
-            </p>
-          </div>
+        <div class="location">📍 Brisbane, QLD, Australia</div>
+        <div class="social-links">
+          <a href="https://github.com/Romerolweb" target="_blank">GitHub</a>
+          <a
+            href="https://www.linkedin.com/in/sebastian-romerol/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a href="mailto:neosoftwaredevelopment@gmail.com">Email</a>
         </div>
-
       </div>
-    </section><!-- End About Section -->
+    </section>
 
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Experience Highlights</h2>
-          <p>Results-driven professional with proven track record in delivering enterprise solutions</p>
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <p>
+            Experienced and versatile Software Engineer with a professional
+            background since 2017, specializing in backend development, cloud
+            infrastructure, and automation. Proven expertise in building
+            scalable systems using Go, Python, AWS, and Terraform, complemented
+            by strong full-stack capabilities in TypeScript and React/Next.js.
+          </p>
+          <p>
+            Recently completed a Master of IT (graduating December 2025), adding
+            advanced academic knowledge in cybersecurity and Artificial
+            Intelligence to a foundation of extensive hands-on experience. A
+            proven leader with a track record of mentoring junior developers and
+            driving projects from conception to deployment in agile
+            environments.
+          </p>
         </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-briefcase"></i>
-              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Professional Roles &amp; Companies</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Completed Projects</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-code-square"></i>
-              <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Programming Languages</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Years of Experience</p>
-            </div>
-          </div>
-
-        </div>
-
       </div>
-    </section><!-- End Facts Section -->
+    </section>
 
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Skills &amp; Expertise</h2>
-          <p>Expert in full-stack development, cloud architecture (AWS, Azure), machine learning, cybersecurity, and DevOps. Proficient in Python, Go, PHP, JavaScript with specialization in evolutionary computation and optimization algorithms.</p>
-        </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">Python &amp; ML/AI <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+    <!-- Skills -->
+    <section id="skills" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Backend Development</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Go (Golang)</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">Microservices</span>
             </div>
-
-            <div class="progress">
-              <span class="skill">PHP / Laravel / OOP <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">AWS Cloud Architecture <i class="val">88%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Evolutionary Computation &amp; Optimization <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Go Programming <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
           </div>
 
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill">REST API Development &amp; Integration <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+          <div class="skill-card">
+            <h3>Cloud & DevOps</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">GitHub Actions</span>
             </div>
-
-            <div class="progress">
-              <span class="skill">Database Design (MySQL, PostgreSQL, SQL) <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Cybersecurity &amp; PKI <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">DevOps (Terraform, Docker, EKS, CI/CD) <i class="val">82%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Data Analysis &amp; Visualization (Pandas, NumPy, Plotly) <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-
           </div>
 
-        </div>
+          <div class="skill-card">
+            <h3>Frontend Development</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">Tailwind CSS</span>
+            </div>
+          </div>
 
+          <div class="skill-card">
+            <h3>Databases</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </section><!-- End Skills Section -->
+    </section>
 
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Resume &amp; Experience</h2>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Sebastian Romero Laguna</h4>
-              <p><em>Software Engineer | Cloud Specialist | AI/ML Researcher</em></p>
-              <ul>
-                <li>Based: Brisbane, QLD, Australia</li>
-                <li>Experience: 6+ Years (Full-Stack, Cloud, AI/ML)</li>
-                <li>Contact: sebastianromerol@outlook.es | +61 404854801</li>
-                <li>GitHub: github.com/Romerolweb | Portfolio: romerolweb.github.io</li>
-              </ul>
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-list">
+          <div class="experience-item">
+            <h3>Software Engineer</h3>
+            <div class="company">
+              <a
+                href="https://platform.recipes/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Platform Recipes</a
+              >
             </div>
-
-            <h3 class="resume-title">Professional Experience</h3>
-            
-            <div class="resume-item">
-              <h4>Student Ambassador (CQUniversity)</h4>
-              <h5>Mar 2024 - Present</h5>
-              <p><em>Brisbane, Queensland, Australia</em></p>
-              <p>Providing guidance to prospective students at CQUniversity. Helping students select degrees aligned with their interests and career goals.</p>
+            <div class="meta">
+              October 2025 - Present | Brisbane, QLD, Australia
             </div>
-
-            <div class="resume-item">
-              <h4>Technical Lead (Platform Recipes)</h4>
-              <h5>Mar 2024 - Feb 2025</h5>
-              <p><em>Brisbane, Queensland, Australia</em></p>
-              <p>Designed dependency scanner for document analysis. Optimized DevOps workflows using AWS EKS. Updated Terraform infrastructure to latest standards, improving deployment efficiency.</p>
-              <strong>Tech Stack:</strong> AWS EKS, Terraform, Docker, Go, Python
-            </div>
-
-            <div class="resume-item">
-              <h4>CEO &amp; Software Engineer (NEO Software Development)</h4>
-              <h5>Jul 2022 - Mar 2024</h5>
-              <p><em>Colombia</em></p>
-              <p>Founded and led company developing event management software. Awarded Ecopetrol Emprende grant. Delivered full-stack solutions for US-based clients with 50%+ revenue growth. Managed team and executed data-driven marketing campaigns.</p>
-              <strong>Tech Stack:</strong> Node.js, REST APIs, SQL, AWS, SDK development
-            </div>
-
-            <div class="resume-item">
-              <h4>AWS Architect (Logical Software Factory)</h4>
-              <h5>Sep - Nov 2021</h5>
-              <p><em>Neiva, Colombia</em></p>
-              <p>Architected cloud infrastructure solutions reducing costs by 75% through reserved instances. Deployed scalable EC2 instances with Docker, enhanced DNS with Route 53, and implemented robust security frameworks.</p>
-              <strong>Tech Stack:</strong> AWS (EC2, Route 53), Docker, Security Architecture
-            </div>
-
-            <div class="resume-item">
-              <h4>Software Engineering Team Lead (Cold Chain Colombia SAS)</h4>
-              <h5>Mar 2018 - Aug 2020</h5>
-              <p><em>Colombia</em></p>
-              <p>Led development team creating mobile and real-time web CMMS platform. Implemented QR code system for machine tracking. Transformed paper-based operations to web-based management. Generated actionable business insights from ticket data.</p>
-              <strong>Tech Stack:</strong> PHP, JavaScript, Real-time systems, QR codes, MySQL
-            </div>
+            <ul>
+              <li>
+                Developed new features to offer premium content under a
+                subscription model
+              </li>
+              <li>
+                Collaborated with the lead engineer to integrate new services
+                into the existing cloud architecture
+              </li>
+            </ul>
           </div>
 
-          <div class="col-lg-6">
-            <h3 class="resume-title">Education</h3>
-
-            <div class="resume-item">
-              <h4>Master of Information  Technology</h4>
-              <h5>Nov 2023 - Nov 2026 (In Progress)</h5>
-              <p><em>CQUniversity, Brisbane, Australia</em></p>
-              <p><strong>Focus Areas:</strong> Cybersecurity, Networking, Cloud Technologies (Azure, AWS), NIST Frameworks, Cryptography, Machine Learning, Deep Learning</p>
+          <div class="experience-item">
+            <h3>Software Engineer (Internship)</h3>
+            <div class="company">
+              <a
+                href="https://platform.recipes/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Platform Recipes</a
+              >
             </div>
-
-            <div class="resume-item">
-              <h4>Bachelor of Engineering - Computer Software Engineering</h4>
-              <h5>Feb 2017 - Dec 2021</h5>
-              <p><em>Fundación Escuela Tecnológica de Neiva "Jesús Oviedo Pérez", Neiva, Colombia</em></p>
-              <p><strong>Specialization:</strong> Software Development, Database Design, Optimization Algorithms</p>
+            <div class="meta">
+              July 2025 - September 2025 | Brisbane, QLD, Australia
             </div>
-
-            <div class="resume-item">
-              <h4>Research Exchange Program - Computer Science</h4>
-              <h5>2021</h5>
-              <p><em>Salisbury University, Maryland, USA</em></p>
-              <p>COVID-19 data analysis research and English language immersion program.</p>
-            </div>
-
-            <h3 class="resume-title">Certifications</h3>
-            
-            <div class="resume-item pb-0">
-              <h4>Professional Certifications & Online Courses</h4>
-              <p>✓ Marketing for Startups Course (Platzi, Aug 2023)</p>
-              <p>✓ Work Smarter, Not Harder: Time Management (UC Irvine, Jun 2023)</p>
-              <p>✓ Introduction to AWS: Fundamentals of Cloud Computing (Platzi, Feb 2023)</p>
-              <p>✓ SQL for Data Science (UC Davis, Jan 2023)</p>
-              <p>✓ E-Commerce Course for Implementing Electronic Payments (Platzi, Sep 2022)</p>
-              <p>✓ The Green Zone Certification (Salisbury University, Sep 2021)</p>
-              <p>✓ Linear Regression with NumPy and Python (Coursera, Apr 2021)</p>
-              <p>✓ Learning Data Science: Understanding the Basics (LinkedIn, Apr 2020)</p>
-              <p>✓ Researcher and Innovator Youth Scholarship (Colciencias, Oct 2020)</p>
-              <p>✓ TOEFL ITP (May 2021) & TOEFL IBT (Jul 2021, expired Jul 2023)</p>
-              <p>✓ Attendance to Introduction to Data Science (Universidad Nacional de Colombia)</p>
-              <p>✓ IELTS ACADEMIC (September 2025)</p>
-            </div>
-
-            <h3 class="resume-title">Core Competencies</h3>
-            
-            <div class="resume-item pb-0">
-              <h4>Programming Languages</h4>
-              <p><strong>Backend:</strong> Python, PHP (OOP), Go, Node.js</p>
-              <p><strong>Frontend:</strong> JavaScript, Vue.js, Bootstrap</p>
-              <p><strong>Data:</strong> SQL, Jupyter Notebook</p>
-            </div>
-
-            <div class="resume-item pb-0 mt-3">
-              <h4>Cloud &amp; DevOps</h4>
-              <p><strong>AWS:</strong> EC2, RDS, S3, Route 53, EKS, Lambda, IAM</p>
-              <p><strong>Azure:</strong> Virtual Machines, App Services, Databases</p>
-              <p><strong>Tools:</strong> Terraform, Docker, Github Actions, Rancher, Kafka</p>
-            </div>
-
-            <div class="resume-item pb-0 mt-3">
-              <h4>AI &amp; ML Specialization</h4>
-              <p><strong>Techniques:</strong> CNN, Classification, Regression, Transfer Learning</p>
-              <p><strong>Optimization:</strong> PSO, Evolution Strategies, Grid Search, Hyperparameter Tuning</p>
-              <p><strong>Frameworks:</strong> TensorFlow, PyTorch, Scikit-Learn</p>
-              <p><strong>Tools:</strong> Pandas, NumPy, Matplotlib, Seaborn, Plotly</p>
-            </div>
-
-            <div class="resume-item pb-0 mt-3">
-              <h4>Cybersecurity</h4>
-              <p><strong>Tools:</strong> Kali Linux, PKI, Cloud Networking</p>
-              <p><strong>Frameworks:</strong> NIST Cybersecurity Framework</p>
-              <p><strong>OS:</strong> Ubuntu, macOS, Windows, Kali</p>
-            </div>
-
-            <div class="resume-item pb-0 mt-3">
-              <h4>Languages</h4>
-              <p><strong>Spanish:</strong> Native Bilingual</p>
-              <p><strong>English:</strong> Full Professional Proficiency</p>
-            </div>
+            <ul>
+              <li>
+                Authored foundational technical guides and Architectural
+                Decision Records (ADRs) for cloud infrastructure
+              </li>
+              <li>
+                Automated cloud infrastructure provisioning and management using
+                Terraform
+              </li>
+              <li>
+                Developed a reusable framework for troubleshooting Kubernetes
+                pod readiness and liveness probe failures
+              </li>
+              <li>
+                Enhanced cloud security by implementing AWS Backup with
+                Multi-party Approval (MPA) policies
+              </li>
+            </ul>
           </div>
-        </div>
 
-      </div>
-    </section><!-- End Resume Section -->
+          <div class="experience-item">
+            <h3>Software Engineer</h3>
+            <div class="company">
+              <a
+                href="https://platform.recipes/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Platform Recipes</a
+              >
+            </div>
+            <div class="meta">
+              January 2023 - Present | Brisbane, QLD, Australia
+            </div>
+            <ul>
+              <li>
+                Develop and maintain critical backend microservices and CLI
+                tools using Go
+              </li>
+              <li>
+                Design and implement data visualization components providing
+                CEO-level insights into KPIs
+              </li>
+              <li>
+                Collaborate within a global, agile team, utilizing CI/CD
+                pipelines with GitHub Actions and Terraform
+              </li>
+              <li>
+                Actively participate in code reviews to ensure high-quality,
+                maintainable, and scalable code
+              </li>
+            </ul>
+          </div>
 
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio section-bg">
-      <div class="container" data-aos="fade-up">
+          <div class="experience-item">
+            <h3>Backend Developer</h3>
+            <div class="company">
+              <a
+                href="https://www.nivelics.com/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Nivelics SAS</a
+              >
+            </div>
+            <div class="meta">
+              September 2022 - January 2023 | Medellín, Colombia
+            </div>
+            <ul>
+              <li>
+                Architected and developed core backend services using
+                microservices architecture with Go, Gin, and GORM
+              </li>
+              <li>
+                Engineered a secure user authentication and Role-Based Access
+                Control (RBAC) system from scratch
+              </li>
+              <li>
+                Deployed and managed containerized applications using Docker on
+                AWS
+              </li>
+            </ul>
+          </div>
 
-        <div class="section-title">
-          <h2>Portfolio</h2>
-        </div>
+          <div class="experience-item">
+            <h3>Research Scholar</h3>
+            <div class="company">
+              <a
+                href="https://www.salisbury.edu/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Salisbury University</a
+              >
+            </div>
+            <div class="meta">
+              January 2021 - December 2021 | Salisbury, MD, USA
+            </div>
+            <ul>
+              <li>
+                Contributed to a data analysis project on COVID-19 risk factors
+                in Colombia
+              </li>
+              <li>
+                Developed and presented research findings at Salisbury
+                University's 'Posters on the Bay' symposium
+              </li>
+              <li>
+                Gained practical experience in data analysis, machine learning,
+                and formal academic presentation
+              </li>
+            </ul>
+          </div>
 
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+          <div class="experience-item">
+            <h3>Web Developer</h3>
+            <div class="company">
+              <a
+                href="https://www.lanacion.com.co/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >La Nación Newspaper</a
+              >
+            </div>
+            <div class="meta">
+              December 2018 - December 2019 | Neiva, Colombia
+            </div>
+            <ul>
+              <li>
+                Led the development and launch of a new e-commerce channel,
+                contributing to a 50% increase in revenue
+              </li>
+              <li>
+                Implemented strategic performance and SEO optimizations that
+                expanded the user base by 2.4 million
+              </li>
+              <li>
+                Collaborated with stakeholders to translate business
+                requirements into technical solutions
+              </li>
             </ul>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
+    <!-- Projects -->
+    <section id="projects" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Serverless Static Website Deployment</h3>
+            <p>
+              Developed a fully serverless static website leveraging AWS with
+              Lambda for form processing and CloudFront CDN for global content
+              delivery.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">AWS</span>
+              <span class="project-tag">Lambda</span>
+              <span class="project-tag">CloudFront</span>
+              <span class="project-tag">Serverless</span>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
+          <div class="project-card">
+            <h3>Hyperparameter Optimization for CNNs</h3>
+            <p>
+              Investigated and compared three HPO methods – PSO, Grid Search,
+              and Random Search – for optimizing CNN hyperparameters using
+              PyTorch.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">Python</span>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
+          <div class="project-card">
+            <h3>
+              <a
+                href="https://github.com/Python-Neiva/risk-factors-covid19/blob/main/risk_factor_data_analysis.ipynb"
+                target="_blank"
+                style="color: var(--text-dark); text-decoration: none"
+                >COVID-19 Risk Factor Analysis</a
+              >
+            </h3>
+            <p>
+              Analyzed COVID-19 risk factors in Colombia using Big Data
+              technologies to identify comorbidities associated with patients.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Data Analysis</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Machine Learning</span>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
+          <div class="project-card">
+            <h3>
+              <a
+                href="https://github.com/Romerolweb/lingua-verse"
+                target="_blank"
+                style="color: var(--text-dark); text-decoration: none"
+                >Lingua Verse</a
+              >
+            </h3>
+            <p>
+              A language learning application designed to help users expand
+              their vocabulary through interactive quizzes and spaced
+              repetition.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
+          <div class="project-card">
+            <h3>
+              <a
+                href="https://github.com/Romerolweb/bakery-invoice-generator"
+                target="_blank"
+                style="color: var(--text-dark); text-decoration: none"
+                >Bakery Invoice Generator</a
+              >
+            </h3>
+            <p>
+              A full-stack web application to streamline invoicing for small
+              businesses, featuring dynamic invoice creation and PDF generation.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Tailwind CSS</span>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
+          <div class="project-card">
+            <h3>
+              <a
+                href="https://github.com/Romerolweb/PSOImplementationInCNN"
+                target="_blank"
+                style="color: var(--text-dark); text-decoration: none"
+                >AI/ML Model Implementation Portfolio</a
+              >
+            </h3>
+            <p>
+              A portfolio of projects focused on implementing models from
+              scratch, including Particle Swarm Optimization for CNNs.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">Data Science</span>
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
-
       </div>
-    </section> -->
-    <!-- End Portfolio Section -->
+    </section>
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container" data-aos="fade-up">
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-list">
+          <div class="education-item">
+            <h3>Master of Information Technology</h3>
+            <div class="institution">CQUniversity</div>
+            <div class="dates">November 2023 - November 2026 (In Progress)</div>
+            <p>
+              Focusing on advanced topics in cybersecurity, cloud computing, and
+              artificial intelligence.
+            </p>
+          </div>
 
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Comprehensive technology solutions covering web development, cloud infrastructure, data analysis, and enterprise software architecture. I provide end-to-end services from concept to deployment and ongoing optimization.</p>
+          <div class="education-item">
+            <h3>Bachelor of Engineering - Computer Software Engineering</h3>
+            <div class="institution">
+              Fundación Escuela Tecnológica de Neiva 'Jesús Oviedo Pérez'
+            </div>
+            <div class="dates">February 2017 - December 2021</div>
+            <p>
+              Completed a comprehensive engineering program with a focus on
+              software development principles and practices.
+            </p>
+          </div>
+
+          <div class="education-item">
+            <h3>Virtual Technologies Program</h3>
+            <div class="institution">Tecnoacademia SENA Huila</div>
+            <div class="dates">January 2014 - December 2014</div>
+            <p>
+              Early research and development program focusing on foundational
+              web technologies.
+            </p>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bx bxl-dribbble"></i>
-              </div>
-              <h4><a href="">Full-Stack Web Development</a></h4>
-              <p>End-to-end web application development using modern technologies. From front-end interfaces to robust back-end systems, I deliver scalable, maintainable solutions that meet your business requirements.</p>
-            </div>
+    <!-- Languages -->
+    <section id="languages" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Languages</h2>
+        <div class="education-list" style="max-width: 700px">
+          <div class="education-item">
+            <h3>Spanish</h3>
+            <p><strong>Proficiency:</strong> Native</p>
           </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
-                </svg>
-                <i class="bx bx-file"></i>
-              </div>
-              <h4><a href="">REST API Development</a></h4>
-              <p>Design and implementation of robust REST APIs for web and mobile applications. Secure, well-documented, and scalable backend solutions that integrate seamlessly with your front-end systems.</p>
-            </div>
+          <div class="education-item">
+            <h3>English</h3>
+            <p><strong>Proficiency:</strong> Full Professional</p>
           </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-pink">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
-                </svg>
-                <i class="bx bx-tachometer"></i>
-              </div>
-              <h4><a href="">E-Commerce Solutions</a></h4>
-              <p>Complete e-commerce platform development with payment gateway integration, inventory management, and analytics. I help businesses establish a powerful online presence with multi-currency and multi-payment support.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-yellow">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>
-                </svg>
-                <i class="bx bx-layer"></i>
-              </div>
-              <h4><a href="">AWS Cloud Deployment</a></h4>
-              <p>Professional deployment and management of web applications on AWS infrastructure. EC2 instances, S3 storage, RDS databases, security configuration, and cost optimization for production environments.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-red">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
-                </svg>
-                <i class="bx bx-slideshow"></i>
-              </div>
-              <h4><a href="">Database Design &amp; Optimization</a></h4>
-              <p>Strategic database architecture and optimization services. Schema design, query optimization, performance tuning, and migration planning to ensure your data layer supports business growth.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-teal">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"></path>
-                </svg>
-                <i class="bx bx-arch"></i>
-              </div>
-              <h4><a href="">Data Analysis &amp; BI</a></h4>
-              <p>Extract actionable insights from your data. Data analysis, visualization, business intelligence dashboards, and predictive analytics to drive informed decision-making and business growth.</p>
-            </div>
-          </div>
-
         </div>
-
       </div>
-    </section><!-- End Services Section -->
+    </section>
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Get In Touch</h2>
-          <p>I'm open to new projects, collaboration opportunities, and technical discussions. Whether you need a full-stack developer, cloud architect, or data analyst, let's connect.</p>
-        </div>
-
-        <div class="row mt-1">
-
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Australia</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>sebastianromerol@outlook.es</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-link-45deg"></i>
-                <h4>Online Profiles:</h4>
-                <p>
-                  <a href="https://github.com/Romerolweb" target="_blank">GitHub</a> | 
-                  <a href="https://www.linkedin.com/in/sebastian-romerol/" target="_blank">LinkedIn</a> | 
-                  <a href="https://torre.co/Romerolweb" target="_blank">Torre</a>
-                </p>
-              </div>
-
+    <!-- Certifications -->
+    <section id="certifications">
+      <div class="container">
+        <h2 class="section-title">Certifications & Professional Development</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Marketing for Startups Course</h3>
+            <p>
+              <strong>Issuer:</strong> Platzi<br /><strong>Date:</strong> August
+              2023
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/957870a2-6100-47f8-997e-b3c75bfb916a"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
             </div>
-
           </div>
 
+          <div class="project-card">
+            <h3>Work Smarter, Not Harder: Time Management</h3>
+            <p>
+              <strong>Issuer:</strong> UC Irvine<br /><strong>Date:</strong>
+              June 2023
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/6XST5ZPHRW7D"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Introduction to AWS: Fundamentals of Cloud Computing</h3>
+            <p>
+              <strong>Issuer:</strong> Platzi<br /><strong>Date:</strong>
+              February 2023
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/eaed0744-f94a-45d8-b8da-09d96685168c"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>SQL for Data Science</h3>
+            <p>
+              <strong>Issuer:</strong> University of California, Davis<br /><strong
+                >Date:</strong
+              >
+              August 2022
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/57a7e2b1-096b-4e89-a29d-16a75f560e9d"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Test Of English as a Foreign Language IBT</h3>
+            <p>
+              <strong>Issuer:</strong> TOEFL<br /><strong>Date:</strong> July
+              2021
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>Linear Regression with NumPy and Python</h3>
+            <p>
+              <strong>Issuer:</strong> Coursera<br /><strong>Date:</strong>
+              April 2021
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/NW7GR7KXRA48"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Researcher and Innovator Youth Scholarship</h3>
+            <p>
+              <strong>Issuer:</strong> Minciencias<br /><strong>Date:</strong>
+              October 2020
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>Learning Data Science: Understanding the Basics</h3>
+            <p>
+              <strong>Issuer:</strong> LinkedIn<br /><strong>Date:</strong>
+              April 2020
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>Professional Development in Cybersecurity</h3>
+            <p>
+              <strong>Institution:</strong> FET - Jesús Oviedo Pérez<br /><strong
+                >Duration:</strong
+              >
+              120 Hours<br /><strong>Date:</strong> 2020
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>English as a Second Language (ESL Program)</h3>
+            <p>
+              <strong>Institution:</strong> Salisbury University<br /><strong
+                >Date:</strong
+              >
+              2021
+            </p>
+          </div>
         </div>
-
       </div>
-    </section><!-- End Contact Section -->
+    </section>
 
-  </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>Sebastian Romero Laguna</h3>
-      <p>Social Networks.</p>
-      <div class="social-links">
-        <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
-        <a href="https://www.facebook.com/sebastianromero100ipuc" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://www.instagram.com/sebastianromerol/" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a> -->
-        <a href="https://www.linkedin.com/in/sebastian-romerol/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <!-- <a href="https://torre.co/Romerolweb" class="torre"><i class="bx bxl-linkedin"></i></a> -->
-        <!-- <a href="https://github.com/Romerolweb" class="github"><i class="bx bxl-linkedin"></i></a> -->
+    <!-- Services -->
+    <section id="services" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="projects-grid">
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>AI Integration & Workflow Automation Strategy</h3>
+            <div class="project-tags">
+              <span class="project-tag">AI Strategy</span>
+              <span class="project-tag">Business Process Automation</span>
+              <span class="project-tag">Technology Consulting</span>
+            </div>
+            <p style="display: none">
+              Strategic advisory for businesses looking to leverage Generative
+              AI and automation. I assess your current workflows, identify
+              high-impact opportunities for AI integration, and design a
+              strategic roadmap for implementation. This includes selecting the
+              right AI tools (like Copilot, Gemini, and other agentic systems),
+              defining spec-driven development processes, and ensuring your team
+              is equipped to build and maintain AI-powered solutions
+              efficiently.
+            </p>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>Cloud-Native Architecture & Design</h3>
+            <div class="project-tags">
+              <span class="project-tag">Cloud Architecture</span>
+              <span class="project-tag">AWS Consulting</span>
+              <span class="project-tag">System Design</span>
+            </div>
+            <p style="display: none">
+              Expert architectural design for building scalable, resilient, and
+              cost-effective applications on AWS. I work with your team to
+              design robust microservices architectures, define best practices
+              for serverless computing, and create a blueprint for your cloud
+              infrastructure that aligns with your long-term business goals and
+              security requirements.
+            </p>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>Infrastructure as Code & CI/CD Pipeline Implementation</h3>
+            <div class="project-tags">
+              <span class="project-tag">DevOps Engineering</span>
+              <span class="project-tag">Cloud Infrastructure</span>
+              <span class="project-tag">Terraform</span>
+            </div>
+            <p style="display: none">
+              I build and configure your complete cloud infrastructure and
+              deployment pipelines using modern DevOps practices. This service
+              includes writing production-grade Terraform code to manage your
+              AWS resources and setting up automated CI/CD workflows with GitHub
+              Actions for reliable, repeatable, and fast deployments.
+            </p>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>Custom CLI & Automation Tool Development</h3>
+            <div class="project-tags">
+              <span class="project-tag">Go (Golang)</span>
+              <span class="project-tag">CLI Tools</span>
+              <span class="project-tag">DevOps Automation</span>
+            </div>
+            <p style="display: none">
+              Development of custom command-line interface (CLI) tools and
+              automation scripts in Go to solve your team's specific challenges.
+              Whether it's for automating deployments, managing infrastructure,
+              or simplifying complex workflows, I build robust, cross-platform
+              tools that make your engineering team faster and more effective.
+            </p>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>REST API & Microservices Implementation</h3>
+            <div class="project-tags">
+              <span class="project-tag">Backend Development</span>
+              <span class="project-tag">Microservices</span>
+              <span class="project-tag">Go (Golang)</span>
+              <span class="project-tag">Python</span>
+            </div>
+            <p style="display: none">
+              Backend development focused on building secure, well-documented,
+              and high-performance REST APIs and microservices. Using Go and
+              modern frameworks, I implement services that are designed for
+              scalability and maintainability, forming the backbone of your web
+              and mobile applications. Also interested in advanced solutions
+              using Python.
+            </p>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>Full-Stack Web Development</h3>
+            <div class="project-tags">
+              <span class="project-tag">Web Development</span>
+              <span class="project-tag">Full-Stack</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">Go (Golang)</span>
+            </div>
+            <p style="display: none">
+              End-to-end web application development using modern technologies.
+              From front-end interfaces with React and TypeScript to robust
+              back-end systems in Go or Python, I deliver scalable, maintainable
+              solutions that are deployed on secure AWS infrastructure and meet
+              your business requirements.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="copyright">
-        &copy; Copyright <strong><a href="#"><span>Sebastian Romero Laguna</span></a></strong>. All Rights Reserved
+
+      <div
+        id="modal"
+        style="
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <div
+          style="
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+          "
+        >
+          <button
+            onclick="closeModal()"
+            style="
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background: none;
+              border: none;
+              font-size: 24px;
+              cursor: pointer;
+              color: var(--text-light);
+            "
+          >
+            ✕
+          </button>
+          <h3
+            id="modalTitle"
+            style="
+              font-size: 22px;
+              margin-bottom: 16px;
+              color: var(--text-dark);
+            "
+          ></h3>
+          <p
+            id="modalContent"
+            style="color: var(--text-medium); line-height: 1.7; font-size: 16px"
+          ></p>
+        </div>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: [license-url] -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
-        <!-- Designed by  -->
-        <!-- <a href="https://bootstrapmade.com/"> -->
-          <!-- BootstrapMade</a> -->
+    </section>
+
+    <script>
+      function openModal(card) {
+        const title = card.querySelector("h3").textContent;
+        const content = card.querySelector(
+          'p[style*="display: none"]'
+        ).textContent;
+        document.getElementById("modalTitle").textContent = title;
+        document.getElementById("modalContent").textContent = content;
+        document.getElementById("modal").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+      document.getElementById("modal").addEventListener("click", (e) => {
+        if (e.target.id === "modal") closeModal();
+      });
+    </script>
+    
+    <!-- Contact -->
+    <section id="contact" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-info">
+          <p style="margin-bottom: 20px">
+            I'm open to new opportunities and collaborations. Feel free to reach
+            out!
+          </p>
+          <p>
+            <a href="mailto:neosoftwaredevelopment@gmail.com"
+              >neosoftwaredevelopment@gmail.com</a
+            >
+          </p>
+        </div>
       </div>
-    </div>
-  </footer><!-- End Footer -->
+    </section>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Sebastian Romero Laguna. All rights reserved.</p>
+        <p style="margin-top: 8px; opacity: 0.8">Brisbane, QLD, Australia</p>
+      </div>
+    </footer>
+  </body>
 </html>
