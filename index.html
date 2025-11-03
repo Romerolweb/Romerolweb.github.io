@@ -1,962 +1,1260 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sebastian Romero Laguna - Software Engineer</title>
-  <meta name="description" content="Software Engineer | Backend & Cloud Specialist">
-  <meta name="keywords" content="Software Development, Go, AWS, Cloud, Backend, DevOps">
-  
-  <!-- Favicon -->
-  <link href="assets/img/favicon.png" rel="icon">
-  
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    :root {
-      --primary: #0ea5e9;
-      --primary-dark: #0284c7;
-      --accent: #8b5cf6;
-      --text-dark: #0f172a;
-      --text-medium: #334155;
-      --text-light: #64748b;
-      --bg-light: #f8fafc;
-      --bg-white: #ffffff;
-      --border: #e2e8f0;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text-dark);
-      background: var(--bg-light);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    /* Header */
-    header {
-      background: var(--bg-white);
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--primary);
-    }
-    
-    nav {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    
-    nav a {
-      color: var(--text-dark);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    
-    nav a:hover {
-      color: var(--primary);
-    }
-    
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
-      color: white;
-      padding: 120px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-      opacity: 0.5;
-    }
-    
-    .hero > .container {
-      position: relative;
-      z-index: 1;
-    }
-    
-    .hero h1 {
-      font-size: 56px;
-      margin-bottom: 20px;
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.2;
-    }
-    
-    .hero .subtitle {
-      font-size: 28px;
-      margin-bottom: 12px;
-      opacity: 0.95;
-      font-weight: 500;
-    }
-    
-    .hero .location {
-      font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 40px;
-      font-weight: 400;
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    
-    .social-links a {
-      color: white;
-      text-decoration: none;
-      padding: 14px 28px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
-      transition: all 0.3s ease;
-      font-weight: 600;
-      font-size: 16px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .social-links a:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Section */
-    section {
-      padding: 80px 0;
-    }
-    
-    .section-title {
-      font-size: 42px;
-      font-weight: 800;
-      margin-bottom: 20px;
-      text-align: center;
-      color: var(--text-dark);
-      letter-spacing: -0.025em;
-    }
-    
-    .section-subtitle {
-      text-align: center;
-      color: var(--text-light);
-      font-size: 18px;
-      margin-bottom: 60px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    /* About */
-    .about-content {
-      background: var(--bg-white);
-      padding: 50px;
-      border-radius: 16px;
-      box-shadow: var(--shadow-md);
-      max-width: 900px;
-      margin: 0 auto;
-      border: 1px solid var(--border);
-    }
-    
-    .about-content p {
-      font-size: 20px;
-      line-height: 1.8;
-      color: var(--text-medium);
-      font-weight: 400;
-    }
-    
-    /* Skills */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
-    }
-    
-    .skill-card {
-      background: var(--bg-white);
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-    }
-    
-    .skill-card:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-4px);
-      border-color: var(--primary);
-    }
-    
-    .skill-card h3 {
-      font-size: 22px;
-      margin-bottom: 20px;
-      color: var(--text-dark);
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .skill-card h3::before {
-      content: '●';
-      color: var(--primary);
-      font-size: 12px;
-    }
-    
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    
-    .skill-tag {
-      background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 14px;
-      color: var(--text-dark);
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-    
-    .skill-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
-    }
-    
-    /* Experience */
-    .experience-list {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .experience-item {
-      background: var(--bg-white);
-      padding: 40px;
-      border-radius: 16px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-    }
-    
-    .experience-item:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary);
-    }
-    
-    .experience-item h3 {
-      font-size: 26px;
-      color: var(--text-dark);
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    
-    .experience-item .company {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-    
-    .experience-item .meta {
-      color: var(--text-light);
-      margin-bottom: 20px;
-      font-size: 15px;
-      font-weight: 500;
-    }
-    
-    .experience-item ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    
-    .experience-item li {
-      padding-left: 28px;
-      position: relative;
-      margin-bottom: 12px;
-      color: var(--text-medium);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-    
-    .experience-item li:before {
-      content: "▸";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-weight: bold;
-      font-size: 18px;
-    }
-    
-    /* Projects */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 28px;
-    }
-    
-    .project-card {
-      background: var(--bg-white);
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
-    }
-    
-    .project-card:hover::before {
-      transform: scaleX(1);
-    }
-    
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--primary);
-    }
-    
-    .project-card h3 {
-      font-size: 22px;
-      margin-bottom: 14px;
-      color: var(--text-dark);
-      font-weight: 700;
-    }
-    
-    .project-card p {
-      color: var(--text-medium);
-      margin-bottom: 20px;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-    
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    
-    .project-tag {
-      background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);
-      color: var(--text-dark);
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    
-    .project-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
-    }
-    
-    /* Education */
-    .education-list {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .education-item {
-      background: var(--bg-white);
-      padding: 36px;
-      border-radius: 16px;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-      transition: all 0.3s ease;
-    }
-    
-    .education-item:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary);
-    }
-    
-    .education-item h3 {
-      font-size: 24px;
-      color: var(--text-dark);
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    
-    .education-item .institution {
-      font-size: 18px;
-      color: var(--primary);
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-    
-    .education-item .dates {
-      color: var(--text-light);
-      font-size: 15px;
-      margin-bottom: 16px;
-      font-weight: 500;
-    }
-    
-    .education-item p {
-      color: var(--text-medium);
-      font-size: 16px;
-      line-height: 1.7;
-    }
-    
-    /* Contact */
-    .contact-info {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      padding: 60px 40px;
-      border-radius: 20px;
-      box-shadow: var(--shadow-lg);
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-      color: white;
-    }
-    
-    .contact-info p {
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-    
-    .contact-info a {
-      color: white;
-      text-decoration: none;
-      font-size: 22px;
-      font-weight: 700;
-      display: inline-block;
-      padding: 16px 32px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      margin-top: 20px;
-      transition: all 0.3s ease;
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(10px);
-    }
-    
-    .contact-info a:hover {
-      background: rgba(255, 255, 255, 0.25);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: white;
-      text-align: center;
-      padding: 48px 0;
-      margin-top: 80px;
-    }
-    
-    footer p {
-      opacity: 0.9;
-      font-size: 15px;
-    }
-    
-    /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sebastian Romero Laguna - Software Engineer</title>
+    <meta
+      name="description"
+      content="Software Engineer | Backend & Cloud Specialist"
+    />
+    <meta
+      name="keywords"
+      content="Software Development, Go, AWS, Cloud, Backend, DevOps"
+    />
+
+    <!-- Favicon -->
+    <link href="assets/img/favicon.png" rel="icon" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      to {
-        opacity: 1;
-        transform: translateY(0);
+
+      :root {
+        --primary: #0ea5e9;
+        --primary-dark: #0284c7;
+        --accent: #8b5cf6;
+        --text-dark: #0f172a;
+        --text-medium: #334155;
+        --text-light: #64748b;
+        --bg-light: #f8fafc;
+        --bg-white: #ffffff;
+        --border: #e2e8f0;
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
       }
-    }
-    
-    .fade-in {
-      animation: fadeIn 0.6s ease-out;
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 40px;
+
+      html {
+        scroll-behavior: smooth;
       }
-      
-      .hero .subtitle {
-        font-size: 22px;
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: var(--bg-light);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
-      
-      .hero {
-        padding: 80px 0 60px;
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
       }
-      
+
+      /* Header */
+      header {
+        background: var(--bg-white);
+        border-bottom: 1px solid var(--border);
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
       nav {
-        gap: 15px;
-        font-size: 14px;
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
       }
-      
-      .section-title {
-        font-size: 32px;
+
+      nav a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
       }
-      
-      section {
-        padding: 60px 0;
+
+      nav a:hover {
+        color: var(--primary);
       }
-      
-      .about-content,
-      .experience-item,
-      .education-item,
-      .project-card,
-      .skill-card {
-        padding: 24px;
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
+        color: white;
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
       }
-      
-      .skills-grid,
-      .projects-grid {
-        grid-template-columns: 1fr;
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(14, 165, 233, 0.1) 0%,
+          rgba(139, 92, 246, 0.1) 100%
+        );
+        opacity: 0.5;
       }
-    }
-    
-    @media (max-width: 480px) {
+
+      .hero > .container {
+        position: relative;
+        z-index: 1;
+      }
+
       .hero h1 {
-        font-size: 32px;
+        font-size: 56px;
+        margin-bottom: 20px;
+        font-weight: 800;
+        letter-spacing: -0.025em;
+        line-height: 1.2;
       }
-      
+
+      .hero .subtitle {
+        font-size: 28px;
+        margin-bottom: 12px;
+        opacity: 0.95;
+        font-weight: 500;
+      }
+
+      .hero .location {
+        font-size: 18px;
+        opacity: 0.9;
+        margin-bottom: 40px;
+        font-weight: 400;
+      }
+
       .social-links {
-        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
       }
-      
+
       .social-links a {
-        width: 100%;
-        max-width: 280px;
+        color: white;
+        text-decoration: none;
+        padding: 14px 28px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        font-size: 16px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
-    }
-  </style>
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <div class="logo">SR</div>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Sebastian Romero Laguna</h1>
-      <div class="subtitle">Software Engineer | Backend & Cloud Specialist</div>
-      <div class="location">📍 Brisbane, QLD, Australia</div>
-      <div class="social-links">
-        <a href="https://github.com/Romerolweb" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/sebastian-romerol/" target="_blank">LinkedIn</a>
-        <a href="mailto:neosoftwaredeveloment@gmail.com">Email</a>
-      </div>
-    </div>
-  </section>
+      .social-links a:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-content">
-        <p>A highly motivated Software Engineer and Master of Information Technology student with over 6 years of combined experience in backend development, cloud infrastructure, and automation. Specializing in Go, AWS, and CI/CD, with a proven track record of building scalable systems and a passion for solving complex problems. Eager to contribute to an innovative and collaborative team in the Australian tech industry.</p>
-      </div>
-    </div>
-  </section>
+      /* Section */
+      section {
+        padding: 80px 0;
+      }
 
-  <!-- Skills -->
-  <section id="skills" style="background: var(--bg-white);">
-    <div class="container">
-      <h2 class="section-title">Skills & Technologies</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Backend Development</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">Go (Golang)</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">PHP</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">Microservices</span>
-          </div>
+      .section-title {
+        font-size: 42px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        text-align: center;
+        color: var(--text-dark);
+        letter-spacing: -0.025em;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-light);
+        font-size: 18px;
+        margin-bottom: 60px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* About */
+      .about-content {
+        background: var(--bg-white);
+        padding: 50px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-md);
+        max-width: 900px;
+        margin: 0 auto;
+        border: 1px solid var(--border);
+      }
+
+      .about-content p {
+        font-size: 20px;
+        line-height: 1.8;
+        color: var(--text-medium);
+        font-weight: 400;
+      }
+
+      /* Skills */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+      }
+
+      .skill-card {
+        background: var(--bg-white);
+        padding: 32px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .skill-card:hover {
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-4px);
+        border-color: var(--primary);
+      }
+
+      .skill-card h3 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        color: var(--text-dark);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .skill-card h3::before {
+        content: "●";
+        color: var(--primary);
+        font-size: 12px;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-tag {
+        background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        color: var(--text-dark);
+        font-weight: 500;
+        transition: all 0.2s ease;
+      }
+
+      .skill-tag:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+
+      /* Experience */
+      .experience-list {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .experience-item {
+        background: var(--bg-white);
+        padding: 40px;
+        border-radius: 16px;
+        margin-bottom: 28px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .experience-item:hover {
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary);
+      }
+
+      .experience-item h3 {
+        font-size: 26px;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .experience-item .company {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .experience-item .meta {
+        color: var(--text-light);
+        margin-bottom: 20px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .experience-item ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .experience-item li {
+        padding-left: 28px;
+        position: relative;
+        margin-bottom: 12px;
+        color: var(--text-medium);
+        line-height: 1.7;
+        font-size: 16px;
+      }
+
+      .experience-item li:before {
+        content: "▸";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      /* Projects */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 28px;
+      }
+
+      .project-card {
+        background: var(--bg-white);
+        padding: 32px;
+        border-radius: 16px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary) 0%,
+          var(--accent) 100%
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--primary);
+      }
+
+      .project-card h3 {
+        font-size: 22px;
+        margin-bottom: 14px;
+        color: var(--text-dark);
+        font-weight: 700;
+      }
+
+      .project-card p {
+        color: var(--text-medium);
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .project-tag {
+        background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 100%);
+        color: var(--text-dark);
+        padding: 6px 12px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+      }
+
+      .project-tag:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+
+      /* Education */
+      .education-list {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .education-item {
+        background: var(--bg-white);
+        padding: 36px;
+        border-radius: 16px;
+        margin-bottom: 24px;
+        box-shadow: var(--shadow-sm);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .education-item:hover {
+        box-shadow: var(--shadow-md);
+        border-color: var(--primary);
+      }
+
+      .education-item h3 {
+        font-size: 24px;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .education-item .institution {
+        font-size: 18px;
+        color: var(--primary);
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .education-item .dates {
+        color: var(--text-light);
+        font-size: 15px;
+        margin-bottom: 16px;
+        font-weight: 500;
+      }
+
+      .education-item p {
+        color: var(--text-medium);
+        font-size: 16px;
+        line-height: 1.7;
+      }
+
+      /* Contact */
+      .contact-info {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--accent) 100%
+        );
+        padding: 60px 40px;
+        border-radius: 20px;
+        box-shadow: var(--shadow-lg);
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+      }
+
+      .contact-info p {
+        font-size: 18px;
+        margin-bottom: 12px;
+      }
+
+      .contact-info a {
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 700;
+        display: inline-block;
+        padding: 16px 32px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 12px;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .contact-info a:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: white;
+        text-align: center;
+        padding: 48px 0;
+        margin-top: 80px;
+      }
+
+      footer p {
+        opacity: 0.9;
+        font-size: 15px;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease-out;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 40px;
+        }
+
+        .hero .subtitle {
+          font-size: 22px;
+        }
+
+        .hero {
+          padding: 80px 0 60px;
+        }
+
+        nav {
+          gap: 15px;
+          font-size: 14px;
+        }
+
+        .section-title {
+          font-size: 32px;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+
+        .about-content,
+        .experience-item,
+        .education-item,
+        .project-card,
+        .skill-card {
+          padding: 24px;
+        }
+
+        .skills-grid,
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .social-links {
+          flex-direction: column;
+        }
+
+        .social-links a {
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">SR</div>
+          <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#contact">Contact</a>
+          </nav>
         </div>
-        
-        <div class="skill-card">
-          <h3>Cloud & DevOps</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">AWS</span>
-            <span class="skill-tag">Terraform</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Kubernetes</span>
-            <span class="skill-tag">CI/CD</span>
-            <span class="skill-tag">GitHub Actions</span>
-          </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Sebastian Romero Laguna</h1>
+        <div class="subtitle">
+          Software Engineer | Backend & Cloud Specialist
         </div>
-        
-        <div class="skill-card">
-          <h3>Frontend Development</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Next.js</span>
-            <span class="skill-tag">Tailwind CSS</span>
-          </div>
+        <div class="location">📍 Brisbane, QLD, Australia</div>
+        <div class="social-links">
+          <a href="https://github.com/Romerolweb" target="_blank">GitHub</a>
+          <a
+            href="https://www.linkedin.com/in/sebastian-romerol/"
+            target="_blank"
+            >LinkedIn</a
+          >
+          <a href="mailto:neosoftwaredevelopment@gmail.com">Email</a>
         </div>
-        
-        <div class="skill-card">
-          <h3>Databases</h3>
-          <div class="skill-tags">
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">MongoDB</span>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <p>
+            Experienced and versatile Software Engineer with a professional
+            background since 2017, specializing in backend development, cloud
+            infrastructure, and automation. Proven expertise in building
+            scalable systems using Go, Python, AWS, and Terraform, complemented
+            by strong full-stack capabilities in TypeScript and React/Next.js.
+          </p>
+          <p>
+            Recently completed a Master of IT (graduating December 2025), adding
+            advanced academic knowledge in cybersecurity and Artificial
+            Intelligence to a foundation of extensive hands-on experience. A
+            proven leader with a track record of mentoring junior developers and
+            driving projects from conception to deployment in agile
+            environments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Backend Development</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Go (Golang)</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">REST APIs</span>
+              <span class="skill-tag">Microservices</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Cloud & DevOps</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">GitHub Actions</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Frontend Development</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="skill-card">
+            <h3>Databases</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MongoDB</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Experience -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Professional Experience</h2>
-      <div class="experience-list">
-        <div class="experience-item">
-          <h3>Software Engineer</h3>
-          <div class="company"><a href="https://platform.recipes/" target="_blank" style="color: var(--primary); text-decoration: none;">Platform Recipes</a></div>
-          <div class="meta">October 2025 - Present | Brisbane, QLD, Australia</div>
-          <ul>
-            <li>Developed new features to offer premium content under a subscription model</li>
-            <li>Collaborated with the lead engineer to integrate new services into the existing cloud architecture</li>
-          </ul>
-        </div>
-        
-        <div class="experience-item">
-          <h3>Software Engineer (Internship)</h3>
-          <div class="company"><a href="https://platform.recipes/" target="_blank" style="color: var(--primary); text-decoration: none;">Platform Recipes</a></div>
-          <div class="meta">July 2025 - September 2025 | Brisbane, QLD, Australia</div>
-          <ul>
-            <li>Authored foundational technical guides and Architectural Decision Records (ADRs) for cloud infrastructure</li>
-            <li>Automated cloud infrastructure provisioning and management using Terraform</li>
-            <li>Developed a reusable framework for troubleshooting Kubernetes pod readiness and liveness probe failures</li>
-            <li>Enhanced cloud security by implementing AWS Backup with Multi-party Approval (MPA) policies</li>
-          </ul>
-        </div>
-        
-        <div class="experience-item">
-          <h3>Software Engineer</h3>
-          <div class="company"><a href="https://platform.recipes/" target="_blank" style="color: var(--primary); text-decoration: none;">Platform Recipes</a></div>
-          <div class="meta">January 2023 - Present | Brisbane, QLD, Australia</div>
-          <ul>
-            <li>Develop and maintain critical backend microservices and CLI tools using Go</li>
-            <li>Design and implement data visualization components providing CEO-level insights into KPIs</li>
-            <li>Collaborate within a global, agile team, utilizing CI/CD pipelines with GitHub Actions and Terraform</li>
-            <li>Actively participate in code reviews to ensure high-quality, maintainable, and scalable code</li>
-          </ul>
-        </div>
-        
-        <div class="experience-item">
-          <h3>Backend Developer</h3>
-          <div class="company"><a href="https://www.nivelics.com/" target="_blank" style="color: var(--primary); text-decoration: none;">Nivelics SAS</a></div>
-          <div class="meta">September 2022 - January 2023 | Medellín, Colombia</div>
-          <ul>
-            <li>Architected and developed core backend services using microservices architecture with Go, Gin, and GORM</li>
-            <li>Engineered a secure user authentication and Role-Based Access Control (RBAC) system from scratch</li>
-            <li>Deployed and managed containerized applications using Docker on AWS</li>
-          </ul>
-        </div>
-        
-        <div class="experience-item">
-          <h3>Research Scholar</h3>
-          <div class="company"><a href="https://www.salisbury.edu/" target="_blank" style="color: var(--primary); text-decoration: none;">Salisbury University</a></div>
-          <div class="meta">January 2021 - December 2021 | Salisbury, MD, USA</div>
-          <ul>
-            <li>Contributed to a data analysis project on COVID-19 risk factors in Colombia</li>
-            <li>Developed and presented research findings at Salisbury University's 'Posters on the Bay' symposium</li>
-            <li>Gained practical experience in data analysis, machine learning, and formal academic presentation</li>
-          </ul>
-        </div>
-        
-        <div class="experience-item">
-          <h3>Web Developer</h3>
-          <div class="company"><a href="https://www.lanacion.com.co/" target="_blank" style="color: var(--primary); text-decoration: none;">La Nación Newspaper</a></div>
-          <div class="meta">December 2018 - December 2019 | Neiva, Colombia</div>
-          <ul>
-            <li>Led the development and launch of a new e-commerce channel, contributing to a 50% increase in revenue</li>
-            <li>Implemented strategic performance and SEO optimizations that expanded the user base by 2.4 million</li>
-            <li>Collaborated with stakeholders to translate business requirements into technical solutions</li>
-          </ul>
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Professional Experience</h2>
+        <div class="experience-list">
+          <div class="experience-item">
+            <h3>Software Engineer</h3>
+            <div class="company">
+              <a
+                href="https://platform.recipes/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Platform Recipes</a
+              >
+            </div>
+            <div class="meta">
+              October 2025 - Present | Brisbane, QLD, Australia
+            </div>
+            <ul>
+              <li>
+                Developed new features to offer premium content under a
+                subscription model
+              </li>
+              <li>
+                Collaborated with the lead engineer to integrate new services
+                into the existing cloud architecture
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>Software Engineer (Internship)</h3>
+            <div class="company">
+              <a
+                href="https://platform.recipes/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Platform Recipes</a
+              >
+            </div>
+            <div class="meta">
+              July 2025 - September 2025 | Brisbane, QLD, Australia
+            </div>
+            <ul>
+              <li>
+                Authored foundational technical guides and Architectural
+                Decision Records (ADRs) for cloud infrastructure
+              </li>
+              <li>
+                Automated cloud infrastructure provisioning and management using
+                Terraform
+              </li>
+              <li>
+                Developed a reusable framework for troubleshooting Kubernetes
+                pod readiness and liveness probe failures
+              </li>
+              <li>
+                Enhanced cloud security by implementing AWS Backup with
+                Multi-party Approval (MPA) policies
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>Software Engineer</h3>
+            <div class="company">
+              <a
+                href="https://platform.recipes/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Platform Recipes</a
+              >
+            </div>
+            <div class="meta">
+              January 2023 - Present | Brisbane, QLD, Australia
+            </div>
+            <ul>
+              <li>
+                Develop and maintain critical backend microservices and CLI
+                tools using Go
+              </li>
+              <li>
+                Design and implement data visualization components providing
+                CEO-level insights into KPIs
+              </li>
+              <li>
+                Collaborate within a global, agile team, utilizing CI/CD
+                pipelines with GitHub Actions and Terraform
+              </li>
+              <li>
+                Actively participate in code reviews to ensure high-quality,
+                maintainable, and scalable code
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>Backend Developer</h3>
+            <div class="company">
+              <a
+                href="https://www.nivelics.com/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Nivelics SAS</a
+              >
+            </div>
+            <div class="meta">
+              September 2022 - January 2023 | Medellín, Colombia
+            </div>
+            <ul>
+              <li>
+                Architected and developed core backend services using
+                microservices architecture with Go, Gin, and GORM
+              </li>
+              <li>
+                Engineered a secure user authentication and Role-Based Access
+                Control (RBAC) system from scratch
+              </li>
+              <li>
+                Deployed and managed containerized applications using Docker on
+                AWS
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>Research Scholar</h3>
+            <div class="company">
+              <a
+                href="https://www.salisbury.edu/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >Salisbury University</a
+              >
+            </div>
+            <div class="meta">
+              January 2021 - December 2021 | Salisbury, MD, USA
+            </div>
+            <ul>
+              <li>
+                Contributed to a data analysis project on COVID-19 risk factors
+                in Colombia
+              </li>
+              <li>
+                Developed and presented research findings at Salisbury
+                University's 'Posters on the Bay' symposium
+              </li>
+              <li>
+                Gained practical experience in data analysis, machine learning,
+                and formal academic presentation
+              </li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <h3>Web Developer</h3>
+            <div class="company">
+              <a
+                href="https://www.lanacion.com.co/"
+                target="_blank"
+                style="color: var(--primary); text-decoration: none"
+                >La Nación Newspaper</a
+              >
+            </div>
+            <div class="meta">
+              December 2018 - December 2019 | Neiva, Colombia
+            </div>
+            <ul>
+              <li>
+                Led the development and launch of a new e-commerce channel,
+                contributing to a 50% increase in revenue
+              </li>
+              <li>
+                Implemented strategic performance and SEO optimizations that
+                expanded the user base by 2.4 million
+              </li>
+              <li>
+                Collaborated with stakeholders to translate business
+                requirements into technical solutions
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects" style="background: var(--bg-white);">
-    <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Serverless Static Website Deployment</h3>
-          <p>Developed a fully serverless static website leveraging AWS with Lambda for form processing and CloudFront CDN for global content delivery.</p>
-          <div class="project-tags">
-            <span class="project-tag">AWS</span>
-            <span class="project-tag">Lambda</span>
-            <span class="project-tag">CloudFront</span>
-            <span class="project-tag">Serverless</span>
+    <!-- Projects -->
+    <section id="projects" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Serverless Static Website Deployment</h3>
+            <p>
+              Developed a fully serverless static website leveraging AWS with
+              Lambda for form processing and CloudFront CDN for global content
+              delivery.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">AWS</span>
+              <span class="project-tag">Lambda</span>
+              <span class="project-tag">CloudFront</span>
+              <span class="project-tag">Serverless</span>
+            </div>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3>Hyperparameter Optimization for CNNs</h3>
-          <p>Investigated and compared three HPO methods – PSO, Grid Search, and Random Search – for optimizing CNN hyperparameters using PyTorch.</p>
-          <div class="project-tags">
-            <span class="project-tag">PyTorch</span>
-            <span class="project-tag">AI/ML</span>
-            <span class="project-tag">Python</span>
+
+          <div class="project-card">
+            <h3>Hyperparameter Optimization for CNNs</h3>
+            <p>
+              Investigated and compared three HPO methods – PSO, Grid Search,
+              and Random Search – for optimizing CNN hyperparameters using
+              PyTorch.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">PyTorch</span>
+              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">Python</span>
+            </div>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3><a href="https://github.com/Python-Neiva/risk-factors-covid19/blob/main/risk_factor_data_analysis.ipynb" target="_blank" style="color: var(--text-dark); text-decoration: none;">COVID-19 Risk Factor Analysis</a></h3>
-          <p>Analyzed COVID-19 risk factors in Colombia using Big Data technologies to identify comorbidities associated with patients.</p>
-          <div class="project-tags">
-            <span class="project-tag">Data Analysis</span>
-            <span class="project-tag">Python</span>
-            <span class="project-tag">Machine Learning</span>
+
+          <div class="project-card">
+            <h3>
+              <a
+                href="https://github.com/Python-Neiva/risk-factors-covid19/blob/main/risk_factor_data_analysis.ipynb"
+                target="_blank"
+                style="color: var(--text-dark); text-decoration: none"
+                >COVID-19 Risk Factor Analysis</a
+              >
+            </h3>
+            <p>
+              Analyzed COVID-19 risk factors in Colombia using Big Data
+              technologies to identify comorbidities associated with patients.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Data Analysis</span>
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Machine Learning</span>
+            </div>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3><a href="https://github.com/Romerolweb/lingua-verse" target="_blank" style="color: var(--text-dark); text-decoration: none;">Lingua Verse</a></h3>
-          <p>A language learning application designed to help users expand their vocabulary through interactive quizzes and spaced repetition.</p>
-          <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">MongoDB</span>
+
+          <div class="project-card">
+            <h3>
+              <a
+                href="https://github.com/Romerolweb/lingua-verse"
+                target="_blank"
+                style="color: var(--text-dark); text-decoration: none"
+                >Lingua Verse</a
+              >
+            </h3>
+            <p>
+              A language learning application designed to help users expand
+              their vocabulary through interactive quizzes and spaced
+              repetition.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">React</span>
+              <span class="project-tag">Node.js</span>
+              <span class="project-tag">MongoDB</span>
+            </div>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3><a href="https://github.com/Romerolweb/bakery-invoice-generator" target="_blank" style="color: var(--text-dark); text-decoration: none;">Bakery Invoice Generator</a></h3>
-          <p>A full-stack web application to streamline invoicing for small businesses, featuring dynamic invoice creation and PDF generation.</p>
-          <div class="project-tags">
-            <span class="project-tag">Next.js</span>
-            <span class="project-tag">TypeScript</span>
-            <span class="project-tag">Tailwind CSS</span>
+
+          <div class="project-card">
+            <h3>
+              <a
+                href="https://github.com/Romerolweb/bakery-invoice-generator"
+                target="_blank"
+                style="color: var(--text-dark); text-decoration: none"
+                >Bakery Invoice Generator</a
+              >
+            </h3>
+            <p>
+              A full-stack web application to streamline invoicing for small
+              businesses, featuring dynamic invoice creation and PDF generation.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">TypeScript</span>
+              <span class="project-tag">Tailwind CSS</span>
+            </div>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3><a href="https://github.com/Romerolweb/PSOImplementationInCNN" target="_blank" style="color: var(--text-dark); text-decoration: none;">AI/ML Model Implementation Portfolio</a></h3>
-          <p>A portfolio of projects focused on implementing models from scratch, including Particle Swarm Optimization for CNNs.</p>
-          <div class="project-tags">
-            <span class="project-tag">Python</span>
-            <span class="project-tag">AI/ML</span>
-            <span class="project-tag">Data Science</span>
+
+          <div class="project-card">
+            <h3>
+              <a
+                href="https://github.com/Romerolweb/PSOImplementationInCNN"
+                target="_blank"
+                style="color: var(--text-dark); text-decoration: none"
+                >AI/ML Model Implementation Portfolio</a
+              >
+            </h3>
+            <p>
+              A portfolio of projects focused on implementing models from
+              scratch, including Particle Swarm Optimization for CNNs.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">AI/ML</span>
+              <span class="project-tag">Data Science</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Education -->
-  <section id="education">
-    <div class="container">
-      <h2 class="section-title">Education</h2>
-      <div class="education-list">
-        <div class="education-item">
-          <h3>Master of Information Technology</h3>
-          <div class="institution">CQUniversity</div>
-          <div class="dates">November 2023 - November 2026 (In Progress)</div>
-          <p>Focusing on advanced topics in cybersecurity, cloud computing, and artificial intelligence.</p>
-        </div>
-        
-        <div class="education-item">
-          <h3>Bachelor of Engineering - Computer Software Engineering</h3>
-          <div class="institution">Fundación Escuela Tecnológica de Neiva 'Jesús Oviedo Pérez'</div>
-          <div class="dates">February 2017 - December 2021</div>
-          <p>Completed a comprehensive engineering program with a focus on software development principles and practices.</p>
-        </div>
-        
-        <div class="education-item">
-          <h3>Virtual Technologies Program</h3>
-          <div class="institution">Tecnoacademia SENA Huila</div>
-          <div class="dates">January 2014 - December 2014</div>
-          <p>Early research and development program focusing on foundational web technologies.</p>
+    <!-- Education -->
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="education-list">
+          <div class="education-item">
+            <h3>Master of Information Technology</h3>
+            <div class="institution">CQUniversity</div>
+            <div class="dates">November 2023 - November 2026 (In Progress)</div>
+            <p>
+              Focusing on advanced topics in cybersecurity, cloud computing, and
+              artificial intelligence.
+            </p>
+          </div>
+
+          <div class="education-item">
+            <h3>Bachelor of Engineering - Computer Software Engineering</h3>
+            <div class="institution">
+              Fundación Escuela Tecnológica de Neiva 'Jesús Oviedo Pérez'
+            </div>
+            <div class="dates">February 2017 - December 2021</div>
+            <p>
+              Completed a comprehensive engineering program with a focus on
+              software development principles and practices.
+            </p>
+          </div>
+
+          <div class="education-item">
+            <h3>Virtual Technologies Program</h3>
+            <div class="institution">Tecnoacademia SENA Huila</div>
+            <div class="dates">January 2014 - December 2014</div>
+            <p>
+              Early research and development program focusing on foundational
+              web technologies.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Languages -->
-  <section id="languages" style="background: var(--bg-white);">
-    <div class="container">
-      <h2 class="section-title">Languages</h2>
-      <div class="education-list" style="max-width: 700px;">
-        <div class="education-item">
-          <h3>Spanish</h3>
-          <p><strong>Proficiency:</strong> Native</p>
-        </div>
-        
-        <div class="education-item">
-          <h3>English</h3>
-          <p><strong>Proficiency:</strong> Full Professional</p>
+    <!-- Languages -->
+    <section id="languages" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Languages</h2>
+        <div class="education-list" style="max-width: 700px">
+          <div class="education-item">
+            <h3>Spanish</h3>
+            <p><strong>Proficiency:</strong> Native</p>
+          </div>
+
+          <div class="education-item">
+            <h3>English</h3>
+            <p><strong>Proficiency:</strong> Full Professional</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Certifications -->
-  <section id="certifications">
-    <div class="container">
-      <h2 class="section-title">Certifications & Professional Development</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Marketing for Startups Course</h3>
-          <p><strong>Issuer:</strong> Platzi<br><strong>Date:</strong> August 2023</p>
-          <div style="margin-top: 12px;">
-            <a href="https://www.credential.net/957870a2-6100-47f8-997e-b3c75bfb916a" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">View Certificate →</a>
+    <!-- Certifications -->
+    <section id="certifications">
+      <div class="container">
+        <h2 class="section-title">Certifications & Professional Development</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Marketing for Startups Course</h3>
+            <p>
+              <strong>Issuer:</strong> Platzi<br /><strong>Date:</strong> August
+              2023
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/957870a2-6100-47f8-997e-b3c75bfb916a"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
+            </div>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3>Work Smarter, Not Harder: Time Management</h3>
-          <p><strong>Issuer:</strong> UC Irvine<br><strong>Date:</strong> June 2023</p>
-          <div style="margin-top: 12px;">
-            <a href="https://www.credential.net/6XST5ZPHRW7D" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">View Certificate →</a>
+
+          <div class="project-card">
+            <h3>Work Smarter, Not Harder: Time Management</h3>
+            <p>
+              <strong>Issuer:</strong> UC Irvine<br /><strong>Date:</strong>
+              June 2023
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/6XST5ZPHRW7D"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
+            </div>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3>Introduction to AWS: Fundamentals of Cloud Computing</h3>
-          <p><strong>Issuer:</strong> Platzi<br><strong>Date:</strong> February 2023</p>
-          <div style="margin-top: 12px;">
-            <a href="https://www.credential.net/eaed0744-f94a-45d8-b8da-09d96685168c" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">View Certificate →</a>
+
+          <div class="project-card">
+            <h3>Introduction to AWS: Fundamentals of Cloud Computing</h3>
+            <p>
+              <strong>Issuer:</strong> Platzi<br /><strong>Date:</strong>
+              February 2023
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/eaed0744-f94a-45d8-b8da-09d96685168c"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
+            </div>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3>SQL for Data Science</h3>
-          <p><strong>Issuer:</strong> University of California, Davis<br><strong>Date:</strong> August 2022</p>
-          <div style="margin-top: 12px;">
-            <a href="https://www.credential.net/57a7e2b1-096b-4e89-a29d-16a75f560e9d" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">View Certificate →</a>
+
+          <div class="project-card">
+            <h3>SQL for Data Science</h3>
+            <p>
+              <strong>Issuer:</strong> University of California, Davis<br /><strong
+                >Date:</strong
+              >
+              August 2022
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/57a7e2b1-096b-4e89-a29d-16a75f560e9d"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
+            </div>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3>Test Of English as a Foreign Language IBT</h3>
-          <p><strong>Issuer:</strong> TOEFL<br><strong>Date:</strong> July 2021</p>
-        </div>
-        
-        <div class="project-card">
-          <h3>Linear Regression with NumPy and Python</h3>
-          <p><strong>Issuer:</strong> Coursera<br><strong>Date:</strong> April 2021</p>
-          <div style="margin-top: 12px;">
-            <a href="https://www.credential.net/NW7GR7KXRA48" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">View Certificate →</a>
+
+          <div class="project-card">
+            <h3>Test Of English as a Foreign Language IBT</h3>
+            <p>
+              <strong>Issuer:</strong> TOEFL<br /><strong>Date:</strong> July
+              2021
+            </p>
           </div>
-        </div>
-        
-        <div class="project-card">
-          <h3>Researcher and Innovator Youth Scholarship</h3>
-          <p><strong>Issuer:</strong> Minciencias<br><strong>Date:</strong> October 2020</p>
-        </div>
-        
-        <div class="project-card">
-          <h3>Learning Data Science: Understanding the Basics</h3>
-          <p><strong>Issuer:</strong> LinkedIn<br><strong>Date:</strong> April 2020</p>
-        </div>
-        
-        <div class="project-card">
-          <h3>Professional Development in Cybersecurity</h3>
-          <p><strong>Institution:</strong> FET - Jesús Oviedo Pérez<br><strong>Duration:</strong> 120 Hours<br><strong>Date:</strong> 2020</p>
-        </div>
-        
-        <div class="project-card">
-          <h3>English as a Second Language (ESL Program)</h3>
-          <p><strong>Institution:</strong> Salisbury University<br><strong>Date:</strong> 2021</p>
+
+          <div class="project-card">
+            <h3>Linear Regression with NumPy and Python</h3>
+            <p>
+              <strong>Issuer:</strong> Coursera<br /><strong>Date:</strong>
+              April 2021
+            </p>
+            <div style="margin-top: 12px">
+              <a
+                href="https://www.credential.net/NW7GR7KXRA48"
+                target="_blank"
+                style="
+                  color: var(--primary);
+                  text-decoration: none;
+                  font-weight: 600;
+                "
+                >View Certificate →</a
+              >
+            </div>
+          </div>
+
+          <div class="project-card">
+            <h3>Researcher and Innovator Youth Scholarship</h3>
+            <p>
+              <strong>Issuer:</strong> Minciencias<br /><strong>Date:</strong>
+              October 2020
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>Learning Data Science: Understanding the Basics</h3>
+            <p>
+              <strong>Issuer:</strong> LinkedIn<br /><strong>Date:</strong>
+              April 2020
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>Professional Development in Cybersecurity</h3>
+            <p>
+              <strong>Institution:</strong> FET - Jesús Oviedo Pérez<br /><strong
+                >Duration:</strong
+              >
+              120 Hours<br /><strong>Date:</strong> 2020
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3>English as a Second Language (ESL Program)</h3>
+            <p>
+              <strong>Institution:</strong> Salisbury University<br /><strong
+                >Date:</strong
+              >
+              2021
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact" style="background: var(--bg-white);">
-    <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <div class="contact-info">
-        <p style="margin-bottom: 20px;">I'm open to new opportunities and collaborations. Feel free to reach out!</p>
-        <p><a href="mailto:neosoftwaredeveloment@gmail.com">neosoftwaredeveloment@gmail.com</a></p>
+    <!-- Contact -->
+    <section id="contact" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-info">
+          <p style="margin-bottom: 20px">
+            I'm open to new opportunities and collaborations. Feel free to reach
+            out!
+          </p>
+          <p>
+            <a href="mailto:neosoftwaredevelopment@gmail.com"
+              >neosoftwaredevelopment@gmail.com</a
+            >
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Sebastian Romero Laguna. All rights reserved.</p>
-      <p style="margin-top: 8px; opacity: 0.8;">Brisbane, QLD, Australia</p>
-    </div>
-  </footer>
-</body>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Sebastian Romero Laguna. All rights reserved.</p>
+        <p style="margin-top: 8px; opacity: 0.8">Brisbane, QLD, Australia</p>
+      </div>
+    </footer>
+  </body>
 </html>
