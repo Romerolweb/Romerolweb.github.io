@@ -598,6 +598,14 @@
           max-width: 280px;
         }
       }
+
+      .project-card[onclick] {
+        cursor: pointer;
+      }
+
+      .project-card[onclick]:hover {
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
@@ -1249,11 +1257,214 @@
       </div>
     </section>
 
-
     <!-- Services -->
+    <section id="services" style="background: var(--bg-white)">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="projects-grid">
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>AI Integration & Workflow Automation Strategy</h3>
+            <div class="project-tags">
+              <span class="project-tag">AI Strategy</span>
+              <span class="project-tag">Business Process Automation</span>
+              <span class="project-tag">Technology Consulting</span>
+            </div>
+            <p style="display: none">
+              Strategic advisory for businesses looking to leverage Generative
+              AI and automation. I assess your current workflows, identify
+              high-impact opportunities for AI integration, and design a
+              strategic roadmap for implementation. This includes selecting the
+              right AI tools (like Copilot, Gemini, and other agentic systems),
+              defining spec-driven development processes, and ensuring your team
+              is equipped to build and maintain AI-powered solutions
+              efficiently.
+            </p>
+          </div>
 
-    
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>Cloud-Native Architecture & Design</h3>
+            <div class="project-tags">
+              <span class="project-tag">Cloud Architecture</span>
+              <span class="project-tag">AWS Consulting</span>
+              <span class="project-tag">System Design</span>
+            </div>
+            <p style="display: none">
+              Expert architectural design for building scalable, resilient, and
+              cost-effective applications on AWS. I work with your team to
+              design robust microservices architectures, define best practices
+              for serverless computing, and create a blueprint for your cloud
+              infrastructure that aligns with your long-term business goals and
+              security requirements.
+            </p>
+          </div>
 
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>Infrastructure as Code & CI/CD Pipeline Implementation</h3>
+            <div class="project-tags">
+              <span class="project-tag">DevOps Engineering</span>
+              <span class="project-tag">Cloud Infrastructure</span>
+              <span class="project-tag">Terraform</span>
+            </div>
+            <p style="display: none">
+              I build and configure your complete cloud infrastructure and
+              deployment pipelines using modern DevOps practices. This service
+              includes writing production-grade Terraform code to manage your
+              AWS resources and setting up automated CI/CD workflows with GitHub
+              Actions for reliable, repeatable, and fast deployments.
+            </p>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>Custom CLI & Automation Tool Development</h3>
+            <div class="project-tags">
+              <span class="project-tag">Go (Golang)</span>
+              <span class="project-tag">CLI Tools</span>
+              <span class="project-tag">DevOps Automation</span>
+            </div>
+            <p style="display: none">
+              Development of custom command-line interface (CLI) tools and
+              automation scripts in Go to solve your team's specific challenges.
+              Whether it's for automating deployments, managing infrastructure,
+              or simplifying complex workflows, I build robust, cross-platform
+              tools that make your engineering team faster and more effective.
+            </p>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>REST API & Microservices Implementation</h3>
+            <div class="project-tags">
+              <span class="project-tag">Backend Development</span>
+              <span class="project-tag">Microservices</span>
+              <span class="project-tag">Go (Golang)</span>
+              <span class="project-tag">Python</span>
+            </div>
+            <p style="display: none">
+              Backend development focused on building secure, well-documented,
+              and high-performance REST APIs and microservices. Using Go and
+              modern frameworks, I implement services that are designed for
+              scalability and maintainability, forming the backbone of your web
+              and mobile applications. Also interested in advanced solutions
+              using Python.
+            </p>
+          </div>
+
+          <div
+            class="project-card"
+            onclick="openModal(this)"
+            style="cursor: pointer"
+          >
+            <h3>Full-Stack Web Development</h3>
+            <div class="project-tags">
+              <span class="project-tag">Web Development</span>
+              <span class="project-tag">Full-Stack</span>
+              <span class="project-tag">React</span>
+              <span class="project-tag">Go (Golang)</span>
+            </div>
+            <p style="display: none">
+              End-to-end web application development using modern technologies.
+              From front-end interfaces with React and TypeScript to robust
+              back-end systems in Go or Python, I deliver scalable, maintainable
+              solutions that are deployed on secure AWS infrastructure and meet
+              your business requirements.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="modal"
+        style="
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          z-index: 1000;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <div
+          style="
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+          "
+        >
+          <button
+            onclick="closeModal()"
+            style="
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              background: none;
+              border: none;
+              font-size: 24px;
+              cursor: pointer;
+              color: var(--text-light);
+            "
+          >
+            ✕
+          </button>
+          <h3
+            id="modalTitle"
+            style="
+              font-size: 22px;
+              margin-bottom: 16px;
+              color: var(--text-dark);
+            "
+          ></h3>
+          <p
+            id="modalContent"
+            style="color: var(--text-medium); line-height: 1.7; font-size: 16px"
+          ></p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function openModal(card) {
+        const title = card.querySelector("h3").textContent;
+        const content = card.querySelector(
+          'p[style*="display: none"]'
+        ).textContent;
+        document.getElementById("modalTitle").textContent = title;
+        document.getElementById("modalContent").textContent = content;
+        document.getElementById("modal").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+      document.getElementById("modal").addEventListener("click", (e) => {
+        if (e.target.id === "modal") closeModal();
+      });
+    </script>
 
     <!-- Footer -->
     <footer>
