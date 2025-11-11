@@ -1448,6 +1448,274 @@
       document.getElementById("modal").addEventListener("click", (e) => {
         if (e.target.id === "modal") closeModal();
       });
+
+      // Load CV data from JSON
+      async function loadCVData() {
+        try {
+          const response = await fetch('./cv.json');
+          const data = await response.json();
+          
+          // Update personal info in hero section
+          updateHeroSection(data.personalInfo);
+          
+          // Update About section
+          updateAboutSection(data.personalInfo);
+          
+          // Update Skills section
+          updateSkillsSection(data.skills);
+          
+          // Update Experience section
+          updateExperienceSection(data.experience);
+          
+          // Update Projects section
+          updateProjectsSection(data.projects);
+          
+          // Update Education section
+          updateEducationSection(data.education);
+          
+          // Update Languages section
+          updateLanguagesSection(data.languages);
+          
+          // Update Certifications section
+          updateCertificationsSection(data.certifications, data.professionalDevelopment);
+          
+          // Update Contact section
+          updateContactSection(data.personalInfo.contact);
+          
+        } catch (error) {
+          console.error('Error loading CV data:', error);
+        }
+      }
+
+      function updateHeroSection(personalInfo) {
+        const heroSection = document.querySelector('.hero');
+        const h1 = heroSection.querySelector('h1');
+        const subtitle = heroSection.querySelector('.subtitle');
+        const location = heroSection.querySelector('.location');
+        const socialLinks = heroSection.querySelector('.social-links');
+        
+        if (h1) h1.textContent = personalInfo.name;
+        if (subtitle) subtitle.textContent = personalInfo.title;
+        if (location) location.textContent = `📍 ${personalInfo.location}`;
+        
+        if (socialLinks && personalInfo.contact) {
+          socialLinks.innerHTML = `
+            ${personalInfo.contact.githubUrl ? `<a href="${personalInfo.contact.githubUrl}" target="_blank">GitHub</a>` : ''}
+            ${personalInfo.contact.linkedinUrl ? `<a href="${personalInfo.contact.linkedinUrl}" target="_blank">LinkedIn</a>` : ''}
+            ${personalInfo.contact.email ? `<a href="mailto:${personalInfo.contact.email}">Email</a>` : ''}
+          `;
+        }
+      }
+
+      function updateAboutSection(personalInfo) {
+        const aboutContent = document.querySelector('.about-content');
+        if (aboutContent && personalInfo.summary) {
+          aboutContent.innerHTML = `<p>${personalInfo.summary.replace(/\n/g, '</p><p>')}</p>`;
+        }
+      }
+
+      function updateSkillsSection(skills) {
+        const skillsGrid = document.querySelector('.skills-grid');
+        if (!skillsGrid || !skills) return;
+        
+        skillsGrid.innerHTML = skills.map(skill => `
+          <div class="skill-card">
+            <h3>${skill.category}</h3>
+            <div class="skill-tags">
+              ${skill.technologies.map(tech => `<span class="skill-tag">${tech}</span>`).join('')}
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function updateExperienceSection(experience) {
+        const experienceList = document.querySelector('.experience-list');
+        if (!experienceList || !experience) return;
+        
+        // Filter only experiences that should be displayed
+        const displayExperiences = experience.filter(exp => exp.display !== false);
+        
+        experienceList.innerHTML = displayExperiences.map(exp => {
+          const startDate = formatDate(exp.startDate);
+          const endDate = exp.endDate === 'Present' ? 'Present' : formatDate(exp.endDate);
+          
+          return `
+            <div class="experience-item">
+              <h3>${exp.role}</h3>
+              <div class="company">
+                ${exp.companyUrl ? `<a href="${exp.companyUrl}" target="_blank" style="color: var(--primary); text-decoration: none">${exp.company}</a>` : exp.company}
+              </div>
+              <div class="meta">${startDate} - ${endDate} | ${exp.location}</div>
+              ${exp.description ? `<p style="margin-bottom: 16px; color: var(--text-medium);">${exp.description}</p>` : ''}
+              ${exp.achievements && exp.achievements.length > 0 ? `
+                <ul>
+                  ${exp.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+                </ul>
+              ` : ''}
+            </div>
+          `;
+        }).join('');
+      }
+
+      function updateProjectsSection(projects) {
+        const projectsGrid = document.querySelector('.projects-grid');
+        if (!projectsGrid || !projects) return;
+        
+        projectsGrid.innerHTML = projects.map(project => `
+          <div class="project-card" ${project.url ? `onclick="window.open('${project.url}', '_blank')" style="cursor: pointer"` : ''}>
+            <h3>${project.title}</h3>
+            ${project.organization ? `<p style="font-size: 14px; color: var(--text-light); margin-bottom: 8px;"><strong>${project.organization}</strong></p>` : ''}
+            ${project.date ? `<p style="font-size: 14px; color: var(--text-light); margin-bottom: 12px;">${formatDate(project.date)}</p>` : ''}
+            <p>${project.description}</p>
+            ${project.tags && project.tags.length > 0 ? `
+              <div class="project-tags">
+                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+        `).join('');
+      }
+
+      function updateEducationSection(education) {
+        const educationList = document.querySelector('.education-list');
+        if (!educationList || !education) return;
+        
+        educationList.innerHTML = education.map(edu => {
+          const startDate = formatDate(edu.startDate);
+          const endDate = formatDate(edu.endDate);
+          const isInProgress = new Date(edu.endDate) > new Date();
+          
+          return `
+            <div class="education-item">
+              <h3>${edu.degree}${edu.fieldOfStudy ? ` - ${edu.fieldOfStudy}` : ''}</h3>
+              <div class="institution">
+                ${edu.institutionUrl ? `<a href="${edu.institutionUrl}" target="_blank" style="color: var(--primary); text-decoration: none">${edu.institution}</a>` : edu.institution}
+              </div>
+              <div class="dates">${startDate} - ${endDate}${isInProgress ? ' (In Progress)' : ''}</div>
+              ${edu.description ? `<p>${edu.description}</p>` : ''}
+            </div>
+          `;
+        }).join('');
+      }
+
+      function updateLanguagesSection(languages) {
+        const languagesSection = document.getElementById('languages');
+        if (!languagesSection || !languages) return;
+        
+        const languagesList = languagesSection.querySelector('.education-list');
+        if (languagesList) {
+          languagesList.innerHTML = languages.map(lang => `
+            <div class="education-item">
+              <h3>${lang.language}</h3>
+              <p><strong>Proficiency:</strong> ${lang.proficiency}</p>
+            </div>
+          `).join('');
+        }
+      }
+
+      function updateCertificationsSection(certifications, professionalDevelopment) {
+        const certificationsGrid = document.querySelector('#certifications .projects-grid');
+        if (!certificationsGrid) return;
+        
+        const allItems = [];
+        
+        // Add certifications
+        if (certifications) {
+          certifications.forEach(cert => {
+            allItems.push({
+              title: cert.title,
+              issuer: cert.issuer,
+              date: cert.date,
+              url: cert.url,
+              type: 'certification'
+            });
+          });
+        }
+        
+        // Add professional development
+        if (professionalDevelopment) {
+          professionalDevelopment.forEach(pd => {
+            allItems.push({
+              title: pd.title,
+              institution: pd.institution,
+              institutionUrl: pd.institutionUrl,
+              date: pd.date,
+              description: pd.description,
+              type: 'development'
+            });
+          });
+        }
+        
+        certificationsGrid.innerHTML = allItems.map(item => {
+          if (item.type === 'certification') {
+            return `
+              <div class="project-card">
+                <h3>${item.title}</h3>
+                <p>
+                  <strong>Issuer:</strong> ${item.issuer}<br />
+                  ${item.date ? `<strong>Date:</strong> ${formatDate(item.date)}` : ''}
+                </p>
+                ${item.url ? `
+                  <div style="margin-top: 12px">
+                    <a href="${item.url}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+                      View Certificate →
+                    </a>
+                  </div>
+                ` : ''}
+              </div>
+            `;
+          } else {
+            return `
+              <div class="project-card">
+                <h3>${item.title}</h3>
+                <p>
+                  <strong>Institution:</strong> ${item.institutionUrl ? `<a href="${item.institutionUrl}" target="_blank" style="color: var(--primary); text-decoration: none;">${item.institution}</a>` : item.institution}<br />
+                  ${item.date ? `<strong>Date:</strong> ${item.date}` : ''}
+                </p>
+                ${item.description ? `<p style="margin-top: 12px;">${item.description}</p>` : ''}
+              </div>
+            `;
+          }
+        }).join('');
+      }
+
+      function updateContactSection(contact) {
+        const contactInfo = document.querySelector('.contact-info');
+        if (!contactInfo || !contact) return;
+        
+        contactInfo.innerHTML = `
+          <p style="margin-bottom: 20px">
+            I'm open to new opportunities and collaborations. Feel free to reach out!
+          </p>
+          <p>
+            <a href="mailto:${contact.email}">${contact.email}</a>
+          </p>
+        `;
+      }
+
+      function formatDate(dateString) {
+        if (!dateString) return '';
+        if (dateString === 'Present') return 'Present';
+        
+        // Handle YYYY-MM format
+        const parts = dateString.split('-');
+        if (parts.length === 2) {
+          const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                         'July', 'August', 'September', 'October', 'November', 'December'];
+          const year = parts[0];
+          const month = months[parseInt(parts[1]) - 1];
+          return `${month} ${year}`;
+        }
+        
+        return dateString;
+      }
+
+      // Load data when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadCVData);
+      } else {
+        loadCVData();
+      }
     </script>
     
     <!-- Contact -->
