@@ -59,6 +59,33 @@ class Trie {
     const activeWordEl = document.getElementById('active-word');
     if (!canvas) return;
 
+    // Color Palette Integration
+    const rootStyles = getComputedStyle(document.documentElement);
+    const primaryColor = rootStyles.getPropertyValue('--primary').trim();
+    const accentColor = rootStyles.getPropertyValue('--accent').trim();
+
+    function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    }
+
+    const primaryRgb = hexToRgb(primaryColor) || { r: 14, g: 165, b: 233 };
+    const accentRgb = hexToRgb(accentColor) || { r: 139, g: 92, b: 246 };
+
+    // Debounce Utility
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            const context = this;
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(context, args), wait);
+        };
+    }
+
     const ctx = canvas.getContext('2d');
     const trie = new Trie();
     let dictionary = [];
@@ -140,7 +167,7 @@ class Trie {
         });
     }
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', debounce(handleResize, 200));
 
     function updateSimulation() {
         if (searchCooldown > 0) {
@@ -207,7 +234,7 @@ class Trie {
             ctx.quadraticCurveTo(cx, cy, childFinalX, childFinalY);
             
             const edgeOpacity = Math.min(node.opacity, child.opacity) * 0.4;
-            ctx.strokeStyle = `rgba(14, 165, 233, ${edgeOpacity})`;
+            ctx.strokeStyle = `rgba(${primaryRgb.r}, ${primaryRgb.g}, ${primaryRgb.b}, ${edgeOpacity})`;
             ctx.lineWidth = 1;
             ctx.stroke();
 
@@ -217,10 +244,12 @@ class Trie {
         if (node.value) {
             ctx.beginPath();
             ctx.arc(finalX, finalY, 2 + (node.opacity * 4), 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(139, 92, 246, ${node.opacity})`;
+            ctx.fillStyle = `rgba(${accentRgb.r}, ${accentRgb.g}, ${accentRgb.b}, ${node.opacity})`;
             ctx.fill();
 
-            if (node.opacity > 0.25) {
+            // Text Rendering Optimization (LOD)
+            // Only render text if node is active (high opacity) or close to root (low depth)
+            if (node.opacity > 0.25 && (node.depth < 4 || node.opacity > 0.5)) {
                 ctx.font = `bold ${10 + (node.opacity * 4)}px monospace`;
                 ctx.fillStyle = `rgba(255, 255, 255, ${node.opacity})`;
                 ctx.textAlign = 'center';

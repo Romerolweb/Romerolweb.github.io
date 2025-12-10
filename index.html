@@ -18,6 +18,8 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Day.js -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
     <style>
       * {
@@ -1015,18 +1017,7 @@
       function formatDate(dateString) {
         if (!dateString) return '';
         if (dateString === 'Present') return 'Present';
-        
-        // Handle YYYY-MM format
-        const parts = dateString.split('-');
-        if (parts.length === 2) {
-          const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-                         'July', 'August', 'September', 'October', 'November', 'December'];
-          const year = parts[0];
-          const month = months[parseInt(parts[1]) - 1];
-          return `${month} ${year}`;
-        }
-        
-        return dateString;
+        return dayjs(dateString).format('MMMM YYYY');
       }
 
       // Load data when DOM is ready
