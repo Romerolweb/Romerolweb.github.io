@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Sebastian Romero Laguna",
-    "label": "Senior Software Engineer | Cloud & DevOps Specialist",
+    "label": "Software Engineer | Cloud & DevOps",
     "image": "",
     "email": "sebastianromerol@outlook.es",
     "phone": "+61 0404854801",
@@ -471,6 +471,64 @@
     {
       "language": "Spanish",
       "fluency": "Native or Bilingual"
+    }
+  ],
+  "services": [
+    {
+      "name": "AI Integration & Workflow Automation Strategy",
+      "keywords": [
+        "AI Strategy",
+        "Business Process Automation",
+        "Technology Consulting"
+      ],
+      "description": "Strategic advisory for businesses looking to leverage Generative AI and automation. I assess your current workflows, identify high-impact opportunities for AI integration, and design a strategic roadmap for implementation. This includes selecting the right AI tools (like Copilot, Gemini, and other agentic systems), defining spec-driven development processes, and ensuring your team is equipped to build and maintain AI-powered solutions efficiently."
+    },
+    {
+      "name": "Cloud-Native Architecture & Design",
+      "keywords": [
+        "Cloud Architecture",
+        "AWS Consulting",
+        "System Design"
+      ],
+      "description": "Expert architectural design for building scalable, resilient, and cost-effective applications on AWS. I work with your team to design robust microservices architectures, define best practices for serverless computing, and create a blueprint for your cloud infrastructure that aligns with your long-term business goals and security requirements."
+    },
+    {
+      "name": "Infrastructure as Code & CI/CD Pipeline Implementation",
+      "keywords": [
+        "DevOps Engineering",
+        "Cloud Infrastructure",
+        "Terraform"
+      ],
+      "description": "I build and configure your complete cloud infrastructure and deployment pipelines using modern DevOps practices. This service includes writing production-grade Terraform code to manage your AWS resources and setting up automated CI/CD workflows with GitHub Actions for reliable, repeatable, and fast deployments."
+    },
+    {
+      "name": "Custom CLI & Automation Tool Development",
+      "keywords": [
+        "Go (Golang)",
+        "CLI Tools",
+        "DevOps Automation"
+      ],
+      "description": "Development of custom command-line interface (CLI) tools and automation scripts in Go to solve your team's specific challenges. Whether it's for automating deployments, managing infrastructure, or simplifying complex workflows, I build robust, cross-platform tools that make your engineering team faster and more effective."
+    },
+    {
+      "name": "REST API & Microservices Implementation",
+      "keywords": [
+        "Backend Development",
+        "Microservices",
+        "Go (Golang)",
+        "Python"
+      ],
+      "description": "Backend development focused on building secure, well-documented, and high-performance REST APIs and microservices. Using Go and modern frameworks, I implement services that are designed for scalability and maintainability, forming the backbone of your web and mobile applications. Also interested in advanced solutions using Python."
+    },
+    {
+      "name": "Full-Stack Web Development",
+      "keywords": [
+        "Web Development",
+        "Full-Stack",
+        "React",
+        "Go (Golang)"
+      ],
+      "description": "End-to-end web application development using modern technologies. From front-end interfaces with React and TypeScript to robust back-end systems in Go or Python, I deliver scalable, maintainable solutions that are deployed on secure AWS infrastructure and meet your business requirements."
     }
   ],
   "meta": {
