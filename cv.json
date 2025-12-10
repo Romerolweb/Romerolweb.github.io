@@ -1,403 +1,481 @@
 {
-  "lastUpdated": "2025-10-19",
-  "personalInfo": {
+  "basics": {
     "name": "Sebastian Romero Laguna",
-    "title": "Software Engineer | Backend & Cloud Specialist",
-    "location": "Brisbane, QLD, Australia",
-    "summary": "Experienced and versatile Software Engineer with a professional background since 2017, specializing in backend development, cloud infrastructure, and automation. Proven expertise in building scalable systems using Go, Python, AWS, and Terraform, complemented by strong full-stack capabilities in TypeScript and React/Next.js. \n Recently completed a Master of IT (graduating December 2025), adding advanced academic knowledge in cybersecurity and Artificial Intelligence to a foundation of extensive hands-on experience. A proven leader with a track record of mentoring junior developers and driving projects from conception to deployment in agile environments.",
-    "contact": {
-      "email": "neosoftwaredevelopment@gmail.com",
-      "phone": "",
-      "linkedinUrl": "https://www.linkedin.com/in/sebastian-romerol/",
-      "githubUrl": "https://github.com/Romerolweb",
-      "portfolioUrl": "https://romerolweb.github.io/"
+    "label": "Senior Software Engineer | Cloud & DevOps Specialist",
+    "image": "",
+    "email": "sebastianromerol@outlook.es",
+    "phone": "+61 0404854801",
+    "url": "https://romerolweb.github.io",
+    "summary": "Highly motivated and results-oriented Software Engineer with experience since 2016. Pivoting to Cloud Infrastructure and DevOps, backed by a Master of Information Technology (Cybersecurity) graduating Dec 2025. Expertise bridges foundational software development (Golang, Python, TypeScript) with modern cloud practices (AWS, Azure, Terraform, Kubernetes). Proven leadership capabilities developed through guiding development teams and executing full-stack projects.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Brisbane",
+      "countryCode": "AU",
+      "region": "Queensland"
     },
-    "profileImage": "https://i.ibb.co/6wm01S9/profile-pic.png"
-  },
-  "aboutMe": {
-    "title": "About Me",
-    "subtitle": "My journey, my passion, and what drives me.",
-    "cards": [
+    "profiles": [
       {
-        "title": "My Ambition",
-        "content": "I am driven by a passion for solving complex problems through elegant code. I thrive in environments where I can continuously learn and apply new technologies to build meaningful products, contributing to a forward-thinking company in Australia."
+        "network": "LinkedIn",
+        "username": "sebastian-romerol",
+        "url": "https://www.linkedin.com/in/sebastian-romerol"
       },
       {
-        "title": "Why Backend & Cloud?",
-        "content": "I specialize in backend and cloud technologies because I am fascinated by the architecture of scalable, resilient systems. Engineering the core logic and infrastructure that powers applications is where I find the most engaging challenges."
+        "network": "GitHub",
+        "username": "Romerolweb",
+        "url": "https://github.com/Romerolweb"
       },
       {
-        "title": "Continuous Learning",
-        "content": "My journey in tech is one of perpetual learning. Completing my Master's in IT, focusing on AI and Cybersecurity, is a testament to my commitment to staying at the forefront of technology and refining my craft."
+        "network": "Portfolio",
+        "username": "romerolweb.github.io",
+        "url": "https://romerolweb.github.io"
       }
     ]
   },
-  "skillsOverview": {
-    "radarChart": {
-      "labels": [
-        "Backend Dev (Go)",
-        "Cloud & DevOps",
-        "Full-Stack (JS/TS)",
-        "Databases",
-        "Cybersecurity",
-        "AI/ML Concepts"
-      ],
-      "data": [95, 90, 80, 85, 75, 70]
-    }
-  },
-  "skills": [
+  "work": [
     {
-      "category": "Backend Development",
-      "technologies": [
-        "Go (Golang)",
-        "Node.js",
-        "Python",
-        "PHP",
-        "REST APIs",
-        "Microservices",
-        "Gin",
-        "TypeScript"
-      ]
-    },
-    {
-      "category": "Cloud & DevOps",
-      "technologies": [
-        "AWS",
-        "AWS Lambda",
-        "Terraform",
-        "Docker",
-        "Kubernetes",
-        "CI/CD",
-        "GitHub Actions",
-        "GitHub",
-        "Azure"
-      ]
-    },
-    {
-      "category": "Frontend Development",
-      "technologies": [
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Next.js",
-        "HTML5",
-        "CSS3",
-        "Tailwind CSS"
-      ]
-    },
-    {
-      "category": "Databases",
-      "technologies": ["SQL (PostgreSQL, MySQL)", "MongoDB"]
-    },
-    {
-      "category": "AI & Machine Learning",
-      "technologies": [
-        "Python",
-        "PyTorch",
-        "Optimisation",
-        "Classification",
-        "Regression",
-        "Machine Learning",
-        "Evolutionary Computation"
-      ]
-    },
-    {
-      "category": "Cybersecurity",
-      "technologies": [
-        "AWS IAM",
-        "RBAC",
-        "Cloud Networking",
-        "PKI",
-        "Kali Linux",
-        "OWASP"
-      ]
-    },
-    {
-      "category": "Tools & Methodologies",
-      "technologies": ["Git", "Jira", "Confluence", "Agile", "Scrum", "OpenAPI"]
-    }
-  ],
-  "experience": [
-    {
-      "role": "Software Engineer",
-      "company": "Platform Recipes",
-      "companyUrl": "https://platform.recipes/",
-      "location": "Brisbane, QLD, Australia",
-      "startDate": "2025-10",
-      "endDate": "2025-10",
-      "category": "Cloud Engineering",
-      "display": true,
-      "description": "Contract role following a successful internship to continue developing premium features.",
-      "achievements": [
-        "Developed new features to offer premium content under a subscription model.",
-        "Collaborated with the lead engineer to integrate new services into the existing cloud architecture."
-      ]
-    },
-    {
-      "role": "Software Engineer (Internship)",
-      "company": "Platform Recipes",
-      "companyUrl": "https://platform.recipes/",
-      "location": "Brisbane, QLD, Australia",
-      "startDate": "2025-07",
-      "endDate": "2025-09",
-      "category": "Cloud Engineering",
-      "display": true,
-      "description": "A pivotal internship that provided deep, hands-on involvement with enterprise-level cloud engineering, security, and DevOps practices.",
-      "achievements": [
-        "Authored foundational technical guides and Architectural Decision Records (ADRs) for cloud infrastructure.",
-        "Automated cloud infrastructure provisioning and management using Terraform.",
-        "Developed a reusable framework for troubleshooting Kubernetes pod readiness and liveness probe failures.",
-        "Enhanced cloud security by implementing AWS Backup with Multi-party Approval (MPA) policies."
-      ]
-    },
-    {
-      "role": "Software Engineer",
-      "company": "Platform Recipes",
-      "companyUrl": "https://platform.recipes/",
-      "location": "Brisbane, QLD, Australia",
-      "startDate": "2023-01",
+      "name": "Platform Recipes",
+      "position": "Software Developer",
+      "url": "https://www.platform.recipes",
+      "startDate": "2024-07",
       "endDate": "Present",
-      "category": "Software Engineering",
-      "display": true,
-      "description": "Contributed to backend services and developer tooling for a global PaaS provider. Note: This role includes two tenures (Jan 2023 – July 2023 and July 2024 – Present).",
-      "achievements": [
-        "Develop and maintain critical backend microservices and command-line interface (CLI) tools using Go.",
-        "Design and implement data visualization components that provide adaptive, CEO-level insights into key performance indicators.",
-        "Collaborate within a global, agile team, utilising CI/CD pipelines with GitHub Actions and Terraform for automated deployments to AWS.",
-        "Actively participate in code reviews to ensure high-quality, maintainable, and scalable code."
-      ]
+      "summary": "Full stack software development focusing on modern JavaScript frameworks and agile delivery.",
+      "highlights": [
+        "Software development using Next.js, JavaScript, and Tailwind CSS.",
+        "Development of tasks under agile methodologies."
+      ],
+      "location": "Brisbane, Australia"
     },
     {
-      "role": "Student Ambassador",
-      "company": "CQUniversity",
-      "companyUrl": "https://www.cqu.edu.au/",
-      "location": "Brisbane, QLD, Australia",
+      "name": "Platform Recipes",
+      "position": "Software Developer (Contract)",
+      "url": "https://www.platform.recipes",
+      "startDate": "2024-06",
+      "endDate": "2024-11",
+      "summary": "Focused on DevOps tooling, CLI development, and infrastructure.",
+      "highlights": [
+        "Led the design and development of a command-line interface (CLI) application in Golang for scanning repository dependencies.",
+        "Utilized SQLite for storing metadata retrieved from API queries within the CLI tool.",
+        "Writing SQL queries to facilitate effective analysis of information gathered via GitHub API.",
+        "Experimented with AWS EKS, AKS, GCP and Rancher for container orchestration proof-of-concepts.",
+        "Created and managed Kubernetes clusters using kubectl for application deployment and scaling tests.",
+        "Updated Infrastructure as Code (IaC) using Terraform blueprints to maintain current standards.",
+        "Used Jira and Confluence for task management and developed Architectural Decision Records (ADR)."
+      ],
+      "location": "Brisbane, Australia"
+    },
+    {
+      "name": "CQUniversity",
+      "position": "Student Ambassador",
+      "url": "https://www.cqu.edu.au",
       "startDate": "2024-03",
       "endDate": "Present",
-      "category": "Community",
-      "display": false,
-      "description": "Provide information and advice to prospective students interested in studying at CQUniversity.",
-      "achievements": [
-        "Help students choose their degrees by understanding their background and areas of interest.",
-        "Represent the university at events and online forums."
-      ]
+      "summary": "Representing the university and guiding prospective students.",
+      "highlights": [
+        "Providing information and advice to prospective domestic and international students regarding CQUniversity courses.",
+        "Helping students select suitable degrees by analysing their background and interests.",
+        "Comparing graduate and undergraduate program structures and outcomes for prospective students.",
+        "Answering student inquiries about university programs, campus life, and application processes."
+      ],
+      "location": "Brisbane, Australia"
     },
     {
-      "role": "Backend Developer",
-      "company": "Nivelics SAS",
-      "companyUrl": "https://www.nivelics.com/",
-      "location": "Medellín, Colombia (Remote)",
-      "startDate": "2022-09",
-      "endDate": "2023-01",
-      "category": "Software Engineering",
-      "display": true,
-      "description": "Led the backend development for a comprehensive tourism management platform.",
-      "achievements": [
-        "Architected and developed the core backend services using a microservices architecture built with Go, Gin, and GORM.",
-        "Engineered a secure user authentication and Role-Based Access Control (RBAC) system from scratch.",
-        "Deployed and managed containerised applications using Docker on AWS."
-      ]
+      "name": "NEO Software Development",
+      "position": "CEO & Software Engineer Lead",
+      "url": "https://neosoftware.dev",
+      "startDate": "2022-07",
+      "endDate": "2024-03",
+      "summary": "Led software strategy and development for a self-founded software services company.",
+      "highlights": [
+        "Led a software development team, managing project tasks and ensuring successful execution.",
+        "Utilized PostgreSQL databases for managing application data storage in the cloud using RDS.",
+        "Analysed product sales data using SQL queries to extract valuable business insights.",
+        "Secured a competitive grant (Ecopetrol Emprende) by a national mining company for young business entrepreneurs.",
+        "Spearheaded designing and implementing a comprehensive event management software solution.",
+        "Delivered full-stack development projects for a US-based company, including robust REST APIs.",
+        "Implemented a mentorship program for workmates focusing on business and software development."
+      ],
+      "location": "Colombia (Remote)"
     },
     {
-      "role": "Research Scholar",
-      "company": "Salisbury University",
-      "companyUrl": "https://www.salisbury.edu/",
-      "location": "Salisbury, MD, USA",
-      "startDate": "2021-01",
+      "name": "Avalanche Industries",
+      "position": "Software Developer",
+      "url": "",
+      "startDate": "2022-01",
+      "endDate": "2022-05",
+      "summary": "Automation and backend development for a US-based logistics/retail company.",
+      "highlights": [
+        "Automated periodical data import processes from PDF to Excel, reducing manual processing time by over 4 hours per week.",
+        "Developing analytical and management modules for the company's software.",
+        "Implementing OAuth 2.0 authentication flows within the company's software to interact with the Amazon Seller Partner API.",
+        "Conducting software maintenance, identifying and resolving bugs in in-house applications promptly.",
+        "Creating comprehensive unit tests to ensure code functionality and prevent regressions.",
+        "Writing SQL queries to MySQL databases for data analysis and business reporting."
+      ],
+      "location": "Selbyville, DE, USA (Remote)"
+    },
+    {
+      "name": "Salisbury University",
+      "position": "Data Analyst",
+      "url": "https://www.salisbury.edu",
+      "startDate": "2021-08",
       "endDate": "2021-12",
-      "category": "Research",
-      "display": true,
-      "description": "Awarded a competitive 'Researcher and Innovator Youth Scholarship' by Minciencias Colombia to conduct research abroad, focusing on data analysis and optimization algorithms.",
-      "achievements": [
-        "Contributed to a significant data analysis project on COVID-19 risk factors in Colombia.",
-        "Developed and presented research findings at Salisbury University's 'Posters on the Bay' symposium.",
-        "Gained practical experience in data analysis, machine learning, and formal academic presentation."
-      ]
+      "summary": "Data processing and database optimization within a university setting.",
+      "highlights": [
+        "Executing Extract, Transform, Load (ETL) cycles to gather and compile data from diverse sources.",
+        "Cleaning, preprocessing, and compiling information from multiple sources into a single database.",
+        "Ensuring data integrity and accuracy through meticulous data cleaning and validation procedures.",
+        "Designing and implementing a new database structure for efficient information storage.",
+        "Developing complex SQL queries to extract valuable insights tailored to diverse university community needs."
+      ],
+      "location": "Salisbury, MD, USA"
     },
     {
-      "role": "Web Developer",
-      "company": "La Nación Newspaper",
-      "companyUrl": "https://www.lanacion.com.co/",
-      "location": "Neiva, Colombia",
+      "name": "Logical Software Factory",
+      "position": "AWS Engineer (Internship)",
+      "url": "",
+      "startDate": "2021-09",
+      "endDate": "2021-11",
+      "summary": "Cloud infrastructure optimization and security implementation.",
+      "highlights": [
+        "Contributing to a significant reduction (over 75%) in cloud infrastructure costs by strategically implementing AWS Reserved Instances.",
+        "Deploying scalable web applications onto AWS EC2 instances utilizing Docker containers.",
+        "Improving application resource utilization and deployment consistency through Docker containerization.",
+        "Enhancing DNS management and application scalability by leveraging AWS Route 53.",
+        "Strengthening cloud environment security posture by implementing and managing robust AWS Security Group rules and Network ACLS."
+      ],
+      "location": "Neiva, Colombia (Remote)"
+    },
+    {
+      "name": "Nivelics SAS",
+      "position": "Back-end Developer",
+      "url": "",
+      "startDate": "2020-05",
+      "endDate": "2020-11",
+      "summary": "Backend API development and enterprise system integration.",
+      "highlights": [
+        "Developing and maintaining secure REST APIs, focusing on implementing encryption and decryption processes for data security.",
+        "Improving internal data flow efficiency through development of REST API communications with external SAP Software.",
+        "Implementing system functionalities allowing document uploads via API endpoints.",
+        "Utilizing AWS services including S3 buckets for scalable object storage.",
+        "Deploying and managing application components on AWS EC2 instances.",
+        "Implementing AWS CodeCommit for secure Git-based version control and project management."
+      ],
+      "location": "Bogota, Colombia (Remote)"
+    },
+    {
+      "name": "Cold Chain Colombia SAS",
+      "position": "Software Engineering Team Lead",
+      "url": "",
+      "startDate": "2018-03",
+      "endDate": "2020-08",
+      "summary": "Led the development of CMMS platforms and digital transformation initiatives.",
+      "highlights": [
+        "Leading the development team responsible for creating and maintaining a real-time web and mobile platform for help desk ticket management.",
+        "Overseeing the company's Computerized Maintenance Management System (CMMS) operating across web and mobile platforms.",
+        "Implementing a system utilizing QR codes for efficient identification and tracking of managed machinery.",
+        "Transforming raw help desk ticket data into actionable business insights through data analysis and reporting.",
+        "Designing and implementing role-based access controls within maintenance platform information systems.",
+        "Achievement - Systematizing maintenance reporting procedures, resulting in an 87% reduction in printed paper usage."
+      ],
+      "location": "Colombia"
+    },
+    {
+      "name": "La Nación (The Nation Newspaper)",
+      "position": "Web Developer",
+      "url": "https://www.lanacion.com.co",
       "startDate": "2018-12",
       "endDate": "2019-12",
-      "category": "Web Development",
-      "display": true,
-      "description": "Spearheaded web development initiatives for a major regional newspaper.",
-      "achievements": [
-        "Led the development and launch of a new e-commerce channel, which directly contributed to a 50% increase in platform revenue.",
-        "Implemented strategic performance and SEO optimisations that successfully expanded the user base by 2.4 million.",
-        "Collaborated with stakeholders to translate business requirements into technical solutions using PHP, JavaScript, and SQL."
-      ]
-    },
-    {
-      "role": "Software Engineering Team Lead",
-      "company": "NEO Software Development",
-      "companyUrl": "https://neosoftware.dev/",
-      "location": "Neiva, Colombia",
-      "startDate": "2017-06",
-      "endDate": "2018-12",
-      "category": "Software Engineering",
-      "display": false,
-      "description": "Led a team in developing web and mobile platforms for various clients.",
-      "achievements": [
-        "Transitioned client systems from paper-based to modern web-based management solutions.",
-        "Designed and implemented a role-based access platform for enterprise applications."
-      ]
-    }
-  ],
-  "projects": [
-    {
-      "title": "Serverless Static Website Deployment",
-      "organization": "Fig Electrical",
-      "date": "2025-07",
-      "description": "Developed a fully serverless static website leveraging AWS. The architecture includes a Lambda function for form processing and CloudFront CDN for global content delivery. Created a custom deployment script to automate updates for both the Lambda function and the website content in a single execution.",
-      "tags": [
-        "AWS",
-        "AWS Lambda",
-        "Serverless",
-        "CloudFront CDN",
-        "Automation",
-        "Static Site"
+      "summary": "E-commerce implementation and website optimization.",
+      "highlights": [
+        "Developing and implementing a new e-commerce sales channel using WordPress and WooCommerce.",
+        "Integrating the e-commerce platform seamlessly with existing company operational systems.",
+        "Optimizing website performance through security enhancements and loading speed improvements, contributing to a documented user base increase of 2.4 million.",
+        "Developing targeted landing pages for seasonal promotions, contributing to achieving over 50% growth in platform revenue.",
+        "Utilizing SQL queries for performing data consultations and updates within the WordPress database instances."
       ],
-      "url": ""
+      "location": "Neiva, Colombia"
     },
     {
-      "title": "Hyperparameter Optimization for Image Classification",
-      "organization": "CQUniversity",
-      "description": "Investigated and compared three Hyperparameter Optimization (HPO) methods – PSO, Grid Search, and Random Search – for optimizing CNN hyperparameters using PyTorch for binary image classification.",
-      "tags": ["PyTorch", "AI/ML", "Python", "Data Science"],
-      "url": ""
+      "name": "Freelance",
+      "position": "PHP Developer",
+      "url": "",
+      "startDate": "2018-03",
+      "endDate": "2020-06",
+      "summary": "Custom web application development for various clients.",
+      "highlights": [
+        "Designing, developing, and maintaining custom web applications tailored to diverse client specifications using PHP and the Laravel framework.",
+        "Collaborating closely with clients and cross-functional teams to ensure seamless integration of application components.",
+        "Delivering high-quality, robust, and user-friendly software solutions meeting agreed requirements.",
+        "Developing front-end components and interfaces using Vue.js."
+      ],
+      "location": "Colombia"
     },
     {
-      "title": "Risk Factor Data Analysis for Sars Cov 2 Patients",
-      "organization": "Salisbury University",
-      "description": "Analyzed COVID-19 risk factors in Colombia using Big Data technologies to identify comorbidities associated with patients, providing insights for health professionals.",
-      "tags": ["Data Analysis", "Python", "Machine Learning", "Research"],
-      "url": "https://github.com/Python-Neiva/risk-factors-covid19/blob/main/risk_factor_data_analysis.ipynb"
-    },
-    {
-      "title": "Lingua Verse",
-      "description": "A language learning application designed to help users expand their vocabulary through interactive quizzes and spaced repetition.",
-      "tags": ["React", "Node.js", "MongoDB", "Gamification"],
-      "url": "https://github.com/Romerolweb/lingua-verse"
-    },
-    {
-      "title": "Bakery Invoice Generator",
-      "description": "A full-stack web application to streamline invoicing for small businesses, featuring dynamic invoice creation and PDF generation.",
-      "tags": ["Next.js", "TypeScript", "Tailwind CSS"],
-      "url": "https://github.com/Romerolweb/bakery-invoice-generator"
-    },
-    {
-      "title": "AI/ML Model Implementation Portfolio",
-      "description": "A portfolio of projects focused on implementing models from scratch, including a Particle Swarm Optimization for CNNs.",
-      "tags": ["Python", "AI/ML", "Data Science"],
-      "url": "https://github.com/Romerolweb/PSOImplementationInCNN"
+      "name": "Cold Chain Colombia SAS",
+      "position": "Web Developer",
+      "url": "",
+      "startDate": "2017-03",
+      "endDate": "2018-05",
+      "summary": "Full stack development for internal maintenance systems.",
+      "highlights": [
+        "Transitioning company information management processes from reliance on paper and Excel spreadsheets to a centralized web-based CMMS in-house solution.",
+        "Designing and developing a role-based access control (RBAC) system for the company's maintenance platform.",
+        "Developing data visualization components presenting key performance indicators and adaptive graphs for CEO-level insights.",
+        "Delivered web and mobile applications used by the customer, technician and management for insights delivery."
+      ],
+      "location": "Colombia"
     }
   ],
   "education": [
     {
       "institution": "CQUniversity",
-      "institutionUrl": "https://www.cqu.edu.au/",
-      "degree": "Master of Information Technology",
-      "fieldOfStudy": "IT",
+      "url": "https://www.cqu.edu.au",
+      "area": "Information Systems and Technology",
+      "studyType": "Master",
       "startDate": "2023-11",
-      "endDate": "2026-11",
-      "description": "Focusing on advanced topics in cybersecurity, cloud computing, and artificial intelligence."
+      "endDate": "2025-11",
+      "score": "5.375 GPA",
+      "courses": [
+        "Networks and Information Security Major",
+        "Artificial Intelligence Minor"
+      ]
     },
     {
-      "institution": "Fundación Escuela Tecnológica de Neiva 'Jesús Oviedo Pérez'",
-      "institutionUrl": "https://www.fet.edu.co/",
-      "degree": "Bachelor of Engineering",
-      "fieldOfStudy": "Computer Software Engineering",
+      "institution": "Fundacion Escuela Tecnologica De Neiva",
+      "url": "",
+      "area": "Computer Software Engineering",
+      "studyType": "Bachelor of Engineering (BE)",
       "startDate": "2017-02",
-      "endDate": "2021-12",
-      "description": "Completed a comprehensive engineering program with a focus on software development principles and practices."
+      "endDate": "2021-12"
     },
     {
-      "institution": "Tecnoacademía SENA Huila",
-      "institutionUrl": "https://www.sena.edu.co/",
-      "degree": "Virtual Technologies Program",
-      "fieldOfStudy": "Information Technology",
-      "startDate": "2014-01",
-      "endDate": "2014-12",
-      "description": "Early research and development program focusing on foundational web technologies."
-    }
-  ],
-  "professionalDevelopment": [
-    {
-      "title": "Professional Development in Cybersecurity (120 Hours)",
-      "institution": "Fundación Escuela Tecnológica de Neiva 'Jesús Oviedo Pérez'",
-      "institutionUrl": "https://www.fet.edu.co/",
-      "date": "2020",
-      "description": "Completed an intensive program on foundational cybersecurity principles, including implementing governance, cloud security on AWS, and network security."
-    },
-    {
-      "title": "English as a Second Language (ESL Program)",
       "institution": "Salisbury University",
-      "institutionUrl": "https://www.salisbury.edu/eli/",
-      "date": "2021",
-      "description": "Completed an intensive English language program to achieve professional fluency for working in an international environment."
+      "url": "https://www.salisbury.edu",
+      "area": "Computer Science",
+      "studyType": "Exchange Research Program",
+      "startDate": "2021-01",
+      "endDate": "2021-07",
+      "courses": [
+        "Focus: Machine Learning for COVID-19 Risk Factor Analysis",
+        "Distinction: Participation in an International Conference"
+      ]
+    },
+    {
+      "institution": "Salisbury University",
+      "url": "https://www.salisbury.edu",
+      "area": "Second Language Learning",
+      "studyType": "English Course (ELI)",
+      "startDate": "2021-01",
+      "endDate": "2021-06"
+    },
+    {
+      "institution": "SENA - Public Institution",
+      "url": "",
+      "area": "Software Design",
+      "studyType": "Technician (Certificate III equivalent)",
+      "startDate": "2015-02",
+      "endDate": "2016-09"
     }
   ],
-  "certifications": [
+  "certificates": [
     {
-      "title": "Marketing for Startups Course",
-      "issuer": "Platzi",
-      "date": "2023-08",
-      "url": "https://www.credential.net/957870a2-6100-47f8-997e-b3c75bfb916a"
+      "name": "Introduction to AWS Course: Fundamentals of Cloud Computing",
+      "issuer": "AWS / Educational Provider",
+      "date": "2021-01"
     },
     {
-      "title": "Work Smarter, Not Harder: Time Management",
-      "issuer": "UC Irvine",
-      "date": "2023-06",
-      "url": "https://www.credential.net/6XST5ZPHRW7D"
+      "name": "Learning Data Science: Understanding the Basics",
+      "issuer": "LinkedIn Learning / Provider",
+      "date": "2021-01"
     },
     {
-      "title": "Introduction to AWS Course: Fundamentals of Cloud Computing",
-      "issuer": "Platzi",
-      "date": "2023-02",
-      "url": "https://www.credential.net/eaed0744-f94a-45d8-b8da-09d96685168c"
+      "name": "Cybersecurity Diploma",
+      "issuer": "Neiva’s Technological School Foundation",
+      "date": "2019-01"
     },
     {
-      "title": "SQL for Data Science",
-      "issuer": "University of California, Davis",
-      "date": "2022-08",
-      "url": "https://www.credential.net/57a7e2b1-096b-4e89-a29d-16a75f560e9d"
+      "name": "Technologist in Software Development",
+      "issuer": "Neiva’s Technological School Foundation",
+      "date": "2019-01"
     },
     {
-      "title": "Test Of English as a Foreign Language IBT",
-      "issuer": "TOEFL",
+      "name": "Technician in Software Development",
+      "issuer": "Neiva’s Technological School Foundation",
+      "date": "2019-01"
+    },
+    {
+      "name": "Attendance to Introduction to Data Science",
+      "issuer": "Provider",
+      "date": "2021-01"
+    },
+    {
+      "name": "Work Smarter, Not Harder: Time Management for Personal & Professional Productivity",
+      "issuer": "Provider",
+      "date": "2021-01"
+    },
+    {
+      "name": "Certification of Completion of The Green Zone",
+      "issuer": "Provider",
+      "date": "2021-01"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Recognised as Youth Researcher",
       "date": "2021-07",
-      "url": ""
+      "awarder": "Ministry of Science in Colombia (Credly)",
+      "summary": "Recognition for research participation and contribution to the scientific community."
     },
     {
-      "title": "Linear Regression with NumPy and Python",
-      "issuer": "Coursera",
-      "date": "2021-04",
-      "url": "https://www.credential.net/NW7GR7KXRA48"
+      "title": "Ecopetrol Emprende Grant",
+      "date": "2023-01",
+      "awarder": "Ecopetrol",
+      "summary": "Secured a competitive grant by a national mining-company for young business entrepreneurs to develop core business activities."
+    }
+  ],
+  "publications": [
+    {
+      "name": "Machine Learning Analysis of COVID-19 Mortality Risk Factors",
+      "publisher": "International Conference (Participation)",
+      "releaseDate": "2021-07",
+      "website": "https://github.com/Python-Neiva/risk-factors-covid19",
+      "summary": "Conducted research to identify key risk factors for COVID-19 mortality in Colombia using Python and graph clustering on official public health data."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Cross-Platform Dependency Scanner CLI Tool",
+      "description": "Developed a command-line interface (CLI) tool in Golang designed to scan documents and identify dependencies, specifically aimed at optimizing DevOps workflows and integrating with CI/CD pipelines.",
+      "highlights": [
+        "Engineered for high portability across macOS, Linux, and Windows.",
+        "Utilized SQLite for local data storage and concurrency concepts in Golang."
+      ],
+      "keywords": [
+        "Golang",
+        "CLI",
+        "DevOps",
+        "Concurrency",
+        "SQLite"
+      ],
+      "url": "https://www.platform.recipes"
     },
     {
-      "title": "Researcher and Innovator Youth Scholarship",
-      "issuer": "Minciencias",
-      "date": "2020-10",
-      "url": ""
+      "name": "Bakery Invoice Generator",
+      "description": "Full stack invoice generation application for small businesses.",
+      "highlights": [
+        "Developed using Next.js, Typescript, Tailwind CSS, and SQLite.",
+        "Designed clean software architecture for maintainability and internationalization.",
+        "Dockerized for cloud or local deployment."
+      ],
+      "keywords": [
+        "Next.js",
+        "TypeScript",
+        "Docker",
+        "SQLite",
+        "Tailwind CSS"
+      ],
+      "url": "https://github.com/Romerolweb/bakery-invoice-generator"
     },
     {
-      "title": "Learning Data Science: Understanding the Basics",
-      "issuer": "LinkedIn",
-      "date": "2020-04",
+      "name": "Lingua Verse",
+      "description": "Language learning web application.",
+      "highlights": [
+        "Uses the Gemini API to provide conceptual feedback on user answers.",
+        "Implemented RAG-like functionality to explain underlying concepts and correct mistakes."
+      ],
+      "keywords": [
+        "Generative AI",
+        "Gemini API",
+        "Education Tech"
+      ],
       "url": ""
+    }
+  ],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": [
+        "Golang",
+        "TypeScript",
+        "JavaScript",
+        "Python",
+        "PHP",
+        "SQL",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "keywords": [
+        "AWS (EC2, S3, Route 53, Security Groups)",
+        "Azure",
+        "GCP",
+        "Terraform",
+        "Docker",
+        "Kubernetes (EKS, AKS, kubectl)",
+        "GitHub Actions",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "keywords": [
+        "Next.js",
+        "React",
+        "Node.js",
+        "Laravel",
+        "Vue.js",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "name": "Systems & Security",
+      "keywords": [
+        "Linux (Ubuntu, Kali)",
+        "PKI",
+        "Cryptography",
+        "OAuth 2.0",
+        "Role-Based Access Control (RBAC)",
+        "NIST"
+      ]
+    },
+    {
+      "name": "AI & Data",
+      "keywords": [
+        "LLMs",
+        "Generative AI (Gemini, Copilot)",
+        "Machine Learning (CNN, Regression, Clustering)",
+        "Data Analysis",
+        "ETL"
+      ]
+    },
+    {
+      "name": "Tools",
+      "keywords": [
+        "Jira",
+        "Confluence",
+        "Git",
+        "Scrum",
+        "Agile",
+        "Draw.io"
+      ]
     }
   ],
   "languages": [
     {
-      "language": "Spanish",
-      "proficiency": "Native"
+      "language": "English",
+      "fluency": "Full Professional"
     },
     {
-      "language": "English",
-      "proficiency": "Full Professional"
+      "language": "Spanish",
+      "fluency": "Native or Bilingual"
     }
-  ]
+  ],
+  "meta": {
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json",
+    "version": "v1.0.0",
+    "lastModified": "2025-12-10"
+  }
 }
