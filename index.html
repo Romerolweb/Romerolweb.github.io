@@ -18,6 +18,8 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Day.js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
@@ -652,6 +654,11 @@
               <span class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
               <span id="active-word">Scanning: INITIALIZING...</span>
             </div>
+            
+            <!-- Social Links (Hero) -->
+            <div class="flex space-x-6 mt-6 hero-socials">
+              <!-- Content loaded dynamically -->
+            </div>
           </div>
         </div>
       </div>
@@ -822,6 +829,7 @@
              updateHeroSection(data.basics);
              updateAboutSection(data.basics);
              updateContactSection(data.basics);
+             if (data.basics.profiles) updateSocialLinks(data.basics.profiles);
           }
           
           // Update Skills section
@@ -1014,6 +1022,44 @@
         `).join('');
       }
 
+      function getSocialIcon(network) {
+        const map = {
+          'LinkedIn': 'fa-linkedin',
+          'GitHub': 'fa-github',
+          'Twitter': 'fa-twitter',
+          'X': 'fa-x-twitter',
+          'Instagram': 'fa-instagram',
+          'Facebook': 'fa-facebook',
+          'Medium': 'fa-medium',
+          'Portfolio': 'fa-globe',
+          'Website': 'fa-globe',
+          'Email': 'fa-envelope'
+        };
+        return map[network] || 'fa-link';
+      }
+
+      function updateSocialLinks(profiles) {
+        // Hero Section Socials
+        const heroSocials = document.querySelector('.hero-socials');
+        if (heroSocials) {
+          heroSocials.innerHTML = profiles.map(profile => `
+            <a href="${profile.url}" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+              <i class="fab ${getSocialIcon(profile.network)} text-3xl"></i>
+            </a>
+          `).join('');
+        }
+
+        // Contact Section Socials
+        const contactSocials = document.querySelector('.contact-socials');
+        if (contactSocials) {
+          contactSocials.innerHTML = profiles.map(profile => `
+            <a href="${profile.url}" target="_blank" class="text-slate-400 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+              <i class="fab ${getSocialIcon(profile.network)} text-4xl"></i>
+            </a>
+          `).join('');
+        }
+      }
+
       function formatDate(dateString) {
         if (!dateString) return '';
         if (dateString === 'Present') return 'Present';
@@ -1034,6 +1080,9 @@
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-info">
           <!-- Content loaded dynamically -->
+        </div>
+        <div class="flex justify-center space-x-8 mt-10 contact-socials">
+           <!-- Content loaded dynamically -->
         </div>
       </div>
     </section>
