@@ -4,7 +4,7 @@
     "label": "Software Engineer | Cloud & DevOps",
     "image": "",
     "email": "sebastianromerol@outlook.es",
-    "phone": "+61 0404854801",
+    "phone": "",
     "url": "https://romerolweb.github.io",
     "summary": "Highly motivated and results-oriented Software Engineer with experience since 2016. Pivoting to Cloud Infrastructure and DevOps, backed by a Master of Information Technology (Cybersecurity) graduating Dec 2025. Expertise bridges foundational software development (Golang, Python, TypeScript) with modern cloud practices (AWS, Azure, Terraform, Kubernetes). Proven leadership capabilities developed through guiding development teams and executing full-stack projects.",
     "location": {
@@ -29,6 +29,11 @@
         "network": "Portfolio",
         "username": "romerolweb.github.io",
         "url": "https://romerolweb.github.io"
+      },
+      {
+        "network": "Medium",
+        "username": "sebastianromerolaguna",
+        "url": "https://medium.com/@sebastianromerolaguna"
       }
     ]
   },
@@ -81,7 +86,7 @@
     },
     {
       "name": "NEO Software Development",
-      "position": "CEO & Software Engineer Lead",
+      "position": "Software Engineer Lead",
       "url": "https://neosoftware.dev",
       "startDate": "2022-07",
       "endDate": "2024-03",
