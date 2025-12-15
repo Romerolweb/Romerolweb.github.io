@@ -15,11 +15,14 @@
 
     <!-- Favicon -->
     <link href="assets/img/favicon.png" rel="icon" />
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <!-- Day.js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 
@@ -636,25 +639,39 @@
     </header>
 
     <!-- Hero -->
-    <div class="relative w-full h-screen overflow-hidden font-sans text-slate-200 bg-slate-900 hero-section">
+    <div
+      class="relative w-full h-screen overflow-hidden font-sans text-slate-200 bg-slate-900 hero-section"
+    >
       <canvas id="hero-canvas" class="absolute inset-0 z-0"></canvas>
-      
+
       <!-- Foreground Content -->
-      <div class="relative z-10 flex flex-col items-center justify-center h-full">
-        <div class="bg-slate-900/80 backdrop-blur-sm p-10 rounded-2xl border border-slate-700 shadow-2xl text-center max-w-3xl mx-4 pointer-events-auto">
-          <h1 class="text-6xl font-extrabold mb-4 bg-gradient-to-r from-sky-500 to-violet-500 bg-clip-text text-transparent hero-name">
+      <div
+        class="relative z-10 flex flex-col items-center justify-center h-full"
+      >
+        <div
+          class="bg-slate-900/80 backdrop-blur-sm p-10 rounded-2xl border border-slate-700 shadow-2xl text-center max-w-3xl mx-4 pointer-events-auto"
+        >
+          <h1
+            class="text-6xl font-extrabold mb-4 bg-gradient-to-r from-sky-500 to-violet-500 bg-clip-text text-transparent hero-name"
+          >
             Sebastian Romero-Laguna
           </h1>
-          <h2 class="text-2xl text-slate-400 mb-6 tracking-widest uppercase font-light hero-subtitle">
+          <h2
+            class="text-2xl text-slate-400 mb-6 tracking-widest uppercase font-light hero-subtitle"
+          >
             Senior Software Engineer
           </h2>
-          
+
           <div class="flex flex-col items-center space-y-4 mt-8">
-            <div class="flex items-center space-x-3 font-mono text-sky-400 text-lg bg-slate-800/50 px-6 py-2 rounded-full border border-sky-500/30 pointer-events-auto">
-              <span class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
+            <div
+              class="flex items-center space-x-3 font-mono text-sky-400 text-lg bg-slate-800/50 px-6 py-2 rounded-full border border-sky-500/30 pointer-events-auto"
+            >
+              <span
+                class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"
+              ></span>
               <span id="active-word">Scanning: INITIALIZING...</span>
             </div>
-            
+
             <!-- Social Links (Hero) -->
             <div class="flex space-x-6 mt-6 hero-socials pointer-events-auto">
               <!-- Content loaded dynamically -->
@@ -733,7 +750,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- Services -->
     <section id="services" style="background: var(--bg-white)">
@@ -821,179 +837,260 @@
       // Load CV data from JSON
       async function loadCVData() {
         try {
-          const response = await fetch('./cv.json');
+          const response = await fetch("./cv.json");
           const data = await response.json();
-          
+
           // Update personal info in hero section
           if (data.basics) {
-             updateHeroSection(data.basics);
-             updateAboutSection(data.basics);
-             updateContactSection(data.basics);
-             if (data.basics.profiles) updateSocialLinks(data.basics.profiles);
+            updateHeroSection(data.basics);
+            updateAboutSection(data.basics);
+            updateContactSection(data.basics);
+            if (data.basics.profiles) updateSocialLinks(data.basics.profiles);
           }
-          
+
           // Update Skills section
           if (data.skills) updateSkillsSection(data.skills);
-          
+
           // Update Experience section
           if (data.work) updateExperienceSection(data.work);
-          
+
           // Update Projects section
           if (data.projects) updateProjectsSection(data.projects);
-          
+
           // Update Education section
           if (data.education) updateEducationSection(data.education);
-          
+
           // Update Languages section
           if (data.languages) updateLanguagesSection(data.languages);
-          
+
           // Update Certifications section
           if (data.certificates) updateCertificationsSection(data.certificates);
-          
+
           // Update Services section
           if (data.services) updateServicesSection(data.services);
         } catch (error) {
-          console.error('Error loading CV data:', error);
+          console.error("Error loading CV data:", error);
         }
       }
 
       function updateHeroSection(basics) {
-        const h1 = document.querySelector('.hero-name');
-        const subtitle = document.querySelector('.hero-subtitle');
-        
+        const h1 = document.querySelector(".hero-name");
+        const subtitle = document.querySelector(".hero-subtitle");
+
         if (h1) h1.textContent = basics.name;
         if (subtitle) subtitle.textContent = basics.label;
       }
 
       function updateAboutSection(basics) {
-        const aboutContent = document.querySelector('.about-content');
+        const aboutContent = document.querySelector(".about-content");
         if (aboutContent && basics.summary) {
-          aboutContent.innerHTML = `<p>${basics.summary.replace(/\n/g, '</p><p>')}</p>`;
+          aboutContent.innerHTML = `<p>${basics.summary.replace(
+            /\n/g,
+            "</p><p>"
+          )}</p>`;
         }
       }
 
       function updateSkillsSection(skills) {
-        const skillsGrid = document.querySelector('.skills-grid');
+        const skillsGrid = document.querySelector(".skills-grid");
         if (!skillsGrid || !skills) return;
-        
-        skillsGrid.innerHTML = skills.map(skill => `
+
+        skillsGrid.innerHTML = skills
+          .map(
+            (skill) => `
           <div class="skill-card">
             <h3>${skill.name}</h3>
             <div class="skill-tags">
-              ${skill.keywords.map(tech => `<span class="skill-tag">${tech}</span>`).join('')}
+              ${skill.keywords
+                .map((tech) => `<span class="skill-tag">${tech}</span>`)
+                .join("")}
             </div>
           </div>
-        `).join('');
+        `
+          )
+          .join("");
       }
 
       function updateExperienceSection(work) {
-        const experienceList = document.querySelector('.experience-list');
+        const experienceList = document.querySelector(".experience-list");
         if (!experienceList || !work) return;
-        
-        experienceList.innerHTML = work.map(exp => {
-          const startDate = formatDate(exp.startDate);
-          const endDate = exp.endDate ? formatDate(exp.endDate) : 'Present';
-          
-          return `
+
+        experienceList.innerHTML = work
+          .map((exp) => {
+            const startDate = formatDate(exp.startDate);
+            const endDate = exp.endDate ? formatDate(exp.endDate) : "Present";
+
+            return `
             <div class="experience-item">
               <h3>${exp.position}</h3>
               <div class="company">
-                ${exp.url ? `<a href="${exp.url}" target="_blank" style="color: var(--primary); text-decoration: none">${exp.name}</a>` : exp.name}
+                ${
+                  exp.url
+                    ? `<a href="${exp.url}" target="_blank" style="color: var(--primary); text-decoration: none">${exp.name}</a>`
+                    : exp.name
+                }
               </div>
-              <div class="meta">${startDate} - ${endDate} | ${exp.location}</div>
-              ${exp.summary ? `<p style="margin-bottom: 16px; color: var(--text-medium);">${exp.summary}</p>` : ''}
-              ${exp.highlights && exp.highlights.length > 0 ? `
+              <div class="meta">${startDate} - ${endDate} | ${
+              exp.location
+            }</div>
+              ${
+                exp.summary
+                  ? `<p style="margin-bottom: 16px; color: var(--text-medium);">${exp.summary}</p>`
+                  : ""
+              }
+              ${
+                exp.highlights && exp.highlights.length > 0
+                  ? `
                 <ul>
-                  ${exp.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                  ${exp.highlights
+                    .map((highlight) => `<li>${highlight}</li>`)
+                    .join("")}
                 </ul>
-              ` : ''}
+              `
+                  : ""
+              }
             </div>
           `;
-        }).join('');
+          })
+          .join("");
       }
 
       function updateProjectsSection(projects) {
-        const projectsGrid = document.querySelector('.projects-grid');
+        const projectsGrid = document.querySelector(".projects-grid");
         if (!projectsGrid || !projects) return;
-        
-        projectsGrid.innerHTML = projects.map(project => `
-          <div class="project-card" ${project.url ? `onclick="window.open('${project.url}', '_blank')" style="cursor: pointer"` : ''}>
+
+        projectsGrid.innerHTML = projects
+          .map(
+            (project) => `
+          <div class="project-card" ${
+            project.url
+              ? `onclick="window.open('${project.url}', '_blank')" style="cursor: pointer"`
+              : ""
+          }>
             <h3>${project.name}</h3>
-            ${project.entity ? `<p style="font-size: 14px; color: var(--text-light); margin-bottom: 8px;"><strong>${project.entity}</strong></p>` : ''}
-            ${project.startDate ? `<p style="font-size: 14px; color: var(--text-light); margin-bottom: 12px;">${formatDate(project.startDate)}</p>` : ''}
+            ${
+              project.entity
+                ? `<p style="font-size: 14px; color: var(--text-light); margin-bottom: 8px;"><strong>${project.entity}</strong></p>`
+                : ""
+            }
+            ${
+              project.startDate
+                ? `<p style="font-size: 14px; color: var(--text-light); margin-bottom: 12px;">${formatDate(
+                    project.startDate
+                  )}</p>`
+                : ""
+            }
             <p>${project.description}</p>
-            ${project.keywords && project.keywords.length > 0 ? `
+            ${
+              project.keywords && project.keywords.length > 0
+                ? `
               <div class="project-tags">
-                ${project.keywords.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                ${project.keywords
+                  .map((tag) => `<span class="project-tag">${tag}</span>`)
+                  .join("")}
               </div>
-            ` : ''}
+            `
+                : ""
+            }
           </div>
-        `).join('');
+        `
+          )
+          .join("");
       }
 
       function updateEducationSection(education) {
-        const educationList = document.querySelector('.education-list');
+        const educationList = document.querySelector(".education-list");
         if (!educationList || !education) return;
-        
-        educationList.innerHTML = education.map(edu => {
-          const startDate = formatDate(edu.startDate);
-          const endDate = edu.endDate ? formatDate(edu.endDate) : 'Present';
-          
-          return `
+
+        educationList.innerHTML = education
+          .map((edu) => {
+            const startDate = formatDate(edu.startDate);
+            const endDate = edu.endDate ? formatDate(edu.endDate) : "Present";
+
+            return `
             <div class="education-item">
               <h3>${edu.studyType} in ${edu.area}</h3>
               <div class="institution">
-                ${edu.url ? `<a href="${edu.url}" target="_blank" style="color: var(--primary); text-decoration: none">${edu.institution}</a>` : edu.institution}
+                ${
+                  edu.url
+                    ? `<a href="${edu.url}" target="_blank" style="color: var(--primary); text-decoration: none">${edu.institution}</a>`
+                    : edu.institution
+                }
               </div>
               <div class="dates">${startDate} - ${endDate}</div>
-              ${edu.score ? `<p>Score: ${edu.score}</p>` : ''}
-              ${edu.courses ? `<ul>${edu.courses.map(c => `<li>${c}</li>`).join('')}</ul>` : ''}
+              ${edu.score ? `<p>Score: ${edu.score}</p>` : ""}
+              ${
+                edu.courses
+                  ? `<ul>${edu.courses
+                      .map((c) => `<li>${c}</li>`)
+                      .join("")}</ul>`
+                  : ""
+              }
             </div>
           `;
-        }).join('');
+          })
+          .join("");
       }
 
       function updateLanguagesSection(languages) {
-        const languagesSection = document.getElementById('languages');
+        const languagesSection = document.getElementById("languages");
         if (!languagesSection || !languages) return;
-        
-        const languagesList = languagesSection.querySelector('.education-list');
+
+        const languagesList = languagesSection.querySelector(".education-list");
         if (languagesList) {
-          languagesList.innerHTML = languages.map(lang => `
+          languagesList.innerHTML = languages
+            .map(
+              (lang) => `
             <div class="education-item">
               <h3>${lang.language}</h3>
               <p><strong>Proficiency:</strong> ${lang.fluency}</p>
             </div>
-          `).join('');
+          `
+            )
+            .join("");
         }
       }
 
       function updateCertificationsSection(certificates) {
-        const certificationsGrid = document.querySelector('#certifications .projects-grid');
+        const certificationsGrid = document.querySelector(
+          "#certifications .projects-grid"
+        );
         if (!certificationsGrid || !certificates) return;
-        
-        certificationsGrid.innerHTML = certificates.map(cert => `
+
+        certificationsGrid.innerHTML = certificates
+          .map(
+            (cert) => `
           <div class="project-card">
             <h3>${cert.name}</h3>
             <p>
               <strong>Issuer:</strong> ${cert.issuer}<br />
-              ${cert.date ? `<strong>Date:</strong> ${formatDate(cert.date)}` : ''}
+              ${
+                cert.date
+                  ? `<strong>Date:</strong> ${formatDate(cert.date)}`
+                  : ""
+              }
             </p>
-            ${cert.url ? `
+            ${
+              cert.url
+                ? `
               <div style="margin-top: 12px">
                 <a href="${cert.url}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">
                   View Certificate →
                 </a>
               </div>
-            ` : ''}
+            `
+                : ""
+            }
           </div>
-        `).join('');
+        `
+          )
+          .join("");
       }
 
       function updateContactSection(basics) {
-        const contactInfo = document.querySelector('.contact-info');
+        const contactInfo = document.querySelector(".contact-info");
         if (!contactInfo || !basics) return;
-        
+
         contactInfo.innerHTML = `
           <p style="margin-bottom: 20px">
             I'm open to new opportunities and collaborations. Feel free to reach out!
@@ -1001,63 +1098,81 @@
           <p>
             <a href="mailto:${basics.email}">${basics.email}</a>
           </p>
-          ${basics.phone ? `<p>${basics.phone}</p>` : ''}
+          ${basics.phone ? `<p>${basics.phone}</p>` : ""}
         `;
       }
 
       function updateServicesSection(services) {
-        const servicesGrid = document.querySelector('#services .projects-grid');
+        const servicesGrid = document.querySelector("#services .projects-grid");
         if (!servicesGrid || !services) return;
-        
-        servicesGrid.innerHTML = services.map(service => `
+
+        servicesGrid.innerHTML = services
+          .map(
+            (service) => `
           <div class="project-card" onclick="openModal(this)" style="cursor: pointer">
             <h3>${service.name}</h3>
-            ${service.keywords && service.keywords.length > 0 ? `
+            ${
+              service.keywords && service.keywords.length > 0
+                ? `
               <div class="project-tags">
-                ${service.keywords.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                ${service.keywords
+                  .map((tag) => `<span class="project-tag">${tag}</span>`)
+                  .join("")}
               </div>
-            ` : ''}
+            `
+                : ""
+            }
             <p style="display: none">${service.description}</p>
           </div>
-        `).join('');
+        `
+          )
+          .join("");
       }
 
       function updateSocialLinks(profiles) {
         // Hero Section Socials
-        const heroSocials = document.querySelector('.hero-socials');
+        const heroSocials = document.querySelector(".hero-socials");
         if (heroSocials) {
-          heroSocials.innerHTML = profiles.map(profile => `
+          heroSocials.innerHTML = profiles
+            .map(
+              (profile) => `
             <a href="${profile.url}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors duration-300 transform hover:scale-110" title="${profile.network}">
               <i class="${profile.icon}" style="font-size: 1.75rem;"></i>
             </a>
-          `).join('');
+          `
+            )
+            .join("");
         }
 
         // Contact Section Socials
-        const contactSocials = document.querySelector('.contact-socials');
+        const contactSocials = document.querySelector(".contact-socials");
         if (contactSocials) {
-          contactSocials.innerHTML = profiles.map(profile => `
+          contactSocials.innerHTML = profiles
+            .map(
+              (profile) => `
             <a href="${profile.url}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1" title="${profile.network}">
               <i class="${profile.icon}" style="font-size: 2rem;"></i>
             </a>
-          `).join('');
+          `
+            )
+            .join("");
         }
       }
 
       function formatDate(dateString) {
-        if (!dateString) return '';
-        if (dateString === 'Present') return 'Present';
-        return dayjs(dateString).format('MMMM YYYY');
+        if (!dateString) return "";
+        if (dateString === "Present") return "Present";
+        return dayjs(dateString).format("MMMM YYYY");
       }
 
       // Load data when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', loadCVData);
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadCVData);
       } else {
         loadCVData();
       }
     </script>
-    
+
     <!-- Contact -->
     <section id="contact" style="background: var(--bg-white)">
       <div class="container">
@@ -1066,11 +1181,10 @@
           <!-- Content loaded dynamically -->
         </div>
         <div class="flex justify-center space-x-8 mt-10 contact-socials">
-           <!-- Content loaded dynamically -->
+          <!-- Content loaded dynamically -->
         </div>
       </div>
     </section>
-
 
     <!-- Footer -->
     <footer>
@@ -1079,7 +1193,7 @@
         <p style="margin-top: 8px; opacity: 0.8">Brisbane, QLD, Australia</p>
       </div>
     </footer>
-    
+
     <!-- Hero Animation Script -->
     <script src="assets/js/hero-animation.js"></script>
   </body>
