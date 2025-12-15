@@ -6,7 +6,7 @@
     "email": "sebastianromerol@outlook.es",
     "phone": "",
     "url": "https://romerolweb.github.io",
-    "summary": "Highly motivated and results-oriented Software Engineer with experience since 2016. Pivoting to Cloud Infrastructure and DevOps, backed by a Master of Information Technology (Cybersecurity) graduating Dec 2025. Expertise bridges foundational software development (Golang, Python, TypeScript) with modern cloud practices (AWS, Azure, Terraform, Kubernetes). Proven leadership capabilities developed through guiding development teams and executing full-stack projects.",
+    "summary": "I am Sebastian, a highly motivated and results-oriented Software Engineer with experience since 2016, enthusiastic about pivoting to Cloud Infrastructure and DevOps, backed by a recent Master of Information Technology. My expertise bridges foundational software development with modern cloud and security practices. My recent Master's degree focused intensively on cybersecurity (NIST, cryptography) and cloud networking (Azure). Core Competencies & Experience: Cloud & DevOps - Hands-on experience deploying VMs, containers, and multi-cloud clusters (AWS, Azure, GCP) using Terraform. Skilled in GitHub Actions (CI/CD), EKS, and Rancher. Development - Proficient in Go (Golang), TypeScript, PHP (OOP), Python, and JavaScript (React, Next.js) for web and CLI applications. ML & AI - Knowledge of Machine Learning and Deep Learning (Classification, Regression, CNNs) from a 2019 research scholarship. Experience with LLMs and Generative AI tools (Copilot, Google AI Studio). Systems & Security - Proficient in Linux (Ubuntu, Kali) and macOS. Practical knowledge of PKI and secure cloud networking. Mentorship - Deepened my cloud and Go skills through a recent mentorship with an Australian Principal Engineer. I am seeking an opportunity to contribute my Software Engineering skills to an Australian organization, and I am eager to continue my professional growth in a collaborative environment.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -38,6 +38,12 @@
         "username": "sebastianromerolaguna",
         "url": "https://medium.com/@sebastianromerolaguna",
         "icon": "fab fa-medium"
+      },
+      {
+        "network": "E-mail",
+        "username": "sebastianromerol",
+        "url": "mailto:sebastianromerol@outlook.es",
+        "icon": "fa-solid fa-envelope"
       }
     ]
   },
@@ -247,7 +253,7 @@
       "courses": [
         "Networks and Information Security Major",
         "Artificial Intelligence Minor"
-      ]     
+      ]
     },
     {
       "institution": "Fundacion Escuela Tecnologica De Neiva",
@@ -359,13 +365,7 @@
         "Engineered for high portability across macOS, Linux, and Windows.",
         "Utilized SQLite for local data storage and concurrency concepts in Golang."
       ],
-      "keywords": [
-        "Golang",
-        "CLI",
-        "DevOps",
-        "Concurrency",
-        "SQLite"
-      ],
+      "keywords": ["Golang", "CLI", "DevOps", "Concurrency", "SQLite"],
       "url": "https://www.platform.recipes"
     },
     {
@@ -376,13 +376,7 @@
         "Designed clean software architecture for maintainability and internationalization.",
         "Dockerized for cloud or local deployment."
       ],
-      "keywords": [
-        "Next.js",
-        "TypeScript",
-        "Docker",
-        "SQLite",
-        "Tailwind CSS"
-      ],
+      "keywords": ["Next.js", "TypeScript", "Docker", "SQLite", "Tailwind CSS"],
       "url": "https://github.com/Romerolweb/bakery-invoice-generator"
     },
     {
@@ -392,11 +386,7 @@
         "Uses the Gemini API to provide conceptual feedback on user answers.",
         "Implemented RAG-like functionality to explain underlying concepts and correct mistakes."
       ],
-      "keywords": [
-        "Generative AI",
-        "Gemini API",
-        "Education Tech"
-      ],
+      "keywords": ["Generative AI", "Gemini API", "Education Tech"],
       "url": ""
     }
   ],
@@ -461,14 +451,7 @@
     },
     {
       "name": "Tools",
-      "keywords": [
-        "Jira",
-        "Confluence",
-        "Git",
-        "Scrum",
-        "Agile",
-        "Draw.io"
-      ]
+      "keywords": ["Jira", "Confluence", "Git", "Scrum", "Agile", "Draw.io"]
     }
   ],
   "languages": [
@@ -493,29 +476,17 @@
     },
     {
       "name": "Cloud-Native Architecture & Design",
-      "keywords": [
-        "Cloud Architecture",
-        "AWS Consulting",
-        "System Design"
-      ],
+      "keywords": ["Cloud Architecture", "AWS Consulting", "System Design"],
       "description": "Expert architectural design for building scalable, resilient, and cost-effective applications on AWS. I work with your team to design robust microservices architectures, define best practices for serverless computing, and create a blueprint for your cloud infrastructure that aligns with your long-term business goals and security requirements."
     },
     {
       "name": "Infrastructure as Code & CI/CD Pipeline Implementation",
-      "keywords": [
-        "DevOps Engineering",
-        "Cloud Infrastructure",
-        "Terraform"
-      ],
+      "keywords": ["DevOps Engineering", "Cloud Infrastructure", "Terraform"],
       "description": "I build and configure your complete cloud infrastructure and deployment pipelines using modern DevOps practices. This service includes writing production-grade Terraform code to manage your AWS resources and setting up automated CI/CD workflows with GitHub Actions for reliable, repeatable, and fast deployments."
     },
     {
       "name": "Custom CLI & Automation Tool Development",
-      "keywords": [
-        "Go (Golang)",
-        "CLI Tools",
-        "DevOps Automation"
-      ],
+      "keywords": ["Go (Golang)", "CLI Tools", "DevOps Automation"],
       "description": "Development of custom command-line interface (CLI) tools and automation scripts in Go to solve your team's specific challenges. Whether it's for automating deployments, managing infrastructure, or simplifying complex workflows, I build robust, cross-platform tools that make your engineering team faster and more effective."
     },
     {
@@ -530,12 +501,7 @@
     },
     {
       "name": "Full-Stack Web Development",
-      "keywords": [
-        "Web Development",
-        "Full-Stack",
-        "React",
-        "Go (Golang)"
-      ],
+      "keywords": ["Web Development", "Full-Stack", "React", "Go (Golang)"],
       "description": "End-to-end web application development using modern technologies. From front-end interfaces with React and TypeScript to robust back-end systems in Go or Python, I deliver scalable, maintainable solutions that are deployed on secure AWS infrastructure and meet your business requirements."
     }
   ],
