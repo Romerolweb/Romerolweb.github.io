@@ -620,7 +620,7 @@
     <header>
       <div class="container">
         <div class="header-content">
-          <div class="logo">SR</div>
+          <div class="logo" href="#">Sebastian</div>
           <nav>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -1022,29 +1022,13 @@
         `).join('');
       }
 
-      function getSocialIcon(network) {
-        const map = {
-          'LinkedIn': 'fa-linkedin',
-          'GitHub': 'fa-github',
-          'Twitter': 'fa-twitter',
-          'X': 'fa-x-twitter',
-          'Instagram': 'fa-instagram',
-          'Facebook': 'fa-facebook',
-          'Medium': 'fa-medium',
-          'Portfolio': 'fa-globe',
-          'Website': 'fa-globe',
-          'Email': 'fa-envelope'
-        };
-        return map[network] || 'fa-link';
-      }
-
       function updateSocialLinks(profiles) {
         // Hero Section Socials
         const heroSocials = document.querySelector('.hero-socials');
         if (heroSocials) {
           heroSocials.innerHTML = profiles.map(profile => `
-            <a href="${profile.url}" target="_blank" class="text-slate-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
-              <i class="fab ${getSocialIcon(profile.network)} text-3xl"></i>
+            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors duration-300 transform hover:scale-110" title="${profile.network}">
+              <i class="${profile.icon}" style="font-size: 1.75rem;"></i>
             </a>
           `).join('');
         }
@@ -1053,8 +1037,8 @@
         const contactSocials = document.querySelector('.contact-socials');
         if (contactSocials) {
           contactSocials.innerHTML = profiles.map(profile => `
-            <a href="${profile.url}" target="_blank" class="text-slate-400 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
-              <i class="fab ${getSocialIcon(profile.network)} text-4xl"></i>
+            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1" title="${profile.network}">
+              <i class="${profile.icon}" style="font-size: 2rem;"></i>
             </a>
           `).join('');
         }

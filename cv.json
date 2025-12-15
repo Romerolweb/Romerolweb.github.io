@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Sebastian Romero Laguna",
-    "label": "Software Engineer | Cloud & DevOps",
+    "label": "Software Engineer",
     "image": "",
     "email": "sebastianromerol@outlook.es",
     "phone": "",
@@ -18,22 +18,26 @@
       {
         "network": "LinkedIn",
         "username": "sebastian-romerol",
-        "url": "https://www.linkedin.com/in/sebastian-romerol"
+        "url": "https://www.linkedin.com/in/sebastian-romerol",
+        "icon": "fab fa-linkedin"
       },
       {
         "network": "GitHub",
         "username": "Romerolweb",
-        "url": "https://github.com/Romerolweb"
+        "url": "https://github.com/Romerolweb",
+        "icon": "fab fa-github"
       },
       {
         "network": "Portfolio",
         "username": "romerolweb.github.io",
-        "url": "https://romerolweb.github.io"
+        "url": "https://romerolweb.github.io",
+        "icon": "fas fa-globe"
       },
       {
         "network": "Medium",
         "username": "sebastianromerolaguna",
-        "url": "https://medium.com/@sebastianromerolaguna"
+        "url": "https://medium.com/@sebastianromerolaguna",
+        "icon": "fab fa-medium"
       }
     ]
   },
@@ -53,7 +57,7 @@
     },
     {
       "name": "Platform Recipes",
-      "position": "Software Developer (Contract)",
+      "position": "Software Developer",
       "url": "https://www.platform.recipes",
       "startDate": "2024-06",
       "endDate": "2024-11",
@@ -240,11 +244,10 @@
       "studyType": "Master",
       "startDate": "2023-11",
       "endDate": "2025-11",
-      "score": "5.375 GPA",
       "courses": [
         "Networks and Information Security Major",
         "Artificial Intelligence Minor"
-      ]
+      ]     
     },
     {
       "institution": "Fundacion Escuela Tecnologica De Neiva",
