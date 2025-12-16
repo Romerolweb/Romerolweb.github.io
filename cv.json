@@ -69,9 +69,8 @@
       "endDate": "2024-11",
       "summary": "Focused on DevOps tooling, CLI development, and infrastructure.",
       "highlights": [
-        "Led the design and development of a command-line interface (CLI) application in Golang for scanning repository dependencies.",
-        "Utilized SQLite for storing metadata retrieved from API queries within the CLI tool.",
-        "Writing SQL queries to facilitate effective analysis of information gathered via GitHub API.",
+        "Developed of a command-line interface (CLI) application in Golang for scanning repository dependencies using the Github API.",
+        "Writing SQL queries to facilitate effective analysis of repositories.",
         "Experimented with AWS EKS, AKS, GCP and Rancher for container orchestration proof-of-concepts.",
         "Created and managed Kubernetes clusters using kubectl for application deployment and scaling tests.",
         "Updated Infrastructure as Code (IaC) using Terraform blueprints to maintain current standards.",
@@ -127,7 +126,7 @@
         "Creating comprehensive unit tests to ensure code functionality and prevent regressions.",
         "Writing SQL queries to MySQL databases for data analysis and business reporting."
       ],
-      "location": "Selbyville, DE, USA (Remote)"
+      "location": "Selbyville, DE, USA"
     },
     {
       "name": "Salisbury University",
@@ -137,11 +136,10 @@
       "endDate": "2021-12",
       "summary": "Data processing and database optimization within a university setting.",
       "highlights": [
-        "Executing Extract, Transform, Load (ETL) cycles to gather and compile data from diverse sources.",
-        "Cleaning, preprocessing, and compiling information from multiple sources into a single database.",
+        "Extracting, Transforming, Loading (ETL) to gather and compile data from diverse sources.",
         "Ensuring data integrity and accuracy through meticulous data cleaning and validation procedures.",
         "Designing and implementing a new database structure for efficient information storage.",
-        "Developing complex SQL queries to extract valuable insights tailored to diverse university community needs."
+        "Performed data analysis and generated insights for diverse university community needs using advanced Excel functions."
       ],
       "location": "Salisbury, MD, USA"
     },
@@ -153,11 +151,10 @@
       "endDate": "2021-11",
       "summary": "Cloud infrastructure optimization and security implementation.",
       "highlights": [
-        "Contributing to a significant reduction (over 75%) in cloud infrastructure costs by strategically implementing AWS Reserved Instances.",
-        "Deploying scalable web applications onto AWS EC2 instances utilizing Docker containers.",
-        "Improving application resource utilization and deployment consistency through Docker containerization.",
-        "Enhancing DNS management and application scalability by leveraging AWS Route 53.",
-        "Strengthening cloud environment security posture by implementing and managing robust AWS Security Group rules and Network ACLS."
+        "Cost Optimisation: Contributed to a significant 75%+ reduction in cloud infrastructure costs by strategically implementing AWS Reserved Instances and optimising resource utilization.",
+        "Deployment: Deployed scalable web applications onto AWS EC2 instances utilizing Docker containers.",
+        "Networking: Enhanced DNS management and application scalability by leveraging AWS Route 53.",
+        "Security: Strengthened cloud environment security posture by implementing and managing robust AWS Security Group rules and Network ACLs."
       ],
       "location": "Neiva, Colombia (Remote)"
     },
