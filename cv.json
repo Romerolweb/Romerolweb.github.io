@@ -254,7 +254,7 @@
     },
     {
       "institution": "Fundacion Escuela Tecnologica De Neiva",
-      "url": "",
+      "url": "https://www.fet.edu.co/Software",
       "area": "Computer Software Engineering",
       "studyType": "Bachelor of Engineering (BE)",
       "startDate": "2017-02",
@@ -282,7 +282,7 @@
     },
     {
       "institution": "SENA - Public Institution",
-      "url": "",
+      "url": "https://www.sena.edu.co",
       "area": "Software Design",
       "studyType": "Technician (Certificate III equivalent)",
       "startDate": "2015-02",
@@ -352,6 +352,13 @@
       "releaseDate": "2021-07",
       "website": "https://github.com/Python-Neiva/risk-factors-covid19",
       "summary": "Conducted research to identify key risk factors for COVID-19 mortality in Colombia using Python and graph clustering on official public health data."
+    },
+    {
+      "name": "Unified System of Management of Medical Appointment System for Colombia",
+      "publisher": "Nexo Global Huila - Salisbury University",
+      "releaseDate": "2021-03",
+      "url": "https://www.salisbury.edu/news/article/2021-3-24-SU-Students-Present-Research-at-Fifth-Annual-Posters-on-the-Bay",
+      "summary": "Participation in the SU Students Present Research at Fifth Annual 'Posters on the Bay'."
     }
   ],
   "projects": [
