@@ -705,6 +705,12 @@
     <section id="experience">
       <div class="container">
         <h2 class="section-title">Professional Experience</h2>
+
+        <!-- Role Filter UI -->
+        <div class="flex justify-center flex-wrap gap-2 mb-8" id="role-filters">
+           <!-- Filters will be injected here -->
+        </div>
+
         <div class="experience-list">
           <!-- Content loaded dynamically -->
         </div>
@@ -817,7 +823,12 @@
       </div>
     </section>
 
+    <!-- Shared Utility Script -->
+    <script src="assets/js/cv-utils.js"></script>
+
     <script>
+      let cvData = null; // Store cached data
+
       function openModal(card) {
         const title = card.querySelector("h3").textContent;
         const content = card.querySelector(
@@ -834,11 +845,22 @@
         if (e.target.id === "modal") closeModal();
       });
 
-      // Load CV data from JSON
-      async function loadCVData() {
+      // Fetch CV data once
+      async function fetchCVData() {
         try {
           const response = await fetch("./cv.json");
-          const data = await response.json();
+          cvData = await response.json();
+          renderCV();
+        } catch (error) {
+          console.error("Error loading CV data:", error);
+        }
+      }
+
+      // Render all sections
+      function renderCV() {
+          if (!cvData) return;
+
+          const data = cvData;
 
           // Update personal info in hero section
           if (data.basics) {
@@ -852,7 +874,10 @@
           if (data.skills) updateSkillsSection(data.skills);
 
           // Update Experience section
-          if (data.work) updateExperienceSection(data.work);
+          if (data.work) {
+              updateExperienceFilters(data.work);
+              updateExperienceSection(data.work);
+          }
 
           // Update Projects section
           if (data.projects) updateProjectsSection(data.projects);
@@ -868,9 +893,6 @@
 
           // Update Services section
           if (data.services) updateServicesSection(data.services);
-        } catch (error) {
-          console.error("Error loading CV data:", error);
-        }
       }
 
       function updateHeroSection(basics) {
@@ -911,14 +933,83 @@
           .join("");
       }
 
+      function updateExperienceFilters(work) {
+          const filterContainer = document.getElementById('role-filters');
+          if (!filterContainer) return;
+
+          // Extract unique roles
+          const roles = new Set();
+          work.forEach(job => {
+              if (job.categorized_highlights) {
+                  Object.keys(job.categorized_highlights).forEach(r => roles.add(r));
+              }
+          });
+
+          const currentRole = getRoleFromUrl();
+
+          let html = `
+            <button
+                onclick="updateUrlRole(null, renderCV)"
+                class="px-4 py-2 rounded-full text-sm font-semibold transition-all ${!currentRole ? 'bg-primary text-white shadow-md transform scale-105' : 'bg-white text-gray-600 hover:bg-gray-100'}"
+                style="${!currentRole ? 'background-color: var(--primary); color: white;' : ''}"
+            >
+                All
+            </button>
+          `;
+
+          roles.forEach(role => {
+              const isActive = currentRole && currentRole.toLowerCase() === role.toLowerCase();
+               html += `
+                <button
+                    onclick="updateUrlRole('${role}', renderCV)"
+                    class="px-4 py-2 rounded-full text-sm font-semibold transition-all ${isActive ? 'bg-primary text-white shadow-md transform scale-105' : 'bg-white text-gray-600 hover:bg-gray-100'}"
+                    style="${isActive ? 'background-color: var(--primary); color: white;' : ''}"
+                >
+                    ${role}
+                </button>
+              `;
+          });
+
+          filterContainer.innerHTML = html;
+      }
+
       function updateExperienceSection(work) {
         const experienceList = document.querySelector(".experience-list");
         if (!experienceList || !work) return;
+
+        const targetRole = getRoleFromUrl();
 
         experienceList.innerHTML = work
           .map((exp) => {
             const startDate = formatDate(exp.startDate);
             const endDate = exp.endDate ? formatDate(exp.endDate) : "Present";
+
+            let displayItems = [];
+
+            if (exp.categorized_highlights) {
+                if (targetRole) {
+                    // Filter by role
+                     Object.keys(exp.categorized_highlights).forEach(category => {
+                        if (category.toLowerCase() === targetRole.toLowerCase()) {
+                            exp.categorized_highlights[category].forEach(h => {
+                                displayItems.push({ text: h, tag: null });
+                            });
+                        }
+                    });
+                } else {
+                    // Show all with tags
+                    Object.keys(exp.categorized_highlights).forEach(category => {
+                         exp.categorized_highlights[category].forEach(h => {
+                                displayItems.push({ text: h, tag: category });
+                            });
+                    });
+                }
+            }
+
+            // Legacy support
+            if (exp.highlights) {
+                exp.highlights.forEach(h => displayItems.push({ text: h, tag: null }));
+            }
 
             return `
             <div class="experience-item">
@@ -939,11 +1030,16 @@
                   : ""
               }
               ${
-                exp.highlights && exp.highlights.length > 0
+                displayItems.length > 0
                   ? `
                 <ul>
-                  ${exp.highlights
-                    .map((highlight) => `<li>${highlight}</li>`)
+                  ${displayItems
+                    .map((item) => `
+                        <li>
+                            ${item.tag ? `<span class="inline-block bg-slate-100 text-slate-500 text-xs px-2 py-0.5 rounded mr-2 align-middle border border-slate-200 font-semibold tracking-wide uppercase shadow-sm" style="font-size: 0.7rem;">${item.tag}</span>` : ''}
+                            ${item.text}
+                        </li>
+                    `)
                     .join("")}
                 </ul>
               `
@@ -1167,9 +1263,9 @@
 
       // Load data when DOM is ready
       if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", loadCVData);
+        document.addEventListener("DOMContentLoaded", fetchCVData);
       } else {
-        loadCVData();
+        fetchCVData();
       }
     </script>
 

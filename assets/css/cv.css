@@ -24,6 +24,7 @@ header {
     border-bottom: 2px solid #333;
     padding-bottom: 15px;
     margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .header-left h1 {
@@ -111,6 +112,8 @@ p {
     font-size: 0.85em;
     color: #666;
     font-style: italic;
+    white-space: nowrap;
+    margin-left: 10px;
 }
 
 .job-company, .education-institution {
@@ -188,6 +191,39 @@ ul li {
     background-color: #0056b3;
 }
 
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .header-right {
+        text-align: center;
+    }
+
+    .job-header, .education-header, .project-header, .publication-header, .award-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-date, .education-date, .publication-date, .award-date {
+        margin-left: 0;
+        margin-top: 2px;
+        font-size: 0.85em;
+    }
+}
+
 @media print {
     body {
         background-color: #fff;
@@ -208,6 +244,19 @@ ul li {
     }
     header {
         border-bottom: 2px solid #000;
+        flex-direction: row !important; /* Force row on print */
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+    .header-right {
+        text-align: right !important;
+    }
+    .job-header {
+         flex-direction: row !important;
+         justify-content: space-between !important;
+    }
+    .job-date {
+        margin-left: auto;
     }
 
     h1 { font-size: 20pt; }

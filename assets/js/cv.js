@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function populateCV(data) {
+    const targetRole = getRoleFromUrl();
+
     // Basics
     const basics = data.basics;
     document.getElementById('name').textContent = basics.name;
@@ -43,17 +45,41 @@ function populateCV(data) {
         const jobDiv = document.createElement('div');
         jobDiv.classList.add('job');
 
+        // Logic to gather highlights based on role
+        let displayHighlights = [];
+
+        if (job.categorized_highlights) {
+            if (targetRole) {
+                // Filter by role (case-insensitive key match)
+                Object.keys(job.categorized_highlights).forEach(category => {
+                    if (category.toLowerCase() === targetRole.toLowerCase()) {
+                        displayHighlights = displayHighlights.concat(job.categorized_highlights[category]);
+                    }
+                });
+            } else {
+                // No role specified: show all, flattened
+                Object.values(job.categorized_highlights).forEach(highlights => {
+                    displayHighlights = displayHighlights.concat(highlights);
+                });
+            }
+        }
+
+        // Fallback or addition of legacy highlights
+        if (job.highlights) {
+             displayHighlights = displayHighlights.concat(job.highlights);
+        }
+
         jobDiv.innerHTML = `
             <div class="job-header">
                 <span class="job-title">${job.position}</span>
-                <span class="job-date">${job.startDate} - ${job.endDate}</span>
+                <span class="job-date">${job.startDate} - ${job.endDate || 'Present'}</span>
             </div>
             <div class="job-company">
                 ${job.url ? `<a href="${job.url}" target="_blank">${job.name}</a>` : job.name} - ${job.location}
             </div>
             ${job.summary ? `<p class="job-summary">${job.summary}</p>` : ''}
             <ul>
-                ${job.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                ${displayHighlights.map(highlight => `<li>${highlight}</li>`).join('')}
             </ul>
         `;
         workContainer.appendChild(jobDiv);
@@ -68,7 +94,7 @@ function populateCV(data) {
         eduDiv.innerHTML = `
             <div class="education-header">
                 <span class="education-study-type">${edu.studyType} - ${edu.area}</span>
-                 <span class="education-date">${edu.startDate} - ${edu.endDate}</span>
+                 <span class="education-date">${edu.startDate} - ${edu.endDate || 'Present'}</span>
             </div>
             <div class="education-institution">
                  ${edu.url ? `<a href="${edu.url}" target="_blank">${edu.institution}</a>` : edu.institution}
@@ -117,7 +143,7 @@ function populateCV(data) {
             ${project.url ? `<div class="project-url"><a href="${project.url}" target="_blank">${project.url}</a></div>` : ''}
             <p class="project-description">${project.description}</p>
             <ul>
-                ${project.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                ${project.highlights ? project.highlights.map(highlight => `<li>${highlight}</li>`).join('') : ''}
             </ul>
         `;
         projectsContainer.appendChild(projectDiv);
