@@ -1191,9 +1191,7 @@
           <p style="margin-bottom: 20px">
             I'm open to new opportunities and collaborations. Feel free to reach out!
           </p>
-          <p>
-            <a href="mailto:${basics.email}">${basics.email}</a>
-          </p>
+          ${basics.email ? `<p><a href="mailto:${basics.email}">${basics.email}</a></p>` : ""}
           ${basics.phone ? `<p>${basics.phone}</p>` : ""}
         `;
       }
@@ -1226,10 +1224,12 @@
       }
 
       function updateSocialLinks(profiles) {
+        const activeProfiles = profiles.filter(p => p.url);
+
         // Hero Section Socials
         const heroSocials = document.querySelector(".hero-socials");
         if (heroSocials) {
-          heroSocials.innerHTML = profiles
+          heroSocials.innerHTML = activeProfiles
             .map(
               (profile) => `
             <a href="${profile.url}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors duration-300 transform hover:scale-110" title="${profile.network}">
@@ -1243,7 +1243,7 @@
         // Contact Section Socials
         const contactSocials = document.querySelector(".contact-socials");
         if (contactSocials) {
-          contactSocials.innerHTML = profiles
+          contactSocials.innerHTML = activeProfiles
             .map(
               (profile) => `
             <a href="${profile.url}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1" title="${profile.network}">
@@ -1285,12 +1285,15 @@
     <!-- Footer -->
     <footer>
       <div class="container">
-        <p>&copy; 2025 Sebastian Romero Laguna. All rights reserved.</p>
+        <p>&copy; <span id="current-year"></span> Sebastian Romero Laguna. All rights reserved.</p>
         <p style="margin-top: 8px; opacity: 0.8">Brisbane, QLD, Australia</p>
       </div>
     </footer>
 
     <!-- Hero Animation Script -->
+    <script>
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
     <script src="assets/js/hero-animation.js"></script>
   </body>
 </html>

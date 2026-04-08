@@ -4,63 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Sebastian Romero Laguna</title>
+    <meta name="description" content="Printable CV for Sebastian Romero Laguna - Software Engineer">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/cv.css">
 </head>
 <body>
-    <div class="container">
+    <article class="container" itemscope itemtype="https://schema.org/Person">
         <header>
             <div class="header-left">
-                <h1 id="name"></h1>
-                <h2 id="label"></h2>
+                <h1 id="name" itemprop="name"></h1>
+                <p id="label" itemprop="jobTitle"></p>
             </div>
-            <div class="header-right">
-                <div id="contact"></div>
-            </div>
+            <address class="header-right" id="contact"></address>
         </header>
 
         <main class="cv-main">
-            <section id="summary">
-                <h3>Summary</h3>
-                <p id="summary-content"></p>
+            <section id="summary" aria-label="Professional Summary">
+                <h2>Summary</h2>
+                <p id="summary-content" itemprop="description"></p>
             </section>
-            <section id="skills">
-                <h3>Skills</h3>
+
+            <section id="skills" aria-label="Skills">
+                <h2>Skills</h2>
                 <div id="skills-container"></div>
             </section>
-            <section id="work">
-                <h3>Work Experience</h3>
+
+            <section id="work" aria-label="Work Experience">
+                <h2>Work Experience</h2>
                 <div id="work-container"></div>
             </section>
-            <section id="projects">
-                <h3>Projects</h3>
+
+            <section id="projects" aria-label="Projects">
+                <h2>Projects</h2>
                 <div id="projects-container"></div>
             </section>
-            <section id="education">
-                <h3>Education</h3>
+
+            <section id="education" aria-label="Education">
+                <h2>Education</h2>
                 <div id="education-container"></div>
             </section>
-            <section id="publications">
-                <h3>Publications</h3>
+
+            <section id="publications" aria-label="Publications">
+                <h2>Publications</h2>
                 <div id="publications-container"></div>
             </section>
-            <section id="certificates">
-                <h3>Certificates</h3>
+
+            <section id="certificates" aria-label="Certificates">
+                <h2>Certificates</h2>
                 <div id="certificates-container"></div>
             </section>
-            <section id="awards">
-                <h3>Awards</h3>
+
+            <section id="awards" aria-label="Awards">
+                <h2>Awards</h2>
                 <div id="awards-container"></div>
             </section>
-            <section id="languages">
-                <h3>Languages</h3>
+
+            <section id="languages" aria-label="Languages">
+                <h2>Languages</h2>
                 <div id="languages-container"></div>
             </section>
         </main>
-        <div class="print-button-container">
-            <button onclick="window.print()">Print CV</button>
-        </div>
-    </div>
+
+        <footer class="print-button-container">
+            <button type="button" onclick="window.print()">Print CV</button>
+        </footer>
+    </article>
     <script src="../assets/js/cv-utils.js"></script>
     <script src="../assets/js/cv.js"></script>
 </body>

@@ -24,84 +24,88 @@ function populateCV(data) {
     document.getElementById('label').textContent = basics.label;
     document.getElementById('summary-content').textContent = basics.summary;
 
+    // Contact - using <address> for semantic correctness
     const contactContainer = document.getElementById('contact');
-    basics.profiles.forEach(profile => {
+    const activeProfiles = basics.profiles.filter(p => p.url);
+    activeProfiles.forEach(profile => {
         const profileLink = document.createElement('a');
         profileLink.href = profile.url;
         profileLink.target = '_blank';
+        profileLink.rel = 'noopener noreferrer';
         profileLink.classList.add('profile-item');
 
         const icon = document.createElement('i');
         icon.className = profile.icon;
+        icon.setAttribute('aria-hidden', 'true');
         profileLink.appendChild(icon);
-        
-        profileLink.append(profile.network === 'E-mail' ? basics.email : profile.username);
+
+        const label = profile.network === 'E-mail' && basics.email
+            ? basics.email
+            : profile.username;
+        profileLink.append(label);
         contactContainer.appendChild(profileLink);
     });
 
-    // Work Experience
+    // Work Experience - using <article> per job for semantic structure
     const workContainer = document.getElementById('work-container');
     data.work.forEach(job => {
-        const jobDiv = document.createElement('div');
-        jobDiv.classList.add('job');
+        const jobArticle = document.createElement('article');
+        jobArticle.classList.add('job');
 
-        // Logic to gather highlights based on role
         let displayHighlights = [];
 
         if (job.categorized_highlights) {
             if (targetRole) {
-                // Filter by role (case-insensitive key match)
                 Object.keys(job.categorized_highlights).forEach(category => {
                     if (category.toLowerCase() === targetRole.toLowerCase()) {
                         displayHighlights = displayHighlights.concat(job.categorized_highlights[category]);
                     }
                 });
             } else {
-                // No role specified: show all, flattened
                 Object.values(job.categorized_highlights).forEach(highlights => {
                     displayHighlights = displayHighlights.concat(highlights);
                 });
             }
         }
 
-        // Fallback or addition of legacy highlights
         if (job.highlights) {
-             displayHighlights = displayHighlights.concat(job.highlights);
+            displayHighlights = displayHighlights.concat(job.highlights);
         }
 
-        jobDiv.innerHTML = `
-            <div class="job-header">
-                <span class="job-title">${job.position}</span>
-                <span class="job-date">${job.startDate} - ${job.endDate || 'Present'}</span>
-            </div>
-            <div class="job-company">
-                ${job.url ? `<a href="${job.url}" target="_blank">${job.name}</a>` : job.name} - ${job.location}
-            </div>
+        jobArticle.innerHTML = `
+            <header class="job-header">
+                <h3 class="job-title">${job.position}</h3>
+                <time class="job-date">${job.startDate} - ${job.endDate || 'Present'}</time>
+            </header>
+            <p class="job-company">
+                ${job.url ? `<a href="${job.url}" target="_blank" rel="noopener noreferrer">${job.name}</a>` : job.name}${job.location ? ` - ${job.location}` : ''}
+            </p>
             ${job.summary ? `<p class="job-summary">${job.summary}</p>` : ''}
+            ${displayHighlights.length > 0 ? `
             <ul>
                 ${displayHighlights.map(highlight => `<li>${highlight}</li>`).join('')}
-            </ul>
+            </ul>` : ''}
         `;
-        workContainer.appendChild(jobDiv);
+        workContainer.appendChild(jobArticle);
     });
 
     // Education
     const educationContainer = document.getElementById('education-container');
     data.education.forEach(edu => {
-        const eduDiv = document.createElement('div');
-        eduDiv.classList.add('education-item');
+        const eduArticle = document.createElement('article');
+        eduArticle.classList.add('education-item');
 
-        eduDiv.innerHTML = `
-            <div class="education-header">
-                <span class="education-study-type">${edu.studyType} - ${edu.area}</span>
-                 <span class="education-date">${edu.startDate} - ${edu.endDate || 'Present'}</span>
-            </div>
-            <div class="education-institution">
-                 ${edu.url ? `<a href="${edu.url}" target="_blank">${edu.institution}</a>` : edu.institution}
-            </div>
+        eduArticle.innerHTML = `
+            <header class="education-header">
+                <h3 class="education-study-type">${edu.studyType} - ${edu.area}</h3>
+                <time class="education-date">${edu.startDate} - ${edu.endDate || 'Present'}</time>
+            </header>
+            <p class="education-institution">
+                ${edu.url ? `<a href="${edu.url}" target="_blank" rel="noopener noreferrer">${edu.institution}</a>` : edu.institution}
+            </p>
             ${edu.courses ? `<ul>${edu.courses.map(course => `<li>${course}</li>`).join('')}</ul>` : ''}
         `;
-        educationContainer.appendChild(eduDiv);
+        educationContainer.appendChild(eduArticle);
     });
 
     // Skills
@@ -109,103 +113,103 @@ function populateCV(data) {
     data.skills.forEach(skillCategory => {
         const categoryDiv = document.createElement('div');
         categoryDiv.classList.add('skill-category');
-        
-        const categoryTitle = document.createElement('h4');
+
+        const categoryTitle = document.createElement('h3');
         categoryTitle.textContent = skillCategory.name + ': ';
         categoryDiv.appendChild(categoryTitle);
 
-        const keywordsDiv = document.createElement('div');
+        const keywordsDiv = document.createElement('p');
         keywordsDiv.classList.add('keywords');
         keywordsDiv.textContent = skillCategory.keywords.join(', ');
         categoryDiv.appendChild(keywordsDiv);
-        
+
         skillsContainer.appendChild(categoryDiv);
     });
 
     // Languages
     const languagesContainer = document.getElementById('languages-container');
     data.languages.forEach(lang => {
-        const langDiv = document.createElement('div');
+        const langDiv = document.createElement('dl');
         langDiv.classList.add('language-item');
-        langDiv.innerHTML = `<strong>${lang.language}:</strong> <span>${lang.fluency}</span>`;
+        langDiv.innerHTML = `<dt>${lang.language}</dt><dd>${lang.fluency}</dd>`;
         languagesContainer.appendChild(langDiv);
     });
 
     // Projects
     const projectsContainer = document.getElementById('projects-container');
     data.projects.forEach(project => {
-        const projectDiv = document.createElement('div');
-        projectDiv.classList.add('project');
-        projectDiv.innerHTML = `
-            <div class="project-header">
-                <span class="project-name">${project.name}</span>
-            </div>
-            ${project.url ? `<div class="project-url"><a href="${project.url}" target="_blank">${project.url}</a></div>` : ''}
+        const projectArticle = document.createElement('article');
+        projectArticle.classList.add('project');
+        projectArticle.innerHTML = `
+            <header class="project-header">
+                <h3 class="project-name">${project.name}</h3>
+            </header>
+            ${project.url ? `<p class="project-url"><a href="${project.url}" target="_blank" rel="noopener noreferrer">${project.url}</a></p>` : ''}
             <p class="project-description">${project.description}</p>
+            ${project.highlights && project.highlights.length > 0 ? `
             <ul>
-                ${project.highlights ? project.highlights.map(highlight => `<li>${highlight}</li>`).join('') : ''}
-            </ul>
+                ${project.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+            </ul>` : ''}
         `;
-        projectsContainer.appendChild(projectDiv);
+        projectsContainer.appendChild(projectArticle);
     });
-    
+
     // Publications
     const publicationsContainer = document.getElementById('publications-container');
     if (data.publications && data.publications.length > 0) {
         data.publications.forEach(pub => {
-            const pubDiv = document.createElement('div');
-            pubDiv.classList.add('publication');
-            pubDiv.innerHTML = `
-                <div class="publication-header">
-                    <span class="publication-name">${pub.name}</span>
-                    <span class="publication-date">${pub.releaseDate}</span>
-                </div>
-                <div class="publication-publisher">${pub.publisher}</div>
-                ${pub.website ? `<div class="publication-website"><a href="${pub.website}" target="_blank">${pub.website}</a></div>` : ''}
+            const pubArticle = document.createElement('article');
+            pubArticle.classList.add('publication');
+            pubArticle.innerHTML = `
+                <header class="publication-header">
+                    <h3 class="publication-name">${pub.name}</h3>
+                    <time class="publication-date">${pub.releaseDate}</time>
+                </header>
+                <p class="publication-publisher">${pub.publisher}</p>
+                ${pub.website ? `<p class="publication-website"><a href="${pub.website}" target="_blank" rel="noopener noreferrer">${pub.website}</a></p>` : ''}
                 <p class="publication-summary">${pub.summary}</p>
             `;
-            publicationsContainer.appendChild(pubDiv);
+            publicationsContainer.appendChild(pubArticle);
         });
     } else {
-        document.getElementById('publications').style.display = 'none';
+        document.getElementById('publications').hidden = true;
     }
-
 
     // Awards
     const awardsContainer = document.getElementById('awards-container');
     if (data.awards && data.awards.length > 0) {
         data.awards.forEach(award => {
-            const awardDiv = document.createElement('div');
-            awardDiv.classList.add('award');
-            awardDiv.innerHTML = `
-                <div class="award-header">
-                    <span class="award-title">${award.title}</span>
-                    <span class="award-date">${award.date}</span>
-                </div>
-                <div class="awarder">${award.awarder}</div>
+            const awardArticle = document.createElement('article');
+            awardArticle.classList.add('award');
+            awardArticle.innerHTML = `
+                <header class="award-header">
+                    <h3 class="award-title">${award.title}</h3>
+                    <time class="award-date">${award.date}</time>
+                </header>
+                <p class="awarder">${award.awarder}</p>
                 <p class="award-summary">${award.summary}</p>
             `;
-            awardsContainer.appendChild(awardDiv);
+            awardsContainer.appendChild(awardArticle);
         });
-     } else {
-        document.getElementById('awards').style.display = 'none';
+    } else {
+        document.getElementById('awards').hidden = true;
     }
 
     // Certificates
     const certificatesContainer = document.getElementById('certificates-container');
     if (data.certificates && data.certificates.length > 0) {
         data.certificates.forEach(cert => {
-            const certDiv = document.createElement('div');
-            certDiv.classList.add('certificate');
-            certDiv.innerHTML = `
-                <div class="certificate-header">
-                    <span class="certificate-name">${cert.name} - <strong>${cert.issuer}</strong></span>
-                    <span class="certificate-date">${cert.date}</span>
-                </div>
+            const certArticle = document.createElement('article');
+            certArticle.classList.add('certificate');
+            certArticle.innerHTML = `
+                <header class="certificate-header">
+                    <h3 class="certificate-name">${cert.name} - <strong>${cert.issuer}</strong></h3>
+                    <time class="certificate-date">${cert.date}</time>
+                </header>
             `;
-            certificatesContainer.appendChild(certDiv);
+            certificatesContainer.appendChild(certArticle);
         });
     } else {
-        document.getElementById('certificates').style.display = 'none';
+        document.getElementById('certificates').hidden = true;
     }
 }
