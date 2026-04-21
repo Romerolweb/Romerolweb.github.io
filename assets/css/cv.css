@@ -24,6 +24,7 @@ header {
     border-bottom: 2px solid #333;
     padding-bottom: 15px;
     margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
 .header-left h1 {
@@ -32,7 +33,7 @@ header {
     color: #333;
 }
 
-.header-left h2 {
+.header-left p {
     margin: 0;
     font-size: 1.3em;
     font-weight: 300;
@@ -42,6 +43,7 @@ header {
 .header-right {
     text-align: right;
     font-size: 0.9em;
+    font-style: normal;
 }
 
 .header-right a {
@@ -59,13 +61,18 @@ header {
     margin-right: 6px;
 }
 
-h3 {
+h2 {
     font-size: 1.2em;
     color: #333;
     border-bottom: 1px solid #eee;
     padding-bottom: 8px;
     margin-top: 0;
     margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.05em;
+    margin: 0;
 }
 
 p {
@@ -93,24 +100,24 @@ p {
     padding-bottom: 0;
 }
 
-
-.job-header, .education-header, .project-header, .publication-header, .award-header {
+.job-header, .education-header, .project-header, .publication-header, .award-header, .certificate-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 4px;
 }
 
-.job-title, .education-study-type, .project-name, .publication-name, .award-title {
+.job-title, .education-study-type, .project-name, .publication-name, .award-title, .certificate-name {
     font-weight: bold;
-    font-size: 1.05em;
     color: #444;
 }
 
-.job-date, .education-date, .publication-date, .award-date {
+.job-date, .education-date, .publication-date, .award-date, .certificate-date {
     font-size: 0.85em;
     color: #666;
     font-style: italic;
+    white-space: nowrap;
+    margin-left: 10px;
 }
 
 .job-company, .education-institution {
@@ -147,7 +154,7 @@ ul li {
     margin-bottom: 10px;
 }
 
-#skills-container h4 {
+#skills-container h3 {
     margin: 0 0 5px 0;
     font-size: 1em;
     color: #555;
@@ -160,10 +167,17 @@ ul li {
 }
 
 .language-item {
+    display: flex;
+    gap: 8px;
     margin-bottom: 8px;
 }
 
-.language-item span {
+.language-item dt {
+    font-weight: bold;
+}
+
+.language-item dd {
+    margin: 0;
     font-style: italic;
     color: #666;
 }
@@ -171,6 +185,7 @@ ul li {
 .print-button-container {
     text-align: center;
     margin-top: 25px;
+    border: none;
 }
 
 .print-button-container button {
@@ -186,6 +201,39 @@ ul li {
 
 .print-button-container button:hover {
     background-color: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .header-right {
+        text-align: center;
+    }
+
+    .job-header, .education-header, .project-header, .publication-header, .award-header, .certificate-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-date, .education-date, .publication-date, .award-date, .certificate-date {
+        margin-left: 0;
+        margin-top: 2px;
+        font-size: 0.85em;
+    }
 }
 
 @media print {
@@ -208,11 +256,24 @@ ul li {
     }
     header {
         border-bottom: 2px solid #000;
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+    .header-right {
+        text-align: right !important;
+    }
+    .job-header, .certificate-header {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+    }
+    .job-date, .certificate-date {
+        margin-left: auto;
     }
 
     h1 { font-size: 20pt; }
-    h2 { font-size: 13pt; }
-    h3 {
+    .header-left p { font-size: 13pt; }
+    h2 {
         font-size: 11pt;
         border-bottom: 1px solid #ccc;
     }
