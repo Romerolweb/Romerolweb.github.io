@@ -636,8 +636,8 @@
     <header>
       <div class="container">
         <div class="header-content">
-          <div class="logo"><a href="#">Sebastian</a></div>
-          <nav>
+          <div class="logo"><a href="#" aria-label="Sebastian Romero Laguna — home">Sebastian</a></div>
+          <nav aria-label="Main navigation">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
@@ -653,10 +653,12 @@
     </header>
 
     <!-- Hero -->
+    <main id="main-content">
     <div
       class="relative w-full h-screen overflow-hidden font-sans text-slate-200 bg-slate-900 hero-section"
+      role="banner"
     >
-      <canvas id="hero-canvas" class="absolute inset-0 z-0"></canvas>
+      <canvas id="hero-canvas" class="absolute inset-0 z-0" aria-hidden="true"></canvas>
 
       <!-- Foreground Content -->
       <div
@@ -670,11 +672,12 @@
           >
             Sebastian Romero-Laguna
           </h1>
-          <h2
+          <p
             class="text-2xl text-slate-400 mb-6 tracking-widest uppercase font-light hero-subtitle"
+            aria-label="Job title"
           >
             Senior Software Engineer
-          </h2>
+          </p>
 
           <div class="flex flex-col items-center space-y-4 mt-8">
             <div
@@ -782,6 +785,9 @@
 
       <div
         id="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
         style="
           display: none;
           position: fixed;
@@ -808,6 +814,7 @@
         >
           <button
             onclick="closeModal()"
+            aria-label="Close service detail"
             style="
               position: absolute;
               top: 20px;
@@ -964,6 +971,7 @@
           let html = `
             <button
                 onclick="updateUrlRole(null, renderCV)"
+                aria-pressed="${!currentRole}"
                 class="px-4 py-2 rounded-full text-sm font-semibold transition-all ${!currentRole ? 'bg-primary text-white shadow-md transform scale-105' : 'bg-white text-gray-600 hover:bg-gray-100'}"
                 style="${!currentRole ? 'background-color: var(--primary); color: white;' : ''}"
             >
@@ -976,6 +984,7 @@
                html += `
                 <button
                     onclick="updateUrlRole('${role}', renderCV)"
+                    aria-pressed="${isActive}"
                     class="px-4 py-2 rounded-full text-sm font-semibold transition-all ${isActive ? 'bg-primary text-white shadow-md transform scale-105' : 'bg-white text-gray-600 hover:bg-gray-100'}"
                     style="${isActive ? 'background-color: var(--primary); color: white;' : ''}"
                 >
@@ -1074,7 +1083,7 @@
             (project) => `
           <div class="project-card" ${
             project.url
-              ? `onclick="window.open('${project.url}', '_blank')" style="cursor: pointer"`
+              ? `role="button" tabindex="0" onclick="window.open('${project.url}', '_blank')" onkeydown="if(event.key==='Enter'||event.key===' ')window.open('${project.url}','_blank')" style="cursor: pointer"`
               : ""
           }>
             <h3>${project.name}</h3>
@@ -1217,7 +1226,7 @@
         servicesGrid.innerHTML = services
           .map(
             (service) => `
-          <div class="project-card" onclick="openModal(this)" style="cursor: pointer">
+          <div class="project-card" role="button" tabindex="0" onclick="openModal(this)" onkeydown="if(event.key==='Enter'||event.key===' ')openModal(this)" style="cursor: pointer">
             <h3>${service.name}</h3>
             ${
               service.keywords && service.keywords.length > 0
@@ -1246,8 +1255,8 @@
           heroSocials.innerHTML = activeProfiles
             .map(
               (profile) => `
-            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors duration-300 transform hover:scale-110" title="${profile.network}">
-              <i class="${profile.icon}" style="font-size: 1.75rem;"></i>
+            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" aria-label="${profile.network}" class="text-slate-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+              <i class="${profile.icon}" aria-hidden="true" style="font-size: 1.75rem;"></i>
             </a>
           `
             )
@@ -1260,8 +1269,8 @@
           contactSocials.innerHTML = activeProfiles
             .map(
               (profile) => `
-            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1" title="${profile.network}">
-              <i class="${profile.icon}" style="font-size: 2rem;"></i>
+            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" aria-label="${profile.network}" class="text-slate-400 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+              <i class="${profile.icon}" aria-hidden="true" style="font-size: 2rem;"></i>
             </a>
           `
             )
@@ -1295,6 +1304,8 @@
         </div>
       </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>

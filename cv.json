@@ -3,10 +3,10 @@
     "name": "Sebastian Romero Laguna",
     "label": "Software Engineer | Cloud & DevOps",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQEf3t0_kqNRqw/profile-displayphoto-shrink_800_800/B56ZcFk.3LHgAc-/0/1748145272620?e=1777507200&v=beta&t=8R9268rQp03rOzlayDJRuMhvA2_wlE3UOoOXh8Szkow",
-    "email": "romerolweb@icloud.com",
+    "email": "",
     "phone": "",
     "url": "https://romerolweb.github.io",
-    "summary": "Highly motivated and results-oriented Software Engineer with experience since 2016. Pivoting to Cloud Infrastructure and DevOps, backed by a Master of Information Technology (Cybersecurity) graduating Dec 2025. Expertise bridges foundational software development (Golang, Python, TypeScript) with modern cloud practices (AWS, Azure, Terraform, Kubernetes). Proven leadership capabilities developed through guiding development teams and executing full-stack projects.",
+    "summary": "Software Engineer with experience since 2016, specialising in full-stack development, cloud infrastructure, and platform security. Holds a Master of Information Technology (Cybersecurity) from CQUniversity (graduated Dec 2025). Expertise bridges modern web development (Next.js, TypeScript, Go) with cloud and DevOps practices (AWS, Supabase, Terraform, Kubernetes). Proven track record delivering measurable performance improvements, security remediations, and architectural decisions in fast-paced startup environments.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -41,36 +41,54 @@
       },
       {
         "network": "E-mail",
-        "username": "sebastianromerol",
-        "url": "mailto:sebastianromerol@outlook.es",
+        "username": "",
+        "url": "",
         "icon": "fas fa-envelope"
       }
     ]
   },
   "work": [
     {
-      "name": "Platform Recipes",
-      "position": "Software Developer",
-      "url": "https://www.platform.recipes",
-      "startDate": "2024-07",
+      "name": "PRX Vault",
+      "position": "Software Developer (Contract)",
+      "url": "https://prxvault.com",
+      "startDate": "2026-01",
       "endDate": "Present",
-      "summary": "Full stack software development on a consumer cashback and rewards platform, focusing on performance, security, and feature delivery. (Current Employer)",
-      "location": "Brisbane, Australia",
+      "summary": "Full-stack development on a consumer cashback and rewards platform, focusing on performance, security, and feature delivery.",
+      "location": "Brisbane, Australia (Remote)",
       "categorized_highlights": {
         "Software Engineer": [
           "Migrated merchant search from a client-side JavaScript implementation to a server-side PostgreSQL Full-Text Search system (BM25 ranking, GIN index), eliminating full dataset downloads on page load and improving multi-word query accuracy by ~40%.",
           "Built a cashback merchant detail page with a 3-step visual timeline, tips grid, and a collapsible exclusions accordion backed by a keyword scoring heuristic covering ~1,000 merchant entries.",
-          "Reduced session-level image resolution failures by approximately 160 per user by redesigning the logo resolution strategy from a 6-candidate cascade to a direct fast path with a 2-candidate fallback.",
+          "Reduced session-level image resolution failures by approximately 160 per user by redesigning the logo resolution strategy from a 6-candidate cascade to a 2-candidate fallback.",
           "Achieved front-end accessibility compliance across interactive components (keyboard navigation, prefers-reduced-motion, eslint-plugin-jsx-a11y rules)."
         ],
         "DevOps": [
-          "Improved mobile page load performance by converting ~27 production images to WebP format, achieving up to 99% file size reduction; conducted Next.js bundle analysis to identify and scope further bottlenecks.",
-          "Designed the architectural blueprint for standardising ~35 Edge Functions using a Hono-first middleware pattern on Deno 2.0, enforcing CORS, JWT authentication, Zod schema validation, and payload limits."
+          "Improved mobile page load performance by converting ~27 production images to WebP format, achieving up to 99% file size reduction; conducted Next.js bundle analysis to identify and scope bottlenecks.",
+          "Designed the architectural blueprint for standardising ~35 Supabase Edge Functions using a Hono-first middleware pattern on Deno 2.0, enforcing CORS, JWT authentication, Zod validation, and payload limits."
         ],
         "Leadership": [
           "Conducted a security diagnostic identifying over 50 vulnerabilities (including critical unauthenticated data mutation risks); authored an executive remediation report and zero-trust migration roadmap presented to engineering leadership.",
           "Authored Architecture Decision Records (ADRs) for major platform changes, documenting rationale, trade-offs, and implementation plans.",
-          "Delivered features and tasks under agile methodologies using Jira and Confluence."
+          "Delivered features under agile methodologies using Jira and Confluence in a fast-paced startup environment."
+        ]
+      }
+    },
+    {
+      "name": "Platform Recipes",
+      "position": "Software Developer",
+      "url": "https://www.platform.recipes",
+      "startDate": "2024-07",
+      "endDate": "2025-12",
+      "summary": "Full-stack software development using modern JavaScript frameworks and agile delivery.",
+      "location": "Brisbane, Australia",
+      "categorized_highlights": {
+        "Software Engineer": [
+          "Developed and maintained features using Next.js, TypeScript, and Tailwind CSS.",
+          "Contributed to front-end and back-end development across the platform's product suite."
+        ],
+        "Leadership": [
+          "Collaborated on task planning and delivery under agile methodologies."
         ]
       }
     },
@@ -618,6 +636,7 @@
       "name": "Cloud & DevOps",
       "keywords": [
         "AWS (EC2, S3, Route 53, Security Groups)",
+        "Supabase",
         "Azure",
         "GCP",
         "Terraform",
@@ -632,7 +651,9 @@
       "keywords": [
         "Next.js",
         "React",
+        "Hono",
         "Node.js",
+        "Deno",
         "Laravel",
         "Vue.js",
         "Tailwind CSS"
@@ -642,11 +663,13 @@
       "name": "Systems & Security",
       "keywords": [
         "Linux (Ubuntu, Kali)",
+        "Row Level Security (RLS)",
         "PKI",
         "Cryptography",
         "OAuth 2.0",
         "Role-Based Access Control (RBAC)",
-        "NIST"
+        "NIST",
+        "WCAG 2.1"
       ]
     },
     {
