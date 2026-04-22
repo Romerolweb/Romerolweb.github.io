@@ -59,6 +59,9 @@ class Trie {
     const activeWordEl = document.getElementById('active-word');
     if (!canvas) return;
 
+    // Skip animation entirely when user prefers reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     // Color Palette Integration
     const rootStyles = getComputedStyle(document.documentElement);
     const primaryColor = rootStyles.getPropertyValue('--primary').trim();
