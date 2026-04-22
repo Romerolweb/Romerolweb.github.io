@@ -1,3 +1,11 @@
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+function formatDate(dateStr) {
+    if (!dateStr || dateStr === 'Present') return dateStr || 'Present';
+    const [year, month] = dateStr.split('-');
+    return month ? `${MONTHS[parseInt(month, 10) - 1]} ${year}` : year;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     fetch('../cv.json')
         .then(response => {
@@ -72,10 +80,13 @@ function populateCV(data) {
             displayHighlights = displayHighlights.concat(job.highlights);
         }
 
+        // Skip entries with no relevant highlights when a role filter is active
+        if (targetRole && displayHighlights.length === 0) return;
+
         jobArticle.innerHTML = `
             <header class="job-header">
                 <h3 class="job-title">${job.position}</h3>
-                <time class="job-date">${job.startDate} - ${job.endDate || 'Present'}</time>
+                <time class="job-date">${formatDate(job.startDate)} – ${job.endDate ? formatDate(job.endDate) : 'Present'}</time>
             </header>
             <p class="job-company">
                 ${job.url ? `<a href="${job.url}" target="_blank" rel="noopener noreferrer">${job.name}</a>` : job.name}${job.location ? ` - ${job.location}` : ''}
@@ -98,7 +109,7 @@ function populateCV(data) {
         eduArticle.innerHTML = `
             <header class="education-header">
                 <h3 class="education-study-type">${edu.studyType} - ${edu.area}</h3>
-                <time class="education-date">${edu.startDate} - ${edu.endDate || 'Present'}</time>
+                <time class="education-date">${formatDate(edu.startDate)} – ${edu.endDate ? formatDate(edu.endDate) : 'Present'}</time>
             </header>
             <p class="education-institution">
                 ${edu.url ? `<a href="${edu.url}" target="_blank" rel="noopener noreferrer">${edu.institution}</a>` : edu.institution}

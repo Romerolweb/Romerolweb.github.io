@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Sebastian Romero Laguna",
-    "label": "Software Engineer | Cloud & DevOps",
+    "label": "Software Engineer | Full-Stack & Security",
     "image": "https://media.licdn.com/dms/image/v2/D5603AQEf3t0_kqNRqw/profile-displayphoto-shrink_800_800/B56ZcFk.3LHgAc-/0/1748145272620?e=1777507200&v=beta&t=8R9268rQp03rOzlayDJRuMhvA2_wlE3UOoOXh8Szkow",
-    "email": "romerolweb@icloud.com",
+    "email": "",
     "phone": "",
     "url": "https://romerolweb.github.io",
-    "summary": "Highly motivated and results-oriented Software Engineer with experience since 2016. Pivoting to Cloud Infrastructure and DevOps, backed by a Master of Information Technology (Cybersecurity) graduating Dec 2025. Expertise bridges foundational software development (Golang, Python, TypeScript) with modern cloud practices (AWS, Azure, Terraform, Kubernetes). Proven leadership capabilities developed through guiding development teams and executing full-stack projects.",
+    "summary": "Software Engineer with professional experience since 2017, working across full-stack web development, application security, and cloud infrastructure. Holds a Master of Information Technology (Cybersecurity) from CQUniversity, Australia (graduated 2025, GPA 5.786/7.0). Has worked across startup, enterprise, and academic settings in Colombia, the United States, and Australia. Currently working as a Software Developer (contractor) at PRX Vault, Brisbane.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -41,27 +41,54 @@
       },
       {
         "network": "E-mail",
-        "username": "sebastianromerol",
-        "url": "mailto:sebastianromerol@outlook.es",
+        "username": "",
+        "url": "",
         "icon": "fas fa-envelope"
       }
     ]
   },
   "work": [
     {
+      "name": "PRX Vault",
+      "position": "Software Developer (Contract)",
+      "url": "https://prxvault.com",
+      "startDate": "2026-01",
+      "endDate": "Present",
+      "summary": "Full-stack development on a consumer cashback and rewards platform.",
+      "location": "Brisbane, Australia (Remote)",
+      "categorized_highlights": {
+        "Software Engineer": [
+          "Migrated merchant search from a client-side JavaScript implementation to a server-side PostgreSQL Full-Text Search system (BM25 ranking, GIN index), eliminating full dataset downloads on page load and improving multi-word query accuracy by approximately 40%.",
+          "Built a cashback merchant detail page with a visual timeline, tips grid, and a collapsible exclusions accordion backed by a keyword scoring heuristic.",
+          "Reduced session-level image resolution failures per user by redesigning the logo resolution strategy from a multi-candidate cascade to a two-step fallback.",
+          "Achieved front-end accessibility compliance across interactive components (keyboard navigation, prefers-reduced-motion, eslint-plugin-jsx-a11y)."
+        ],
+        "DevOps": [
+          "Improved mobile page load performance by converting production images to WebP format; conducted Next.js bundle analysis to identify and scope performance bottlenecks.",
+          "Designed the architectural blueprint for standardising Supabase Edge Functions with consistent middleware, authentication, and validation patterns."
+        ],
+        "Leadership": [
+          "Conducted a platform security audit identifying vulnerabilities across authentication and data access layers; authored a remediation report and security roadmap presented to engineering leadership.",
+          "Authored Architecture Decision Records (ADRs) for major platform changes, documenting rationale, trade-offs, and implementation plans.",
+          "Delivered features under agile methodologies using Jira and Confluence."
+        ]
+      }
+    },
+    {
       "name": "Platform Recipes",
       "position": "Software Developer",
       "url": "https://www.platform.recipes",
       "startDate": "2024-07",
-      "endDate": "Present",
-      "summary": "Full stack software development focusing on modern JavaScript frameworks and agile delivery. (Current Employer)",
+      "endDate": "2025-12",
+      "summary": "Full-stack software development using modern JavaScript frameworks and agile delivery.",
       "location": "Brisbane, Australia",
       "categorized_highlights": {
         "Software Engineer": [
-          "Software development using Next.js, JavaScript, and Tailwind CSS."
+          "Developed and maintained features using Next.js, TypeScript, and Tailwind CSS.",
+          "Contributed to front-end and back-end development across the platform's product suite."
         ],
         "Leadership": [
-          "Development of tasks under agile methodologies."
+          "Collaborated on task planning and delivery under agile methodologies."
         ]
       }
     },
@@ -71,23 +98,23 @@
       "url": "https://www.platform.recipes",
       "startDate": "2024-03",
       "endDate": "2024-06",
-      "summary": "Focused on DevOps tooling, CLI development, and infrastructure.",
+      "summary": "DevOps tooling, CLI development, and infrastructure work.",
       "location": "Brisbane, Australia",
       "categorized_highlights": {
         "DevOps": [
-          "Experimented with AWS EKS, AKS, GCP and Rancher for container orchestration proof-of-concepts.",
+          "Evaluated AWS EKS, AKS, GCP, and Rancher for container orchestration through proof-of-concept work.",
           "Created and managed Kubernetes clusters using kubectl for application deployment and scaling tests.",
-          "Updated Infrastructure as Code (IaC) using Terraform blueprints to maintain current standards.",
-          "Set up and configuration of Kubernetes (External DNS, Argo CD)."
+          "Updated Infrastructure as Code using Terraform to maintain current provisioning standards.",
+          "Configured Kubernetes add-ons including External DNS and Argo CD."
         ],
         "Software Engineer": [
-          "Led the design and development of a cross-platform CLI application in Golang for scanning repository dependencies using the GitHub API.",
-          "Utilized SQLite for storing metadata retrieved from API queries within the CLI tool.",
-          "Wrote SQL queries to facilitate effective analysis of information gathered via GitHub API.",
-          "Development of features for platform.recipes, allowing for patterns web presentation from a raw format."
+          "Led the design and development of a cross-platform CLI application in Go for scanning repository dependencies via the GitHub API.",
+          "Used SQLite for storing metadata retrieved from API queries within the CLI tool.",
+          "Wrote SQL queries to analyse information gathered via the GitHub API.",
+          "Developed features for platform.recipes to enable web presentation of content from structured raw formats."
         ],
         "Leadership": [
-          "Used Jira and Confluence for task management and developed Architectural Decision Records (ADR)."
+          "Used Jira and Confluence for task management and developed Architecture Decision Records (ADRs)."
         ]
       }
     },
@@ -101,9 +128,9 @@
       "location": "Brisbane, Australia",
       "categorized_highlights": {
         "Leadership": [
-          "Providing information and advice to prospective domestic and international students regarding CQUniversity courses.",
-          "Helping students select suitable degrees by analysing their background and interests.",
-          "Answering student inquiries about university programs, campus life, and application processes."
+          "Provides information and guidance to prospective domestic and international students regarding CQUniversity courses.",
+          "Helps students select suitable degrees by reviewing their academic background and interests.",
+          "Responds to student inquiries about university programmes, campus life, and application processes."
         ]
       }
     },
@@ -113,21 +140,21 @@
       "url": "https://neosoftware.dev",
       "startDate": "2022-07",
       "endDate": "2024-03",
-      "summary": "Led software strategy and development for a self-founded software services company.",
+      "summary": "Founded and led a software services company, managing client projects and a small development team.",
       "location": "Colombia (Remote)",
       "categorized_highlights": {
         "Leadership": [
-          "Led a software development team, managing project tasks and ensuring successful execution.",
-          "Secured a competitive grant (Ecopetrol Emprende) by a national mining company for young business entrepreneurs.",
-          "Implemented a mentorship program for workmates focusing on business and software development."
+          "Managed a small software development team across client projects, handling task assignment and delivery.",
+          "Secured a competitive grant (Ecopetrol Emprende) for young business entrepreneurs.",
+          "Ran a mentorship programme for team members covering business and software development practices."
         ],
         "Software Engineer": [
-          "Spearheaded designing and implementing a comprehensive event management software solution.",
-          "Delivered full-stack development projects for a US-based company, including robust REST APIs.",
-          "Utilized PostgreSQL databases for managing application data storage in the cloud using RDS."
+          "Led the design and implementation of an event management software solution.",
+          "Delivered full-stack development projects for a US-based client, including REST APIs.",
+          "Used PostgreSQL on AWS RDS for cloud-hosted application data storage."
         ],
         "Data": [
-          "Analysed product sales data using SQL queries to extract valuable business insights."
+          "Analysed product sales data using SQL queries to extract business insights."
         ]
       }
     },
@@ -137,22 +164,21 @@
       "url": "",
       "startDate": "2022-01",
       "endDate": "2022-05",
-      "summary": "Automation and backend development for a US-based logistics/retail company.",
+      "summary": "Automation and back-end development for a US-based logistics and retail company.",
       "location": "Selbyville, DE, USA",
       "categorized_highlights": {
         "Software Engineer": [
-          "Automated periodical data import processes from PDF to Excel using Power Query M, reducing manual processing time by over 4 hours per week.",
-          "Implemented OAuth 2.0 authentication flows within the company's software to interact with the Amazon Seller Partner API.",
-          "Created comprehensive unit tests to ensure code functionality and prevent regressions.",
-          "Conducted software maintenance, identifying and resolving bugs in in-house applications promptly.",
-          "Documented business logic within the codebase for user clarity."
+          "Automated periodic data import processes from PDF to Excel using Power Query M, reducing manual processing time by over 4 hours per week.",
+          "Implemented OAuth 2.0 authentication flows to integrate with the Amazon Seller Partner API.",
+          "Wrote unit tests to verify code functionality and prevent regressions.",
+          "Performed software maintenance, identifying and resolving bugs in in-house applications."
         ],
         "Data": [
-          "Utilized MySQL databases to generate insightful reports for informed business decisions."
+          "Used MySQL to generate reports for business decision-making."
         ],
         "IT Support": [
-          "Constructed GPU-based cryptocurrency mining rigs and tracked inventory details.",
-          "Provided IT support across various departments, managing printers, surveillance systems, and software/hardware installations."
+          "Assembled and tracked GPU-based computing hardware.",
+          "Provided IT support across departments, covering printers, surveillance systems, and software and hardware installations."
         ]
       }
     },
@@ -162,14 +188,14 @@
       "url": "https://www.salisbury.edu",
       "startDate": "2021-08",
       "endDate": "2021-12",
-      "summary": "Data processing and database optimization within a university setting.",
+      "summary": "Data processing and database work within a university research context.",
       "location": "Salisbury, MD, USA",
       "categorized_highlights": {
         "Data": [
-          "Executed Extract, Transform, Load (ETL) cycles to gather and compile data from diverse sources.",
-          "Cleaned and compiled information from multiple sources into a single database for efficient access.",
-          "Designed and implemented a new database structure for efficient information storage.",
-          "Developed complex SQL queries to extract valuable insights tailored to diverse university community needs."
+          "Executed ETL cycles to gather and compile data from multiple sources.",
+          "Cleaned and consolidated information from disparate sources into a single database.",
+          "Designed and implemented a database structure for efficient information storage.",
+          "Developed SQL queries to extract insights tailored to diverse university community needs."
         ]
       }
     },
@@ -179,14 +205,14 @@
       "url": "",
       "startDate": "2021-09",
       "endDate": "2021-11",
-      "summary": "Cloud infrastructure optimization and security implementation.",
+      "summary": "Cloud infrastructure optimisation and security configuration.",
       "location": "Neiva, Colombia (Remote)",
       "categorized_highlights": {
         "DevOps": [
-          "Contributed to a significant reduction (over 75%) in cloud infrastructure costs by strategically implementing AWS Reserved Instances.",
-          "Deployed scalable web applications onto AWS EC2 instances utilizing Docker containers.",
-          "Enhanced DNS management and application scalability by leveraging AWS Route 53.",
-          "Strengthened cloud environment security posture by implementing and managing robust AWS Security Group rules and Network ACLS."
+          "Contributed to a reduction of over 75% in cloud infrastructure costs through implementation of AWS Reserved Instances.",
+          "Deployed web applications on AWS EC2 instances using Docker containers.",
+          "Managed DNS routing and application scalability using AWS Route 53.",
+          "Implemented and managed AWS Security Group rules and Network ACLs to harden the cloud environment."
         ]
       }
     },
@@ -196,19 +222,18 @@
       "url": "",
       "startDate": "2020-05",
       "endDate": "2020-11",
-      "summary": "Backend API development and enterprise system integration.",
+      "summary": "Back-end API development and enterprise system integration.",
       "location": "Bogota, Colombia (Remote)",
       "categorized_highlights": {
         "Software Engineer": [
-          "Improved internal data flow efficiency through development of REST API communications with external SAP Software.",
-          "Developed and maintained secure REST APIs, implementing encryption and decryption processes for data security.",
-          "Implemented system functionalities allowing document uploads via API endpoints.",
-          "Utilized Vue.js for the development of a Content Management System."
+          "Improved internal data flow by developing REST API integrations with an external SAP system.",
+          "Developed and maintained REST APIs with encryption and decryption for data security.",
+          "Implemented document upload functionality via API endpoints.",
+          "Built a Content Management System using Vue.js."
         ],
         "DevOps": [
-          "Utilized AWS services including S3 buckets for scalable object storage.",
-          "Deployed and managed application components on AWS EC2 instances.",
-          "Implemented AWS CodeCommit for secure Git-based version control."
+          "Used AWS S3 for object storage and EC2 for application hosting.",
+          "Implemented AWS CodeCommit for Git-based version control."
         ]
       }
     },
@@ -218,21 +243,21 @@
       "url": "",
       "startDate": "2018-03",
       "endDate": "2020-08",
-      "summary": "Led the development of CMMS platforms and digital transformation initiatives.",
+      "summary": "Led the development of a Computerised Maintenance Management System (CMMS) and digital transformation initiatives.",
       "location": "Colombia",
       "categorized_highlights": {
         "Leadership": [
-          "Led the development team responsible for creating and maintaining a real-time web and mobile platform for help desk ticket management.",
-          "Oversaw the company's Computerized Maintenance Management System (CMMS) operating across web and mobile platforms."
+          "Led the team responsible for developing and maintaining a real-time web and mobile platform for help desk ticket management.",
+          "Oversaw the company's Computerised Maintenance Management System (CMMS) across web and mobile platforms."
         ],
         "Software Engineer": [
           "Designed and developed a role-based access control (RBAC) system for the maintenance platform.",
-          "Implemented a system utilizing QR codes for efficient identification and tracking of managed machinery.",
-          "Delivered web and mobile applications used by the customer, technician, and management."
+          "Implemented QR code-based identification and tracking of managed machinery.",
+          "Delivered web and mobile applications used by customers, technicians, and management."
         ],
         "Data": [
-          "Transformed raw help desk ticket data into actionable business insights through data analysis.",
-          "Achievement: Systematized maintenance reporting procedures, resulting in an 87% reduction in printed paper usage."
+          "Transformed help desk ticket data into business insights through data analysis.",
+          "Systematised maintenance reporting procedures, reducing printed paper usage by 87%."
         ]
       }
     },
@@ -242,14 +267,14 @@
       "url": "https://www.lanacion.com.co",
       "startDate": "2018-12",
       "endDate": "2019-12",
-      "summary": "E-commerce implementation and website optimization.",
+      "summary": "E-commerce implementation and website optimisation.",
       "location": "Neiva, Colombia",
       "categorized_highlights": {
         "Software Engineer": [
-          "Developed and implemented a new e-commerce sales channel using WordPress and WooCommerce.",
-          "Optimized website performance through security enhancements and loading speed improvements, contributing to a documented user base increase of 2.4 million.",
-          "Developed targeted landing pages for seasonal promotions, contributing to achieving over 50% growth in platform revenue.",
-          "Implemented custom solutions using SQL and Laravel to optimize internal software."
+          "Developed and implemented an e-commerce channel using WordPress and WooCommerce.",
+          "Optimised website performance through security enhancements and loading speed improvements, contributing to documented growth in the user base.",
+          "Developed landing pages for seasonal promotions, contributing to over 50% growth in platform revenue.",
+          "Implemented custom SQL and Laravel solutions to optimise internal software."
         ]
       }
     },
@@ -259,13 +284,13 @@
       "url": "",
       "startDate": "2018-03",
       "endDate": "2020-06",
-      "summary": "Custom web application development for various clients.",
+      "summary": "Custom web application development for various clients using PHP and Laravel.",
       "location": "Colombia",
       "categorized_highlights": {
         "Software Engineer": [
-          "Designing, developing, and maintaining custom web applications tailored to diverse client specifications using PHP and the Laravel framework.",
-          "Delivering high-quality, robust, and user-friendly software solutions meeting agreed requirements.",
-          "Developing front-end components and interfaces using Vue.js."
+          "Designed, developed, and maintained custom web applications to client specifications using PHP and the Laravel framework.",
+          "Delivered web application solutions meeting agreed functional requirements.",
+          "Developed front-end interfaces using Vue.js."
         ]
       }
     },
@@ -275,13 +300,13 @@
       "url": "",
       "startDate": "2017-03",
       "endDate": "2018-05",
-      "summary": "Full stack development for internal maintenance systems.",
+      "summary": "Full-stack development for internal maintenance systems.",
       "location": "Colombia",
       "categorized_highlights": {
         "Software Engineer": [
-          "Transitioning company information management processes from reliance on paper and Excel spreadsheets to a centralized web-based CMMS solution.",
-          "Designed and developed a role-based access control (RBAC) system for the company's maintenance platform.",
-          "Developing data visualization components presenting key performance indicators and adaptive graphs."
+          "Transitioned company information management from paper and spreadsheets to a centralised web-based CMMS solution.",
+          "Designed and developed a role-based access control (RBAC) system for the maintenance platform.",
+          "Developed data visualisation components presenting key performance indicators and adaptive graphs."
         ]
       }
     }
@@ -322,7 +347,7 @@
       "institution": "Salisbury University",
       "url": "https://www.salisbury.edu",
       "area": "Computer Science",
-      "studyType": "Exchange Research Program",
+      "studyType": "Exchange Research Programme",
       "startDate": "2021-01",
       "endDate": "2021-07",
       "courses": [
@@ -373,7 +398,7 @@
         "AWS Consulting",
         "System Design"
       ],
-      "description": "Expert architectural design for building scalable, resilient, and cost-effective applications on AWS. I work with your team to design robust microservices architectures, define best practices for serverless computing, and create a blueprint for your cloud infrastructure that aligns with your long-term business goals and security requirements."
+      "description": "Architectural design for building scalable, resilient, and cost-effective applications on AWS. I work with your team to design microservices architectures, define practices for serverless computing, and create a blueprint for your cloud infrastructure aligned with your long-term business goals and security requirements."
     },
     {
       "name": "Infrastructure as Code & CI/CD Pipeline Implementation",
@@ -382,7 +407,7 @@
         "Cloud Infrastructure",
         "Terraform"
       ],
-      "description": "I build and configure your complete cloud infrastructure and deployment pipelines using modern DevOps practices. This service includes writing production-grade Terraform code to manage your AWS resources and setting up automated CI/CD workflows with GitHub Actions for reliable, repeatable, and fast deployments."
+      "description": "I build and configure cloud infrastructure and deployment pipelines using modern DevOps practices. This service includes writing Terraform code to manage AWS resources and setting up automated CI/CD workflows with GitHub Actions for reliable, repeatable deployments."
     },
     {
       "name": "Custom CLI & Automation Tool Development",
@@ -391,7 +416,7 @@
         "CLI Tools",
         "DevOps Automation"
       ],
-      "description": "Development of custom command-line interface (CLI) tools and automation scripts in Go to solve your team's specific challenges. Whether it's for automating deployments, managing infrastructure, or simplifying complex workflows, I build robust, cross-platform tools that make your engineering team faster and more effective."
+      "description": "Development of custom command-line interface (CLI) tools and automation scripts in Go to address your team's specific challenges. Whether for automating deployments, managing infrastructure, or simplifying complex workflows, I build cross-platform tools that improve engineering efficiency."
     },
     {
       "name": "REST API & Microservices Implementation",
@@ -401,7 +426,7 @@
         "Go (Golang)",
         "Python"
       ],
-      "description": "Backend development focused on building secure, well-documented, and high-performance REST APIs and microservices. Using Go and modern frameworks, I implement services that are designed for scalability and maintainability, forming the backbone of your web and mobile applications. Also interested in advanced solutions using Python."
+      "description": "Back-end development focused on building secure, well-documented REST APIs and microservices. Using Go and modern frameworks, I implement services designed for scalability and maintainability."
     },
     {
       "name": "Full-Stack Web Development",
@@ -411,7 +436,7 @@
         "React",
         "Go (Golang)"
       ],
-      "description": "End-to-end web application development using modern technologies. From front-end interfaces with React and TypeScript to robust back-end systems in Go or Python, I deliver scalable, maintainable solutions that are deployed on secure AWS infrastructure and meet your business requirements."
+      "description": "End-to-end web application development using modern technologies. From front-end interfaces with React and TypeScript to back-end systems in Go or Python, deployed on AWS infrastructure."
     }
   ],
   "certificates": [
@@ -432,26 +457,26 @@
     },
     {
       "name": "Learning Data Science: Understanding the Basics",
-      "issuer": "LinkedIn Learning / Provider",
+      "issuer": "LinkedIn Learning",
       "date": "2021-01"
     },
     {
       "name": "Cybersecurity Diploma",
-      "issuer": "Neiva’s Technological School Foundation",
+      "issuer": "Fundacion Escuela Tecnologica De Neiva",
       "date": "2019-01"
     },
     {
       "name": "Technologist in Software Development",
-      "issuer": "Neiva’s Technological School Foundation",
+      "issuer": "Fundacion Escuela Tecnologica De Neiva",
       "date": "2019-01"
     },
     {
       "name": "Technician in Software Development",
-      "issuer": "Neiva’s Technological School Foundation",
+      "issuer": "Fundacion Escuela Tecnologica De Neiva",
       "date": "2019-01"
     },
     {
-      "name": "Attendance to Introduction to Data Science",
+      "name": "Introduction to Data Science",
       "issuer": "Provider",
       "date": "2021-01"
     },
@@ -461,7 +486,7 @@
       "date": "2021-01"
     },
     {
-      "name": "Certification of Completion of The Green Zone",
+      "name": "Certification of Completion: The Green Zone",
       "issuer": "Provider",
       "date": "2021-01"
     }
@@ -471,13 +496,13 @@
       "title": "Nexo Global Scholar & Youth Researcher",
       "date": "2021-01",
       "awarder": "MinCiencias Colombia / Salisbury University",
-      "summary": "Selected through a rigorous process for the prestigious Nexo Global grant to conduct research at Salisbury University. Recognised as a Youth Researcher by the Ministry of Science in Colombia."
+      "summary": "Selected through a competitive national process for the Nexo Global grant to conduct research at Salisbury University. Recognised as a Youth Researcher by the Ministry of Science, Colombia."
     },
     {
       "title": "Ecopetrol Emprende Grant",
       "date": "2023-01",
       "awarder": "Ecopetrol",
-      "summary": "Secured a competitive grant by a national mining-company for young business entrepreneurs to develop core business activities."
+      "summary": "Secured a competitive grant for young business entrepreneurs to develop core business activities."
     }
   ],
   "publications": [
@@ -486,23 +511,23 @@
       "publisher": "Posters on the Bay (Council on Undergraduate Research)",
       "releaseDate": "2021-03",
       "url": "https://www.salisbury.edu/news/article/2021-3-24-SU-Students-Present-Research-at-Fifth-Annual-Posters-on-the-Bay",
-      "summary": "Selected to present research on a unified medical appointment system at the prestigious 'Posters on the Bay' exhibition to Maryland state legislators and university administrators."
+      "summary": "Selected to present research on a unified medical appointment system at the Posters on the Bay exhibition to Maryland state legislators and university administrators."
     },
     {
       "name": "Machine Learning Analysis of COVID-19 Mortality Risk Factors",
       "publisher": "International Conference (Participation)",
       "releaseDate": "2021-07",
       "website": "https://github.com/Python-Neiva/risk-factors-covid19",
-      "summary": "Conducted research to identify key risk factors for COVID-19 mortality in Colombia using Python and graph clustering on official public health data."
+      "summary": "Research identifying risk factors for COVID-19 mortality in Colombia using Python and graph clustering on official public health data."
     }
   ],
   "projects": [
     {
       "name": "IoT Classroom Moisture Sensors System",
-      "description": "IoT system connected to multiple physical moisture sensors deployed in Rockhampton, Brisbane, Melbourne and Sydney campuses. Utilized Docker to run cloudThings and a secure broker for data transmission.",
+      "description": "IoT system connected to physical moisture sensors deployed across CQUniversity campuses in Rockhampton, Brisbane, Melbourne, and Sydney. Used Docker to run a cloud broker with secure data transmission.",
       "highlights": [
         "Maintained physical sensors for university-wide student access.",
-        "Implemented security measures for data transmission between sensors and cloud broker."
+        "Implemented security measures for data transmission between sensors and the cloud broker."
       ],
       "keywords": [
         "IoT",
@@ -515,28 +540,28 @@
     },
     {
       "name": "Evolution Strategy Project",
-      "description": "Implementation of Evolution Strategy algorithms for optimization problems.",
+      "description": "Implementation of Evolution Strategy algorithms for optimisation problems.",
       "highlights": [
-        "Applied evolutionary computation principles to solve complex optimization tasks."
+        "Applied evolutionary computation principles to solve complex optimisation tasks."
       ],
       "keywords": [
         "Evolutionary Computation",
         "Python",
-        "Optimization",
+        "Optimisation",
         "Algorithms"
       ],
       "url": "https://github.com/Python-Neiva/COIT29224-EvolutionStrategy"
     },
     {
-      "name": "Hyperparameter Optimization of CNN",
-      "description": "Report on Hyperparameter Optimization of a CNN for Cat vs. Dog Classification using PSO, Grid Search, and Random Search.",
+      "name": "Hyperparameter Optimisation of CNN",
+      "description": "Report on hyperparameter optimisation of a CNN for image classification using PSO, Grid Search, and Random Search.",
       "highlights": [
-        "Compared Particle Swarm Optimization (PSO), Grid Search, and Random Search for tuning CNN hyperparameters.",
-        "Analysed performance metrics to determine the most effective optimization strategy."
+        "Compared Particle Swarm Optimisation (PSO), Grid Search, and Random Search for tuning CNN hyperparameters.",
+        "Analysed performance metrics to determine the most effective optimisation strategy."
       ],
       "keywords": [
         "CNN",
-        "Hyperparameter Optimization",
+        "Hyperparameter Optimisation",
         "PSO",
         "Grid Search",
         "Deep Learning"
@@ -545,13 +570,13 @@
     },
     {
       "name": "Cross-Platform Dependency Scanner CLI Tool",
-      "description": "Developed a command-line interface (CLI) tool in Golang designed to scan documents and identify dependencies, specifically aimed at optimizing DevOps workflows and integrating with CI/CD pipelines.",
+      "description": "Command-line tool in Go for scanning repository dependencies via the GitHub API, designed for use in DevOps workflows and CI/CD pipelines.",
       "highlights": [
-        "Engineered for high portability across macOS, Linux, and Windows.",
-        "Utilized SQLite for local data storage and concurrency concepts in Golang."
+        "Built for portability across macOS, Linux, and Windows.",
+        "Used SQLite for local data storage and Go concurrency primitives."
       ],
       "keywords": [
-        "Golang",
+        "Go",
         "CLI",
         "DevOps",
         "Concurrency",
@@ -561,11 +586,11 @@
     },
     {
       "name": "Bakery Invoice Generator",
-      "description": "Full stack invoice generation application for small businesses.",
+      "description": "Full-stack invoice generation application for small businesses.",
       "highlights": [
-        "Developed using Next.js, Typescript, Tailwind CSS, and SQLite.",
-        "Designed clean software architecture for maintainability and internationalization.",
-        "Dockerized for cloud or local deployment."
+        "Built with Next.js, TypeScript, Tailwind CSS, and SQLite.",
+        "Designed for maintainability and internationalisation.",
+        "Containerised with Docker for local or cloud deployment."
       ],
       "keywords": [
         "Next.js",
@@ -578,10 +603,10 @@
     },
     {
       "name": "Lingua Verse",
-      "description": "Language learning web application.",
+      "description": "Language learning web application using the Gemini API to provide conceptual feedback on user answers and explain underlying concepts.",
       "highlights": [
-        "Uses the Gemini API to provide conceptual feedback on user answers.",
-        "Implemented RAG-like functionality to explain underlying concepts and correct mistakes."
+        "Integrated the Gemini API for generative feedback on user responses.",
+        "Implemented retrieval-augmented generation (RAG) style functionality to contextualise corrections."
       ],
       "keywords": [
         "Generative AI",
@@ -595,7 +620,7 @@
     {
       "name": "Languages",
       "keywords": [
-        "Golang",
+        "Go",
         "TypeScript",
         "JavaScript",
         "Python",
@@ -609,6 +634,7 @@
       "name": "Cloud & DevOps",
       "keywords": [
         "AWS (EC2, S3, Route 53, Security Groups)",
+        "Supabase",
         "Azure",
         "GCP",
         "Terraform",
@@ -623,7 +649,9 @@
       "keywords": [
         "Next.js",
         "React",
+        "Hono",
         "Node.js",
+        "Deno",
         "Laravel",
         "Vue.js",
         "Tailwind CSS"
@@ -633,11 +661,13 @@
       "name": "Systems & Security",
       "keywords": [
         "Linux (Ubuntu, Kali)",
+        "Row Level Security (RLS)",
         "PKI",
         "Cryptography",
         "OAuth 2.0",
         "Role-Based Access Control (RBAC)",
-        "NIST"
+        "NIST",
+        "WCAG 2.1"
       ]
     },
     {
@@ -675,6 +705,6 @@
   "meta": {
     "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json",
     "version": "v1.0.0",
-    "lastModified": "2025-12-10"
+    "lastModified": "2026-04-22"
   }
 }
