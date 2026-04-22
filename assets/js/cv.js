@@ -80,6 +80,9 @@ function populateCV(data) {
             displayHighlights = displayHighlights.concat(job.highlights);
         }
 
+        // Skip entries with no relevant highlights when a role filter is active
+        if (targetRole && displayHighlights.length === 0) return;
+
         jobArticle.innerHTML = `
             <header class="job-header">
                 <h3 class="job-title">${job.position}</h3>

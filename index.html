@@ -1242,6 +1242,9 @@
             exp.highlights.forEach(h => displayItems.push({ text: h, tag: null }));
           }
 
+          // Hide entries with no relevant highlights when a role filter is active
+          if (targetRole && displayItems.length === 0) return '';
+
           return `
             <div class="experience-item">
               <h3>${exp.position}</h3>
