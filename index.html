@@ -6,11 +6,11 @@
     <title>Sebastian Romero Laguna - Software Engineer</title>
     <meta
       name="description"
-      content="Software Engineer | Backend & Cloud Specialist"
+      content="Software Engineer | Full-Stack, Cloud &amp; Security Specialist"
     />
     <meta
       name="keywords"
-      content="Software Development, Go, AWS, Cloud, Backend, DevOps"
+      content="Software Development, Go, AWS, Cloud, Backend, DevOps, Security"
     />
 
     <!-- Favicon -->
@@ -46,6 +46,7 @@
         --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
         --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        --header-h: 65px;
       }
 
       html {
@@ -68,11 +69,14 @@
         padding: 0 20px;
       }
 
-      /* Header */
+      /* ─── Header ─────────────────────────────────────────── */
       header {
         background: var(--bg-white);
         border-bottom: 1px solid var(--border);
-        padding: 20px 0;
+        padding: 0 0;
+        height: var(--header-h);
+        display: flex;
+        align-items: center;
         position: sticky;
         top: 0;
         z-index: 100;
@@ -82,119 +86,181 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
+        width: 100%;
       }
 
       .logo {
         font-size: 24px;
         font-weight: 700;
+      }
+
+      .logo a {
         color: var(--primary);
+        text-decoration: none;
       }
 
       nav {
         display: flex;
-        gap: 30px;
-        flex-wrap: wrap;
+        align-items: center;
+        gap: 28px;
+        flex-wrap: nowrap;
       }
 
       nav a {
         color: var(--text-dark);
         text-decoration: none;
         font-weight: 500;
-        transition: color 0.3s;
+        font-size: 15px;
+        white-space: nowrap;
+        transition: color 0.2s;
       }
 
       nav a:hover {
         color: var(--primary);
       }
 
-      /* Hero Section */
-      .hero {
-        background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
-        color: white;
-        padding: 120px 0 80px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
+      .nav-cv-link {
+        color: var(--primary) !important;
+        font-weight: 700 !important;
       }
 
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(14, 165, 233, 0.1) 0%,
-          rgba(139, 92, 246, 0.1) 100%
-        );
-        opacity: 0.5;
+      /* Hamburger button — hidden on desktop */
+      #nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        color: var(--text-dark);
+        font-size: 22px;
+        line-height: 1;
+        border-radius: 8px;
+        transition: background 0.2s;
       }
 
-      .hero > .container {
-        position: relative;
-        z-index: 1;
+      #nav-toggle:hover {
+        background: var(--bg-light);
       }
 
-      .hero h1 {
-        font-size: 56px;
-        margin-bottom: 20px;
-        font-weight: 800;
-        letter-spacing: -0.025em;
-        line-height: 1.2;
-      }
-
-      .hero .subtitle {
-        font-size: 28px;
-        margin-bottom: 12px;
-        opacity: 0.95;
-        font-weight: 500;
-      }
-
-      .hero .location {
-        font-size: 18px;
-        opacity: 0.9;
-        margin-bottom: 40px;
-        font-weight: 400;
-      }
-
-      .social-links {
-        display: flex;
+      /* Mobile nav overlay */
+      #mobile-nav {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.97);
+        z-index: 200;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
+        gap: 36px;
       }
 
-      .social-links a {
-        color: white;
+      #mobile-nav.open {
+        display: flex;
+      }
+
+      #mobile-nav a {
+        color: rgba(255, 255, 255, 0.9);
         text-decoration: none;
-        padding: 14px 28px;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 10px;
-        transition: all 0.3s ease;
+        font-size: 22px;
         font-weight: 600;
+        transition: color 0.2s;
+      }
+
+      #mobile-nav a:hover,
+      #mobile-nav a:focus {
+        color: var(--primary);
+        outline: none;
+      }
+
+      #mobile-nav .mobile-nav-cv {
+        color: var(--primary);
+        font-size: 20px;
+        border: 2px solid var(--primary);
+        padding: 10px 28px;
+        border-radius: 10px;
+      }
+
+      #mobile-nav-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 28px;
+        cursor: pointer;
+        padding: 10px;
+        line-height: 1;
+        border-radius: 8px;
+        transition: color 0.2s;
+      }
+
+      #mobile-nav-close:hover {
+        color: white;
+      }
+
+      /* ─── Hero section ───────────────────────────────────── */
+      /* Override Tailwind h-screen to account for sticky header */
+      .hero-section {
+        height: calc(100vh - var(--header-h));
+        min-height: 520px;
+      }
+
+      /* Hero CTA button */
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--primary);
+        color: white;
+        padding: 14px 32px;
+        border-radius: 12px;
+        font-weight: 700;
         font-size: 16px;
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-decoration: none;
+        margin-top: 24px;
+        transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4);
       }
 
-      .social-links a:hover {
-        background: rgba(255, 255, 255, 0.25);
+      .hero-cta:hover {
+        background: var(--primary-dark);
         transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 20px rgba(14, 165, 233, 0.5);
+        color: white;
       }
 
-      /* Section */
+      /* Touch targets for hero social icons */
+      .hero-socials a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      /* Contact section social touch targets */
+      .contact-socials a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      /* ─── Sections ───────────────────────────────────────── */
       section {
         padding: 80px 0;
       }
 
       .section-title {
         font-size: 42px;
-        font-weight: 800;
+        font-weight: 700;
         margin-bottom: 20px;
         text-align: center;
         color: var(--text-dark);
@@ -211,7 +277,7 @@
         margin-right: auto;
       }
 
-      /* About */
+      /* ─── About ──────────────────────────────────────────── */
       .about-content {
         background: var(--bg-white);
         padding: 50px;
@@ -229,7 +295,7 @@
         font-weight: 400;
       }
 
-      /* Skills */
+      /* ─── Skills ─────────────────────────────────────────── */
       .skills-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -242,7 +308,7 @@
         border-radius: 16px;
         box-shadow: var(--shadow-sm);
         border: 1px solid var(--border);
-        transition: all 0.3s ease;
+        transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
       }
 
       .skill-card:hover {
@@ -252,7 +318,7 @@
       }
 
       .skill-card h3 {
-        font-size: 22px;
+        font-size: 20px;
         margin-bottom: 20px;
         color: var(--text-dark);
         font-weight: 700;
@@ -265,6 +331,7 @@
         content: "●";
         color: var(--primary);
         font-size: 12px;
+        flex-shrink: 0;
       }
 
       .skill-tags {
@@ -280,7 +347,7 @@
         font-size: 14px;
         color: var(--text-dark);
         font-weight: 500;
-        transition: all 0.2s ease;
+        transition: transform 0.2s, box-shadow 0.2s;
       }
 
       .skill-tag:hover {
@@ -288,7 +355,7 @@
         box-shadow: var(--shadow-sm);
       }
 
-      /* Experience */
+      /* ─── Experience ─────────────────────────────────────── */
       .experience-list {
         max-width: 1000px;
         margin: 0 auto;
@@ -301,7 +368,7 @@
         margin-bottom: 28px;
         box-shadow: var(--shadow-sm);
         border: 1px solid var(--border);
-        transition: all 0.3s ease;
+        transition: box-shadow 0.3s, border-color 0.3s;
       }
 
       .experience-item:hover {
@@ -310,23 +377,23 @@
       }
 
       .experience-item h3 {
-        font-size: 26px;
+        font-size: 24px;
         color: var(--text-dark);
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         font-weight: 700;
       }
 
       .experience-item .company {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         color: var(--primary);
-        margin-bottom: 10px;
+        margin-bottom: 8px;
       }
 
       .experience-item .meta {
         color: var(--text-light);
         margin-bottom: 20px;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
       }
 
@@ -350,13 +417,13 @@
         left: 0;
         color: var(--primary);
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
       }
 
-      /* Projects */
+      /* ─── Projects ───────────────────────────────────────── */
       .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 28px;
       }
 
@@ -366,7 +433,7 @@
         border-radius: 16px;
         box-shadow: var(--shadow-sm);
         border: 1px solid var(--border);
-        transition: all 0.3s ease;
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
         position: relative;
         overflow: hidden;
       }
@@ -378,11 +445,7 @@
         left: 0;
         width: 100%;
         height: 4px;
-        background: linear-gradient(
-          90deg,
-          var(--primary) 0%,
-          var(--accent) 100%
-        );
+        background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
         transform: scaleX(0);
         transform-origin: left;
         transition: transform 0.3s ease;
@@ -399,8 +462,8 @@
       }
 
       .project-card h3 {
-        font-size: 22px;
-        margin-bottom: 14px;
+        font-size: 20px;
+        margin-bottom: 12px;
         color: var(--text-dark);
         font-weight: 700;
       }
@@ -425,7 +488,7 @@
         border-radius: 8px;
         font-size: 13px;
         font-weight: 600;
-        transition: all 0.2s ease;
+        transition: transform 0.2s, box-shadow 0.2s;
       }
 
       .project-tag:hover {
@@ -433,7 +496,7 @@
         box-shadow: var(--shadow-sm);
       }
 
-      /* Education */
+      /* ─── Education ──────────────────────────────────────── */
       .education-list {
         max-width: 1000px;
         margin: 0 auto;
@@ -446,7 +509,7 @@
         margin-bottom: 24px;
         box-shadow: var(--shadow-sm);
         border: 1px solid var(--border);
-        transition: all 0.3s ease;
+        transition: box-shadow 0.3s, border-color 0.3s;
       }
 
       .education-item:hover {
@@ -455,39 +518,123 @@
       }
 
       .education-item h3 {
-        font-size: 24px;
+        font-size: 22px;
         color: var(--text-dark);
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         font-weight: 700;
       }
 
       .education-item .institution {
-        font-size: 18px;
+        font-size: 17px;
         color: var(--primary);
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         font-weight: 600;
       }
 
       .education-item .dates {
         color: var(--text-light);
-        font-size: 15px;
+        font-size: 14px;
         margin-bottom: 16px;
         font-weight: 500;
       }
 
       .education-item p {
         color: var(--text-medium);
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.7;
       }
 
-      /* Contact */
+      /* ─── Languages — compact pills ──────────────────────── */
+      .language-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .language-pill {
+        background: var(--bg-white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px 32px;
+        text-align: center;
+        box-shadow: var(--shadow-sm);
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      .language-pill:hover {
+        border-color: var(--primary);
+        box-shadow: var(--shadow-md);
+      }
+
+      .language-pill strong {
+        display: block;
+        font-size: 17px;
+        color: var(--text-dark);
+        margin-bottom: 4px;
+      }
+
+      .language-pill span {
+        font-size: 13px;
+        color: var(--text-light);
+      }
+
+      /* ─── Certifications — compact list ──────────────────── */
+      .cert-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .cert-item {
+        background: var(--bg-white);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 20px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        box-shadow: var(--shadow-sm);
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      .cert-item:hover {
+        border-color: var(--primary);
+        box-shadow: var(--shadow-md);
+      }
+
+      .cert-item strong {
+        font-size: 15px;
+        color: var(--text-dark);
+        font-weight: 700;
+        line-height: 1.4;
+      }
+
+      .cert-item .cert-meta {
+        font-size: 13px;
+        color: var(--text-light);
+      }
+
+      .cert-item a {
+        font-size: 13px;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 6px;
+        align-self: flex-start;
+      }
+
+      .cert-item a:hover {
+        text-decoration: underline;
+      }
+
+      /* ─── Contact ─────────────────────────────────────────── */
       .contact-info {
-        background: linear-gradient(
-          135deg,
-          var(--primary) 0%,
-          var(--accent) 100%
-        );
+        background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
         padding: 60px 40px;
         border-radius: 20px;
         box-shadow: var(--shadow-lg);
@@ -505,14 +652,14 @@
       .contact-info a {
         color: white;
         text-decoration: none;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
         display: inline-block;
         padding: 16px 32px;
         background: rgba(255, 255, 255, 0.15);
         border-radius: 12px;
         margin-top: 20px;
-        transition: all 0.3s ease;
+        transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
         border: 2px solid rgba(255, 255, 255, 0.3);
         backdrop-filter: blur(10px);
       }
@@ -523,7 +670,7 @@
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       }
 
-      /* Footer */
+      /* ─── Footer ─────────────────────────────────────────── */
       footer {
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
         color: white;
@@ -537,48 +684,34 @@
         font-size: 15px;
       }
 
-      /* Animations */
+      /* ─── Animations ─────────────────────────────────────── */
       @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
       }
 
       .fade-in {
         animation: fadeIn 0.6s ease-out;
       }
 
-      /* Responsive */
-      @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 40px;
-        }
-
-        .hero .subtitle {
-          font-size: 22px;
-        }
-
-        .hero {
-          padding: 80px 0 60px;
-        }
-
+      /* ─── Responsive: tablet ─────────────────────────────── */
+      @media (max-width: 900px) {
         nav {
-          gap: 15px;
+          gap: 18px;
+        }
+        nav a {
           font-size: 14px;
         }
+      }
 
-        .section-title {
-          font-size: 32px;
-        }
+      @media (max-width: 768px) {
+        /* Hide desktop nav, show hamburger */
+        nav { display: none; }
+        #nav-toggle { display: block; }
 
-        section {
-          padding: 60px 0;
-        }
+        .section-title { font-size: 32px; }
+
+        section { padding: 60px 0; }
 
         .about-content,
         .experience-item,
@@ -592,42 +725,33 @@
         .projects-grid {
           grid-template-columns: 1fr;
         }
+
+        .cert-list {
+          grid-template-columns: 1fr 1fr;
+        }
       }
 
       @media (max-width: 480px) {
-        nav {
-          gap: 10px;
-          font-size: 13px;
-        }
+        .section-title { font-size: 26px; }
 
-        .contact-info {
-          padding: 32px 20px;
-        }
+        .contact-info { padding: 32px 20px; }
 
-        .section-title {
-          font-size: 26px;
-        }
+        .cert-list { grid-template-columns: 1fr; }
 
-        .hero h1 {
-          font-size: 28px;
-        }
-
-        .social-links {
-          flex-direction: column;
-        }
-
-        .social-links a {
-          width: 100%;
-          max-width: 280px;
-        }
+        .language-pills { gap: 12px; }
       }
 
-      .project-card[onclick] {
-        cursor: pointer;
-      }
+      /* Cursor for clickable cards */
+      .project-card[onclick] { cursor: pointer; }
 
-      .project-card[onclick]:hover {
-        cursor: pointer;
+      /* ─── Reduced motion ─────────────────────────────────── */
+      @media (prefers-reduced-motion: reduce) {
+        #hero-canvas { display: none; }
+        .fade-in { animation: none; }
+        * {
+          transition-duration: 0.01ms !important;
+          animation-duration: 0.01ms !important;
+        }
       }
     </style>
   </head>
@@ -636,34 +760,58 @@
     <header>
       <div class="container">
         <div class="header-content">
-          <div class="logo"><a href="#" aria-label="Sebastian Romero Laguna — home">Sebastian</a></div>
+          <div class="logo">
+            <a href="#" aria-label="Sebastian Romero Laguna — home">Sebastian</a>
+          </div>
           <nav aria-label="Main navigation">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#education">Education</a>
-            <a href="#certifications">Certifications</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
-            <a href="views/cv.html" style="color: var(--primary); font-weight: 600;">CV ↗</a>
+            <a href="views/cv.html" class="nav-cv-link">CV ↗</a>
           </nav>
+          <!-- Hamburger (mobile only) -->
+          <button
+            id="nav-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Mobile navigation overlay -->
+    <div id="mobile-nav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+      <button id="mobile-nav-close" aria-label="Close navigation menu">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <a href="#about"         onclick="closeMobileNav()">About</a>
+      <a href="#skills"        onclick="closeMobileNav()">Skills</a>
+      <a href="#experience"    onclick="closeMobileNav()">Experience</a>
+      <a href="#projects"      onclick="closeMobileNav()">Projects</a>
+      <a href="#education"     onclick="closeMobileNav()">Education</a>
+      <a href="#services"      onclick="closeMobileNav()">Services</a>
+      <a href="#contact"       onclick="closeMobileNav()">Contact</a>
+      <a href="views/cv.html"  class="mobile-nav-cv">View Full CV ↗</a>
+    </div>
+
+    <!-- Main content -->
     <main id="main-content">
+
+    <!-- Hero -->
     <div
-      class="relative w-full h-screen overflow-hidden font-sans text-slate-200 bg-slate-900 hero-section"
-      role="banner"
+      class="relative w-full overflow-hidden font-sans text-slate-200 bg-slate-900 hero-section"
     >
       <canvas id="hero-canvas" class="absolute inset-0 z-0" aria-hidden="true"></canvas>
 
       <!-- Foreground Content -->
-      <div
-        class="relative z-10 flex flex-col items-center justify-center h-full"
-      >
+      <div class="relative z-10 flex flex-col items-center justify-center h-full">
         <div
           class="bg-slate-900/80 backdrop-blur-sm p-10 rounded-2xl border border-slate-700 shadow-2xl text-center max-w-3xl mx-4 pointer-events-auto"
         >
@@ -679,18 +827,22 @@
             Senior Software Engineer
           </p>
 
-          <div class="flex flex-col items-center space-y-4 mt-8">
+          <div class="flex flex-col items-center space-y-4 mt-6">
             <div
-              class="flex items-center space-x-3 font-mono text-sky-400 text-lg bg-slate-800/50 px-6 py-2 rounded-full border border-sky-500/30 pointer-events-auto"
+              class="flex items-center space-x-3 font-mono text-sky-400 text-base bg-slate-800/50 px-5 py-2 rounded-full border border-sky-500/30 pointer-events-auto"
             >
-              <span
-                class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"
-              ></span>
-              <span id="active-word">Scanning: INITIALIZING...</span>
+              <span class="w-2 h-2 bg-sky-400 rounded-full animate-pulse"></span>
+              <span id="active-word" aria-live="polite" aria-atomic="true">Full-Stack · Cloud · Security</span>
             </div>
 
+            <!-- Primary CTA -->
+            <a href="views/cv.html" class="hero-cta pointer-events-auto">
+              <i class="fa-regular fa-file-lines" aria-hidden="true"></i>
+              View Full CV
+            </a>
+
             <!-- Social Links (Hero) -->
-            <div class="flex space-x-6 mt-6 hero-socials pointer-events-auto">
+            <div class="flex flex-wrap justify-center gap-2 mt-2 hero-socials pointer-events-auto">
               <!-- Content loaded dynamically -->
             </div>
           </div>
@@ -711,7 +863,7 @@
     <!-- Skills -->
     <section id="skills" style="background: var(--bg-white)">
       <div class="container">
-        <h2 class="section-title">Skills & Technologies</h2>
+        <h2 class="section-title">Skills &amp; Technologies</h2>
         <div class="skills-grid">
           <!-- Content loaded dynamically -->
         </div>
@@ -725,7 +877,7 @@
 
         <!-- Role Filter UI -->
         <div class="flex justify-center flex-wrap gap-2 mb-8" id="role-filters">
-           <!-- Filters will be injected here -->
+          <!-- Filters injected dynamically -->
         </div>
 
         <div class="experience-list">
@@ -744,32 +896,28 @@
       </div>
     </section>
 
-    <!-- Education -->
+    <!-- Education + Languages + Certifications -->
     <section id="education">
       <div class="container">
         <h2 class="section-title">Education</h2>
         <div class="education-list">
           <!-- Content loaded dynamically -->
         </div>
-      </div>
-    </section>
 
-    <!-- Languages -->
-    <section id="languages" style="background: var(--bg-white)">
-      <div class="container">
-        <h2 class="section-title">Languages</h2>
-        <div class="education-list" style="max-width: 700px">
-          <!-- Content loaded dynamically -->
+        <!-- Languages (compact, nested under Education) -->
+        <div id="languages-block" style="margin-top: 56px;">
+          <h3 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 24px; color: var(--text-dark);">Languages</h3>
+          <div class="language-pills">
+            <!-- Content loaded dynamically -->
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Certifications -->
-    <section id="certifications">
-      <div class="container">
-        <h2 class="section-title">Certifications & Professional Development</h2>
-        <div class="projects-grid">
-          <!-- Content loaded dynamically -->
+        <!-- Certifications (compact, nested under Education) -->
+        <div id="certifications-block" style="margin-top: 56px;">
+          <h3 style="font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 24px; color: var(--text-dark);">Certifications &amp; Professional Development</h3>
+          <div class="cert-list">
+            <!-- Content loaded dynamically -->
+          </div>
         </div>
       </div>
     </section>
@@ -778,11 +926,12 @@
     <section id="services" style="background: var(--bg-white)">
       <div class="container">
         <h2 class="section-title">Services</h2>
-        <div class="projects-grid">
+        <div class="projects-grid" id="services-grid">
           <!-- Content loaded dynamically -->
         </div>
       </div>
 
+      <!-- Services modal -->
       <div
         id="modal"
         role="dialog"
@@ -791,11 +940,8 @@
         style="
           display: none;
           position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
+          inset: 0;
+          background: rgba(0, 0, 0, 0.55);
           z-index: 1000;
           align-items: center;
           justify-content: center;
@@ -807,6 +953,7 @@
             padding: 40px;
             border-radius: 16px;
             max-width: 600px;
+            width: calc(100% - 40px);
             max-height: 80vh;
             overflow-y: auto;
             position: relative;
@@ -824,17 +971,19 @@
               font-size: 24px;
               cursor: pointer;
               color: var(--text-light);
+              min-width: 44px;
+              min-height: 44px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 8px;
             "
           >
             ✕
           </button>
           <h3
             id="modalTitle"
-            style="
-              font-size: 22px;
-              margin-bottom: 16px;
-              color: var(--text-dark);
-            "
+            style="font-size: 22px; margin-bottom: 16px; color: var(--text-dark);"
           ></h3>
           <p
             id="modalContent"
@@ -844,454 +993,6 @@
       </div>
     </section>
 
-    <!-- Shared Utility Script -->
-    <script src="assets/js/cv-utils.js"></script>
-
-    <script>
-      let cvData = null; // Store cached data
-
-      function openModal(card) {
-        const title = card.querySelector("h3").textContent;
-        const content = card.querySelector(
-          'p[style*="display: none"]'
-        ).textContent;
-        document.getElementById("modalTitle").textContent = title;
-        document.getElementById("modalContent").textContent = content;
-        document.getElementById("modal").style.display = "flex";
-      }
-      function closeModal() {
-        document.getElementById("modal").style.display = "none";
-      }
-      document.getElementById("modal").addEventListener("click", (e) => {
-        if (e.target.id === "modal") closeModal();
-      });
-
-      // Fetch CV data once
-      async function fetchCVData() {
-        try {
-          const response = await fetch("./cv.json");
-          cvData = await response.json();
-          renderCV();
-        } catch (error) {
-          console.error("Error loading CV data:", error);
-        }
-      }
-
-      // Render all sections
-      function renderCV() {
-          if (!cvData) return;
-
-          const data = cvData;
-
-          // Update personal info in hero section
-          if (data.basics) {
-            updateHeroSection(data.basics);
-            updateAboutSection(data.basics);
-            updateContactSection(data.basics);
-            if (data.basics.profiles) updateSocialLinks(data.basics.profiles);
-          }
-
-          // Update Skills section
-          if (data.skills) updateSkillsSection(data.skills);
-
-          // Update Experience section
-          if (data.work) {
-              updateExperienceFilters(data.work);
-              updateExperienceSection(data.work);
-          }
-
-          // Update Projects section
-          if (data.projects) updateProjectsSection(data.projects);
-
-          // Update Education section
-          if (data.education) updateEducationSection(data.education);
-
-          // Update Languages section
-          if (data.languages) updateLanguagesSection(data.languages);
-
-          // Update Certifications section
-          if (data.certificates) updateCertificationsSection(data.certificates);
-
-          // Update Services section
-          if (data.services) updateServicesSection(data.services);
-      }
-
-      function updateHeroSection(basics) {
-        const h1 = document.querySelector(".hero-name");
-        const subtitle = document.querySelector(".hero-subtitle");
-
-        if (h1) h1.textContent = basics.name;
-        if (subtitle) subtitle.textContent = basics.label;
-      }
-
-      function updateAboutSection(basics) {
-        const aboutContent = document.querySelector(".about-content");
-        if (aboutContent && basics.summary) {
-          aboutContent.innerHTML = `<p>${basics.summary.replace(
-            /\n/g,
-            "</p><p>"
-          )}</p>`;
-        }
-      }
-
-      function updateSkillsSection(skills) {
-        const skillsGrid = document.querySelector(".skills-grid");
-        if (!skillsGrid || !skills) return;
-
-        skillsGrid.innerHTML = skills
-          .map(
-            (skill) => `
-          <div class="skill-card">
-            <h3>${skill.name}</h3>
-            <div class="skill-tags">
-              ${skill.keywords
-                .map((tech) => `<span class="skill-tag">${tech}</span>`)
-                .join("")}
-            </div>
-          </div>
-        `
-          )
-          .join("");
-      }
-
-      function updateExperienceFilters(work) {
-          const filterContainer = document.getElementById('role-filters');
-          if (!filterContainer) return;
-
-          // Extract unique roles
-          const roles = new Set();
-          work.forEach(job => {
-              if (job.categorized_highlights) {
-                  Object.keys(job.categorized_highlights).forEach(r => roles.add(r));
-              }
-          });
-
-          const currentRole = getRoleFromUrl();
-
-          let html = `
-            <button
-                onclick="updateUrlRole(null, renderCV)"
-                aria-pressed="${!currentRole}"
-                class="px-4 py-2 rounded-full text-sm font-semibold transition-all ${!currentRole ? 'bg-primary text-white shadow-md transform scale-105' : 'bg-white text-gray-600 hover:bg-gray-100'}"
-                style="${!currentRole ? 'background-color: var(--primary); color: white;' : ''}"
-            >
-                All
-            </button>
-          `;
-
-          roles.forEach(role => {
-              const isActive = currentRole && currentRole.toLowerCase() === role.toLowerCase();
-               html += `
-                <button
-                    onclick="updateUrlRole('${role}', renderCV)"
-                    aria-pressed="${isActive}"
-                    class="px-4 py-2 rounded-full text-sm font-semibold transition-all ${isActive ? 'bg-primary text-white shadow-md transform scale-105' : 'bg-white text-gray-600 hover:bg-gray-100'}"
-                    style="${isActive ? 'background-color: var(--primary); color: white;' : ''}"
-                >
-                    ${role}
-                </button>
-              `;
-          });
-
-          filterContainer.innerHTML = html;
-      }
-
-      function updateExperienceSection(work) {
-        const experienceList = document.querySelector(".experience-list");
-        if (!experienceList || !work) return;
-
-        const targetRole = getRoleFromUrl();
-
-        experienceList.innerHTML = work
-          .map((exp) => {
-            const startDate = formatDate(exp.startDate);
-            const endDate = exp.endDate ? formatDate(exp.endDate) : "Present";
-
-            let displayItems = [];
-
-            if (exp.categorized_highlights) {
-                if (targetRole) {
-                    // Filter by role
-                     Object.keys(exp.categorized_highlights).forEach(category => {
-                        if (category.toLowerCase() === targetRole.toLowerCase()) {
-                            exp.categorized_highlights[category].forEach(h => {
-                                displayItems.push({ text: h, tag: null });
-                            });
-                        }
-                    });
-                } else {
-                    // Show all with tags
-                    Object.keys(exp.categorized_highlights).forEach(category => {
-                         exp.categorized_highlights[category].forEach(h => {
-                                displayItems.push({ text: h, tag: category });
-                            });
-                    });
-                }
-            }
-
-            // Legacy support
-            if (exp.highlights) {
-                exp.highlights.forEach(h => displayItems.push({ text: h, tag: null }));
-            }
-
-            return `
-            <div class="experience-item">
-              <h3>${exp.position}</h3>
-              <div class="company">
-                ${
-                  exp.url
-                    ? `<a href="${exp.url}" target="_blank" style="color: var(--primary); text-decoration: none">${exp.name}</a>`
-                    : exp.name
-                }
-              </div>
-              <div class="meta">${startDate} - ${endDate} | ${
-              exp.location
-            }</div>
-              ${
-                exp.summary
-                  ? `<p style="margin-bottom: 16px; color: var(--text-medium);">${exp.summary}</p>`
-                  : ""
-              }
-              ${
-                displayItems.length > 0
-                  ? `
-                <ul>
-                  ${displayItems
-                    .map((item) => `
-                        <li>
-                            ${item.tag ? `<span class="inline-block bg-slate-100 text-slate-500 text-xs px-2 py-0.5 rounded mr-2 align-middle border border-slate-200 font-semibold tracking-wide uppercase shadow-sm" style="font-size: 0.7rem;">${item.tag}</span>` : ''}
-                            ${item.text}
-                        </li>
-                    `)
-                    .join("")}
-                </ul>
-              `
-                  : ""
-              }
-            </div>
-          `;
-          })
-          .join("");
-      }
-
-      function updateProjectsSection(projects) {
-        const projectsGrid = document.querySelector(".projects-grid");
-        if (!projectsGrid || !projects) return;
-
-        projectsGrid.innerHTML = projects
-          .map(
-            (project) => `
-          <div class="project-card" ${
-            project.url
-              ? `role="button" tabindex="0" onclick="window.open('${project.url}', '_blank')" onkeydown="if(event.key==='Enter'||event.key===' ')window.open('${project.url}','_blank')" style="cursor: pointer"`
-              : ""
-          }>
-            <h3>${project.name}</h3>
-            ${
-              project.entity
-                ? `<p style="font-size: 14px; color: var(--text-light); margin-bottom: 8px;"><strong>${project.entity}</strong></p>`
-                : ""
-            }
-            ${
-              project.startDate
-                ? `<p style="font-size: 14px; color: var(--text-light); margin-bottom: 12px;">${formatDate(
-                    project.startDate
-                  )}</p>`
-                : ""
-            }
-            <p>${project.description}</p>
-            ${
-              project.keywords && project.keywords.length > 0
-                ? `
-              <div class="project-tags">
-                ${project.keywords
-                  .map((tag) => `<span class="project-tag">${tag}</span>`)
-                  .join("")}
-              </div>
-            `
-                : ""
-            }
-          </div>
-        `
-          )
-          .join("");
-      }
-
-      function updateEducationSection(education) {
-        const educationList = document.querySelector(".education-list");
-        if (!educationList || !education) return;
-
-        educationList.innerHTML = education
-          .map((edu) => {
-            const startDate = formatDate(edu.startDate);
-            const endDate = edu.endDate ? formatDate(edu.endDate) : "Present";
-
-            return `
-            <div class="education-item">
-              <h3>${edu.studyType} in ${edu.area}</h3>
-              <div class="institution">
-                ${
-                  edu.url
-                    ? `<a href="${edu.url}" target="_blank" style="color: var(--primary); text-decoration: none">${edu.institution}</a>`
-                    : edu.institution
-                }
-              </div>
-              <div class="dates">${startDate} - ${endDate}</div>
-              ${edu.score ? `<p>Score: ${edu.score}</p>` : ""}
-              ${
-                edu.courses
-                  ? `<ul>${edu.courses
-                      .map((c) => `<li>${c}</li>`)
-                      .join("")}</ul>`
-                  : ""
-              }
-            </div>
-          `;
-          })
-          .join("");
-      }
-
-      function updateLanguagesSection(languages) {
-        const languagesSection = document.getElementById("languages");
-        if (!languagesSection || !languages) return;
-
-        const languagesList = languagesSection.querySelector(".education-list");
-        if (languagesList) {
-          languagesList.innerHTML = languages
-            .map(
-              (lang) => `
-            <div class="education-item">
-              <h3>${lang.language}</h3>
-              <p><strong>Proficiency:</strong> ${lang.fluency}</p>
-            </div>
-          `
-            )
-            .join("");
-        }
-      }
-
-      function updateCertificationsSection(certificates) {
-        const certificationsGrid = document.querySelector(
-          "#certifications .projects-grid"
-        );
-        if (!certificationsGrid || !certificates) return;
-
-        certificationsGrid.innerHTML = certificates
-          .map(
-            (cert) => `
-          <div class="project-card">
-            <h3>${cert.name}</h3>
-            <p>
-              <strong>Issuer:</strong> ${cert.issuer}<br />
-              ${
-                cert.date
-                  ? `<strong>Date:</strong> ${formatDate(cert.date)}`
-                  : ""
-              }
-            </p>
-            ${
-              cert.url
-                ? `
-              <div style="margin-top: 12px">
-                <a href="${cert.url}" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600;">
-                  View Certificate →
-                </a>
-              </div>
-            `
-                : ""
-            }
-          </div>
-        `
-          )
-          .join("");
-      }
-
-      function updateContactSection(basics) {
-        const contactInfo = document.querySelector(".contact-info");
-        if (!contactInfo || !basics) return;
-
-        contactInfo.innerHTML = `
-          <p style="margin-bottom: 20px">
-            I'm open to new opportunities and collaborations. Feel free to reach out!
-          </p>
-          ${basics.email ? `<p><a href="mailto:${basics.email}">${basics.email}</a></p>` : ""}
-          ${basics.phone ? `<p>${basics.phone}</p>` : ""}
-        `;
-      }
-
-      function updateServicesSection(services) {
-        const servicesGrid = document.querySelector("#services .projects-grid");
-        if (!servicesGrid || !services) return;
-
-        servicesGrid.innerHTML = services
-          .map(
-            (service) => `
-          <div class="project-card" role="button" tabindex="0" onclick="openModal(this)" onkeydown="if(event.key==='Enter'||event.key===' ')openModal(this)" style="cursor: pointer">
-            <h3>${service.name}</h3>
-            ${
-              service.keywords && service.keywords.length > 0
-                ? `
-              <div class="project-tags">
-                ${service.keywords
-                  .map((tag) => `<span class="project-tag">${tag}</span>`)
-                  .join("")}
-              </div>
-            `
-                : ""
-            }
-            <p style="display: none">${service.description}</p>
-          </div>
-        `
-          )
-          .join("");
-      }
-
-      function updateSocialLinks(profiles) {
-        const activeProfiles = profiles.filter(p => p.url);
-
-        // Hero Section Socials
-        const heroSocials = document.querySelector(".hero-socials");
-        if (heroSocials) {
-          heroSocials.innerHTML = activeProfiles
-            .map(
-              (profile) => `
-            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" aria-label="${profile.network}" class="text-slate-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
-              <i class="${profile.icon}" aria-hidden="true" style="font-size: 1.75rem;"></i>
-            </a>
-          `
-            )
-            .join("");
-        }
-
-        // Contact Section Socials
-        const contactSocials = document.querySelector(".contact-socials");
-        if (contactSocials) {
-          contactSocials.innerHTML = activeProfiles
-            .map(
-              (profile) => `
-            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" aria-label="${profile.network}" class="text-slate-400 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
-              <i class="${profile.icon}" aria-hidden="true" style="font-size: 2rem;"></i>
-            </a>
-          `
-            )
-            .join("");
-        }
-      }
-
-      function formatDate(dateString) {
-        if (!dateString) return "";
-        if (dateString === "Present") return "Present";
-        return dayjs(dateString).format("MMMM YYYY");
-      }
-
-      // Load data when DOM is ready
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", fetchCVData);
-      } else {
-        fetchCVData();
-      }
-    </script>
-
     <!-- Contact -->
     <section id="contact" style="background: var(--bg-white)">
       <div class="container">
@@ -1299,7 +1000,7 @@
         <div class="contact-info">
           <!-- Content loaded dynamically -->
         </div>
-        <div class="flex justify-center space-x-8 mt-10 contact-socials">
+        <div class="flex justify-center flex-wrap gap-2 mt-10 contact-socials">
           <!-- Content loaded dynamically -->
         </div>
       </div>
@@ -1315,10 +1016,398 @@
       </div>
     </footer>
 
-    <!-- Hero Animation Script -->
+    <!-- Shared Utility Script -->
+    <script src="assets/js/cv-utils.js"></script>
+
     <script>
-      document.getElementById("current-year").textContent = new Date().getFullYear();
+      /* ─── Mobile nav ────────────────────────────────────── */
+      const navToggle    = document.getElementById('nav-toggle');
+      const mobileNav    = document.getElementById('mobile-nav');
+      const mobileClose  = document.getElementById('mobile-nav-close');
+
+      function openMobileNav() {
+        mobileNav.classList.add('open');
+        navToggle.setAttribute('aria-expanded', 'true');
+        mobileClose.focus();
+        // Trap focus inside overlay
+        mobileNav.addEventListener('keydown', trapMobileNavFocus);
+      }
+
+      function closeMobileNav() {
+        mobileNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.focus();
+        mobileNav.removeEventListener('keydown', trapMobileNavFocus);
+      }
+
+      function trapMobileNavFocus(e) {
+        if (e.key !== 'Tab') return;
+        const focusable = Array.from(
+          mobileNav.querySelectorAll('a, button')
+        ).filter(el => !el.hidden);
+        const first = focusable[0];
+        const last  = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+
+      navToggle.addEventListener('click', openMobileNav);
+      mobileClose.addEventListener('click', closeMobileNav);
+
+      // Close on Escape
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+          closeMobileNav();
+        }
+      });
+
+      /* ─── Services modal ────────────────────────────────── */
+      let modalTrigger = null;
+
+      function openModal(card) {
+        modalTrigger = card;
+        const title   = card.querySelector('h3').textContent;
+        const content = card.querySelector('p[style*="display: none"]').textContent;
+        document.getElementById('modalTitle').textContent   = title;
+        document.getElementById('modalContent').textContent = content;
+
+        const modal = document.getElementById('modal');
+        modal.style.display = 'flex';
+
+        // Focus the close button
+        const closeBtn = modal.querySelector('button[aria-label="Close service detail"]');
+        if (closeBtn) closeBtn.focus();
+
+        modal.addEventListener('keydown', trapModalFocus);
+      }
+
+      function closeModal() {
+        const modal = document.getElementById('modal');
+        modal.style.display = 'none';
+        modal.removeEventListener('keydown', trapModalFocus);
+        if (modalTrigger) { modalTrigger.focus(); modalTrigger = null; }
+      }
+
+      function trapModalFocus(e) {
+        if (e.key !== 'Tab' && e.key !== 'Escape') return;
+        if (e.key === 'Escape') { closeModal(); return; }
+        const modal     = document.getElementById('modal');
+        const focusable = Array.from(
+          modal.querySelectorAll('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])')
+        );
+        const first = focusable[0];
+        const last  = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+
+      document.getElementById('modal').addEventListener('click', e => {
+        if (e.target.id === 'modal') closeModal();
+      });
+
+      /* ─── CV data ───────────────────────────────────────── */
+      let cvData = null;
+
+      async function fetchCVData() {
+        try {
+          const response = await fetch('./cv.json');
+          cvData = await response.json();
+          renderCV();
+        } catch (error) {
+          console.error('Error loading CV data:', error);
+        }
+      }
+
+      function renderCV() {
+        if (!cvData) return;
+        const data = cvData;
+
+        if (data.basics) {
+          updateHeroSection(data.basics);
+          updateAboutSection(data.basics);
+          updateContactSection(data.basics);
+          if (data.basics.profiles) updateSocialLinks(data.basics.profiles);
+        }
+
+        if (data.skills)        updateSkillsSection(data.skills);
+        if (data.work) {
+          updateExperienceFilters(data.work);
+          updateExperienceSection(data.work);
+        }
+        if (data.projects)      updateProjectsSection(data.projects);
+        if (data.education)     updateEducationSection(data.education);
+        if (data.languages)     updateLanguagesSection(data.languages);
+        if (data.certificates)  updateCertificationsSection(data.certificates);
+        if (data.services)      updateServicesSection(data.services);
+      }
+
+      function updateHeroSection(basics) {
+        const h1       = document.querySelector('.hero-name');
+        const subtitle = document.querySelector('.hero-subtitle');
+        if (h1)       h1.textContent       = basics.name;
+        if (subtitle) subtitle.textContent = basics.label;
+      }
+
+      function updateAboutSection(basics) {
+        const aboutContent = document.querySelector('.about-content');
+        if (aboutContent && basics.summary) {
+          aboutContent.innerHTML = `<p>${basics.summary.replace(/\n/g, '</p><p>')}</p>`;
+        }
+      }
+
+      function updateSkillsSection(skills) {
+        const skillsGrid = document.querySelector('.skills-grid');
+        if (!skillsGrid || !skills) return;
+
+        skillsGrid.innerHTML = skills.map(skill => `
+          <div class="skill-card">
+            <h3>${skill.name}</h3>
+            <div class="skill-tags">
+              ${skill.keywords.map(tech => `<span class="skill-tag">${tech}</span>`).join('')}
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function updateExperienceFilters(work) {
+        const filterContainer = document.getElementById('role-filters');
+        if (!filterContainer) return;
+
+        const roles = new Set();
+        work.forEach(job => {
+          if (job.categorized_highlights) {
+            Object.keys(job.categorized_highlights).forEach(r => roles.add(r));
+          }
+        });
+
+        const currentRole = getRoleFromUrl();
+
+        let html = `
+          <button
+            onclick="updateUrlRole(null, renderCV)"
+            aria-pressed="${!currentRole}"
+            class="px-4 py-2 rounded-full text-sm font-semibold transition-all ${!currentRole ? 'bg-primary text-white shadow-md transform scale-105' : 'bg-white text-gray-600 hover:bg-gray-100'}"
+            style="${!currentRole ? 'background-color: var(--primary); color: white;' : ''}"
+          >All</button>
+        `;
+
+        roles.forEach(role => {
+          const isActive = currentRole && currentRole.toLowerCase() === role.toLowerCase();
+          html += `
+            <button
+              onclick="updateUrlRole('${role}', renderCV)"
+              aria-pressed="${isActive}"
+              class="px-4 py-2 rounded-full text-sm font-semibold transition-all ${isActive ? 'bg-primary text-white shadow-md transform scale-105' : 'bg-white text-gray-600 hover:bg-gray-100'}"
+              style="${isActive ? 'background-color: var(--primary); color: white;' : ''}"
+            >${role}</button>
+          `;
+        });
+
+        filterContainer.innerHTML = html;
+      }
+
+      function updateExperienceSection(work) {
+        const experienceList = document.querySelector('.experience-list');
+        if (!experienceList || !work) return;
+
+        const targetRole = getRoleFromUrl();
+
+        experienceList.innerHTML = work.map(exp => {
+          const startDate = formatDate(exp.startDate);
+          const endDate   = exp.endDate ? formatDate(exp.endDate) : 'Present';
+
+          let displayItems = [];
+
+          if (exp.categorized_highlights) {
+            if (targetRole) {
+              Object.keys(exp.categorized_highlights).forEach(category => {
+                if (category.toLowerCase() === targetRole.toLowerCase()) {
+                  exp.categorized_highlights[category].forEach(h => displayItems.push({ text: h, tag: null }));
+                }
+              });
+            } else {
+              Object.keys(exp.categorized_highlights).forEach(category => {
+                exp.categorized_highlights[category].forEach(h => displayItems.push({ text: h, tag: category }));
+              });
+            }
+          }
+
+          if (exp.highlights) {
+            exp.highlights.forEach(h => displayItems.push({ text: h, tag: null }));
+          }
+
+          return `
+            <div class="experience-item">
+              <h3>${exp.position}</h3>
+              <div class="company">
+                ${exp.url
+                  ? `<a href="${exp.url}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none">${exp.name}</a>`
+                  : exp.name}
+              </div>
+              <div class="meta">${startDate} – ${endDate}${exp.location ? ` · ${exp.location}` : ''}</div>
+              ${exp.summary ? `<p style="margin-bottom: 16px; color: var(--text-medium);">${exp.summary}</p>` : ''}
+              ${displayItems.length > 0 ? `
+                <ul>
+                  ${displayItems.map(item => `
+                    <li>
+                      ${item.tag ? `<span class="inline-block bg-slate-100 text-slate-500 text-xs px-2 py-0.5 rounded mr-2 align-middle border border-slate-200 font-semibold tracking-wide uppercase shadow-sm" style="font-size: 0.7rem;">${item.tag}</span>` : ''}
+                      ${item.text}
+                    </li>
+                  `).join('')}
+                </ul>
+              ` : ''}
+            </div>
+          `;
+        }).join('');
+      }
+
+      function updateProjectsSection(projects) {
+        const projectsGrid = document.querySelector('.projects-grid');
+        if (!projectsGrid || !projects) return;
+
+        projectsGrid.innerHTML = projects.map(project => `
+          <div class="project-card" ${project.url
+            ? `role="button" tabindex="0" onclick="window.open('${project.url}', '_blank')" onkeydown="if(event.key==='Enter'||event.key===' ')window.open('${project.url}','_blank')" style="cursor: pointer"`
+            : ''}>
+            <h3>${project.name}</h3>
+            ${project.entity ? `<p style="font-size: 13px; color: var(--text-light); margin-bottom: 8px;"><strong>${project.entity}</strong></p>` : ''}
+            ${project.startDate ? `<p style="font-size: 13px; color: var(--text-light); margin-bottom: 12px;">${formatDate(project.startDate)}</p>` : ''}
+            <p>${project.description}</p>
+            ${project.keywords && project.keywords.length > 0 ? `
+              <div class="project-tags">
+                ${project.keywords.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+              </div>
+            ` : ''}
+          </div>
+        `).join('');
+      }
+
+      function updateEducationSection(education) {
+        const educationList = document.querySelector('.education-list');
+        if (!educationList || !education) return;
+
+        educationList.innerHTML = education.map(edu => {
+          const startDate = formatDate(edu.startDate);
+          const endDate   = edu.endDate ? formatDate(edu.endDate) : 'Present';
+          return `
+            <div class="education-item">
+              <h3>${edu.studyType} in ${edu.area}</h3>
+              <div class="institution">
+                ${edu.url
+                  ? `<a href="${edu.url}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none">${edu.institution}</a>`
+                  : edu.institution}
+              </div>
+              <div class="dates">${startDate} – ${endDate}</div>
+              ${edu.score ? `<p>Score: ${edu.score}</p>` : ''}
+              ${edu.courses ? `<ul>${edu.courses.map(c => `<li>${c}</li>`).join('')}</ul>` : ''}
+            </div>
+          `;
+        }).join('');
+      }
+
+      function updateLanguagesSection(languages) {
+        const pills = document.querySelector('.language-pills');
+        if (!pills || !languages) return;
+
+        pills.innerHTML = languages.map(lang => `
+          <div class="language-pill">
+            <strong>${lang.language}</strong>
+            <span>${lang.fluency}</span>
+          </div>
+        `).join('');
+      }
+
+      function updateCertificationsSection(certificates) {
+        const certList = document.querySelector('.cert-list');
+        if (!certList || !certificates) return;
+
+        certList.innerHTML = certificates.map(cert => `
+          <div class="cert-item">
+            <strong>${cert.name}</strong>
+            <span class="cert-meta">${cert.issuer}${cert.date ? ` · ${formatDate(cert.date)}` : ''}</span>
+            ${cert.url ? `<a href="${cert.url}" target="_blank" rel="noopener noreferrer">View certificate →</a>` : ''}
+          </div>
+        `).join('');
+      }
+
+      function updateContactSection(basics) {
+        const contactInfo = document.querySelector('.contact-info');
+        if (!contactInfo || !basics) return;
+
+        contactInfo.innerHTML = `
+          <p style="margin-bottom: 20px">
+            I'm open to new opportunities and collaborations. Feel free to reach out!
+          </p>
+          ${basics.email ? `<p><a href="mailto:${basics.email}">${basics.email}</a></p>` : ''}
+          ${basics.phone ? `<p>${basics.phone}</p>` : ''}
+        `;
+      }
+
+      function updateServicesSection(services) {
+        const servicesGrid = document.getElementById('services-grid');
+        if (!servicesGrid || !services) return;
+
+        servicesGrid.innerHTML = services.map(service => `
+          <div class="project-card" role="button" tabindex="0"
+               onclick="openModal(this)"
+               onkeydown="if(event.key==='Enter'||event.key===' ')openModal(this)"
+               style="cursor: pointer">
+            <h3>${service.name}</h3>
+            ${service.keywords && service.keywords.length > 0 ? `
+              <div class="project-tags">
+                ${service.keywords.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+              </div>
+            ` : ''}
+            <p style="display: none">${service.description}</p>
+          </div>
+        `).join('');
+      }
+
+      function updateSocialLinks(profiles) {
+        const activeProfiles = profiles.filter(p => p.url);
+
+        const heroSocials = document.querySelector('.hero-socials');
+        if (heroSocials) {
+          heroSocials.innerHTML = activeProfiles.map(profile => `
+            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" aria-label="${profile.network}"
+               class="text-slate-400 hover:text-white transition-colors duration-300 transform hover:scale-110">
+              <i class="${profile.icon}" aria-hidden="true" style="font-size: 1.6rem;"></i>
+            </a>
+          `).join('');
+        }
+
+        const contactSocials = document.querySelector('.contact-socials');
+        if (contactSocials) {
+          contactSocials.innerHTML = activeProfiles.map(profile => `
+            <a href="${profile.url}" target="_blank" rel="noopener noreferrer" aria-label="${profile.network}"
+               class="text-slate-400 hover:text-primary transition-all duration-300 transform hover:scale-110 hover:-translate-y-1">
+              <i class="${profile.icon}" aria-hidden="true" style="font-size: 1.9rem;"></i>
+            </a>
+          `).join('');
+        }
+      }
+
+      function formatDate(dateString) {
+        if (!dateString) return '';
+        if (dateString === 'Present') return 'Present';
+        return dayjs(dateString).format('MMMM YYYY');
+      }
+
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fetchCVData);
+      } else {
+        fetchCVData();
+      }
     </script>
+
     <script src="assets/js/hero-animation.js"></script>
   </body>
 </html>
