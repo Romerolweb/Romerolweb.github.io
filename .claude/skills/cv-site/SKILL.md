@@ -38,6 +38,8 @@ The CV view exists so that an applicant tracking system, an OCR pass, or a recru
 
 - Lead each highlight with the outcome, then the method. "Made search 89% faster for members by …" beats "Migrated search to full-text search". A number in the first six words is what a human remembers and what a parser can extract.
 - Keep company know-how out. Describe the shape of the work (what changed for users, which technologies, the scale) without the internal names of workflows, data, or vulnerabilities. If a sentence would help a competitor or an attacker, cut the detail and keep the result.
+- Paraphrase, do not embellish. Use only facts the person gave you; a word like "cross-team" or a date you guessed becomes a claim they have to defend in an interview. When something is missing, put a visible `TODO` in the field and say so in your reply instead of inventing it.
+- A new current role rarely changes only `work`. Update the last sentence of `basics.summary` and the About Me paragraph in the README in the same change, otherwise the CV introduces the person with a job they no longer lead with.
 - One role, one entry. Two positions at the same company are two entries with their own dates; parsers key on date ranges.
 - Dates are `YYYY-MM` or `YYYY`. Omit `endDate` for a current role; never write "Present", the schema rejects it and the pages already render a missing end date as Present.
 - Omit empty fields rather than writing `""`. An empty `url` or `email` fails the `uri` and `email` formats in the schema.
