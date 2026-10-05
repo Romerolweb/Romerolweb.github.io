@@ -17,6 +17,7 @@ Thumbs.db
 # Temporary files
 /tmp/
 .claude/*
+!.claude/skills/
 
 # Local working docs (not published)
 docs/*

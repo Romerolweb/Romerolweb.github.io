@@ -9,7 +9,7 @@ Responsive resume/portfolio website built with vanilla HTML, CSS, and JavaScript
 
 - **No dependencies**: Vanilla HTML/CSS/JS with a small token-based design system (`assets/css/tokens.css`)
 - **Responsive Design**: Perfect on desktop, tablet, and mobile devices
-- **Data Driven**: All content is loaded dynamically from `cv.json`
+- **Data Driven**: All content is loaded from `cv.json`, a valid [JSON Resume](https://jsonresume.org/schema/) v1.0.0 file, plus `services.json`
 - **Role-Based CV**: Dynamically filter resume content based on target role
 - **Interactive Components**: Dynamic navigation, hero animation
 - **ATS-friendly CV**: `views/cv.html` renders a single-column, icon-free, printable CV for applicant tracking systems and OCR
@@ -20,6 +20,22 @@ Responsive resume/portfolio website built with vanilla HTML, CSS, and JavaScript
 - **Vanilla HTML/CSS/JavaScript** - no framework, no build step
 - **Font Awesome 6** - social icons on the portfolio page only (via CDN)
 - **Design tokens** - colours, type scale, spacing, radii and shadows live in `assets/css/tokens.css` and are consumed by `assets/css/site.css` (portfolio) and `assets/css/cv.css` (printable CV)
+
+## 🔁 Use It for Your Own CV
+
+Everything you need to change lives in two JSON files. There is no build step.
+
+1. Fork or clone this repository.
+2. Replace the contents of `cv.json` with your own data. It follows the [JSON Resume v1.0.0 schema](schema/resume.schema.json) with one extension: `work[].categorized_highlights` (see below). Leave `endDate` out for a current role.
+3. Replace `services.json` with the services you offer, or an empty array `[]` to hide the section.
+4. Validate: `python3 scripts/validate-cv.py` (no dependencies).
+5. Preview locally: `python3 -m http.server 8000`, then open `http://localhost:8000`.
+6. Swap `assets/img/favicon.png` and `assets/img/apple-touch-icon.png`, and change the colours in `assets/css/tokens.css` if you like.
+7. Push to a repository named `<your-user>.github.io` and GitHub Pages serves it. For a custom domain, edit `CNAME` and point your DNS at GitHub Pages.
+
+The printable CV at `views/cv.html` is deliberately plain so that applicant tracking systems and OCR tools can read it. Keep it that way: no icons, no columns, no images.
+
+If you use Claude Code, the repository ships a skill under `.claude/skills/` that walks through these steps and checks the result.
 
 ## 🎯 Role-Based Resume Generation
 
@@ -94,4 +110,12 @@ Software Engineer with professional experience since 2017 across full-stack deve
 
 ## 📄 License
 
-© 2026 Sebastian Romero Laguna. All Rights Reserved.
+[MIT](LICENSE). Use it, change it, ship it. Replace my data with yours before you publish.
+
+## 🙏 Credit (optional)
+
+Attribution is not required by the licence. If you want to leave a trace, a line like this in your README is plenty:
+
+```markdown
+Built from [Romerolweb/Romerolweb.github.io](https://github.com/Romerolweb/Romerolweb.github.io) (MIT).
+```

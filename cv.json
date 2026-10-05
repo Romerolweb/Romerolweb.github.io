@@ -2,8 +2,6 @@
   "basics": {
     "name": "Sebastian Romero Laguna",
     "label": "Software Engineer | Full-Stack & Security",
-    "email": "",
-    "phone": "",
     "url": "https://romerolweb.github.io",
     "summary": "Software Engineer with professional experience since 2017, working across full-stack web development, application security, and cloud infrastructure. Holds a Master of Information Technology (Cybersecurity) from CQUniversity, Australia (graduated 2025, GPA 5.786/7.0). Has worked across startup, enterprise, and academic settings in Colombia, the United States, and Australia. Currently a Software Developer (contractor) at PRX Vault, Brisbane, and a part-time Software Engineer at Let's Lyric.",
     "location": {
@@ -37,12 +35,6 @@
         "username": "sebastianromerolaguna",
         "url": "https://medium.com/@sebastianromerolaguna",
         "icon": "fab fa-medium"
-      },
-      {
-        "network": "E-mail",
-        "username": "",
-        "url": "",
-        "icon": "fas fa-envelope"
       }
     ]
   },
@@ -52,7 +44,6 @@
       "position": "Software Developer (Contract)",
       "url": "https://prxvault.com",
       "startDate": "2026-01",
-      "endDate": "Present",
       "summary": "Full-stack development on a consumer cashback and rewards platform (Next.js, TypeScript, Supabase, PostgreSQL, Deno Edge Functions).",
       "location": "Brisbane, Australia (Remote)",
       "categorized_highlights": {
@@ -87,7 +78,6 @@
       "position": "Software Engineer (Part-time)",
       "url": "https://letslyric.app",
       "startDate": "2026-04",
-      "endDate": "Present",
       "summary": "Real-time collaborative worship presentation platform (Next.js, Go, Spring Boot, Supabase, Redis, Fly.io).",
       "location": "Remote",
       "categorized_highlights": {
@@ -155,7 +145,6 @@
       "position": "Student Ambassador",
       "url": "https://www.cqu.edu.au",
       "startDate": "2024-03",
-      "endDate": "Present",
       "summary": "Representing the university and guiding prospective students.",
       "location": "Brisbane, Australia",
       "categorized_highlights": {
@@ -193,7 +182,6 @@
     {
       "name": "Avalanche Industries",
       "position": "Software Developer",
-      "url": "",
       "startDate": "2022-01",
       "endDate": "2022-05",
       "summary": "Automation and back-end development for a US-based logistics and retail company.",
@@ -234,7 +222,6 @@
     {
       "name": "Logical Software Factory",
       "position": "AWS Engineer (Internship)",
-      "url": "",
       "startDate": "2021-09",
       "endDate": "2021-11",
       "summary": "Cloud infrastructure optimisation and security configuration.",
@@ -251,7 +238,6 @@
     {
       "name": "Nivelics SAS",
       "position": "Back-end Developer",
-      "url": "",
       "startDate": "2020-05",
       "endDate": "2020-11",
       "summary": "Back-end API development and enterprise system integration.",
@@ -272,7 +258,6 @@
     {
       "name": "Cold Chain Colombia SAS",
       "position": "Software Engineering Team Lead",
-      "url": "",
       "startDate": "2018-03",
       "endDate": "2020-08",
       "summary": "Led the development of a Computerised Maintenance Management System (CMMS) and digital transformation initiatives.",
@@ -313,7 +298,6 @@
     {
       "name": "Freelance",
       "position": "PHP Developer",
-      "url": "",
       "startDate": "2018-03",
       "endDate": "2020-06",
       "summary": "Custom web application development for various clients using PHP and Laravel.",
@@ -329,7 +313,6 @@
     {
       "name": "Cold Chain Colombia SAS",
       "position": "Web Developer",
-      "url": "",
       "startDate": "2017-03",
       "endDate": "2018-05",
       "summary": "Full-stack development for internal maintenance systems.",
@@ -411,64 +394,6 @@
       "studyType": "Technician (Certificate III equivalent)",
       "startDate": "2015-02",
       "endDate": "2016-09"
-    }
-  ],
-  "services": [
-    {
-      "name": "AI Integration & Workflow Automation Strategy",
-      "keywords": [
-        "AI Strategy",
-        "Business Process Automation",
-        "Technology Consulting"
-      ],
-      "description": "Strategic advisory for businesses looking to leverage Generative AI and automation. I assess your current workflows, identify high-impact opportunities for AI integration, and design a strategic roadmap for implementation. This includes selecting the right AI tools (like Copilot, Gemini, and other agentic systems), defining spec-driven development processes, and ensuring your team is equipped to build and maintain AI-powered solutions efficiently."
-    },
-    {
-      "name": "Cloud-Native Architecture & Design",
-      "keywords": [
-        "Cloud Architecture",
-        "AWS Consulting",
-        "System Design"
-      ],
-      "description": "Architectural design for building scalable, resilient, and cost-effective applications on AWS. I work with your team to design microservices architectures, define practices for serverless computing, and create a blueprint for your cloud infrastructure aligned with your long-term business goals and security requirements."
-    },
-    {
-      "name": "Infrastructure as Code & CI/CD Pipeline Implementation",
-      "keywords": [
-        "DevOps Engineering",
-        "Cloud Infrastructure",
-        "Terraform"
-      ],
-      "description": "I build and configure cloud infrastructure and deployment pipelines using modern DevOps practices. This service includes writing Terraform code to manage AWS resources and setting up automated CI/CD workflows with GitHub Actions for reliable, repeatable deployments."
-    },
-    {
-      "name": "Custom CLI & Automation Tool Development",
-      "keywords": [
-        "Go (Golang)",
-        "CLI Tools",
-        "DevOps Automation"
-      ],
-      "description": "Development of custom command-line interface (CLI) tools and automation scripts in Go to address your team's specific challenges. Whether for automating deployments, managing infrastructure, or simplifying complex workflows, I build cross-platform tools that improve engineering efficiency."
-    },
-    {
-      "name": "REST API & Microservices Implementation",
-      "keywords": [
-        "Backend Development",
-        "Microservices",
-        "Go (Golang)",
-        "Python"
-      ],
-      "description": "Back-end development focused on building secure, well-documented REST APIs and microservices. Using Go and modern frameworks, I implement services designed for scalability and maintainability."
-    },
-    {
-      "name": "Full-Stack Web Development",
-      "keywords": [
-        "Web Development",
-        "Full-Stack",
-        "React",
-        "Go (Golang)"
-      ],
-      "description": "End-to-end web application development using modern technologies. From front-end interfaces with React and TypeScript to back-end systems in Go or Python, deployed on AWS infrastructure."
     }
   ],
   "certificates": [
@@ -660,8 +585,7 @@
         "Generative AI",
         "Gemini API",
         "Education Tech"
-      ],
-      "url": ""
+      ]
     }
   ],
   "skills": [

@@ -1,0 +1,23 @@
+{
+  "skill_name": "cv-site",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I forked this resume template. Set it up for me: I'm Priya Natarajan, a data engineer in Melbourne. Current job: Senior Data Engineer at Canva since Feb 2024 (dbt, Snowflake, Airflow; cut warehouse cost 35%). Before that Data Engineer at REA Group, Jul 2021 to Jan 2024. BSc Computer Science, Monash, 2017-2020. LinkedIn is linkedin.com/in/priya-natarajan, GitHub pnatarajan. No services, no certificates. Make sure it validates and nothing of the previous owner is left.",
+      "expected_output": "cv.json rewritten for Priya with correct dates (no 'Present', no empty strings), services.json set to [], owner name removed from HTML/README/CNAME, validator passes.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "add my new role to cv.json: Staff Engineer at Atlassian starting 2026-03, Sydney. I led the move of the Jira search backend to OpenSearch, p95 dropped from 900ms to 210ms, and I run a guild of 12 engineers. Keep the previous Atlassian role too.",
+      "expected_output": "A new work entry inserted at the top with outcome-first bullets grouped under categorized_highlights, previous entry kept with an endDate, validator passes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "The PDF I printed from views/cv.html has a mostly blank first page and a recruiter said their system couldn't read my contact details. Fix it.",
+      "expected_output": "Diagnoses print break rules and icon-based contact line, keeps the CV single-column and text-only, verifies by printing to PDF.",
+      "files": []
+    }
+  ]
+}

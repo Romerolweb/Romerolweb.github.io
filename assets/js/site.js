@@ -77,8 +77,10 @@ let cvData = null;
 
 async function fetchCVData() {
     try {
-        const response = await fetch('./cv.json');
-        cvData = await response.json();
+        const [cv, services] = await Promise.all(
+            ['./cv.json', './services.json'].map(url => fetch(url).then(r => r.json()))
+        );
+        cvData = { ...cv, services };
         renderCV();
     } catch (error) {
         console.error('Error loading CV data:', error);
