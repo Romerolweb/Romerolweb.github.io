@@ -142,6 +142,7 @@ function renderSkills(skills) {
 function renderExperience(work) {
     const targetRole = getRoleFromUrl();
     renderRoleChips(byId('role-filters'), collectRoles(work), targetRole, renderCV);
+    syncRoleLinks();
 
     byId('experience-list').innerHTML = work.map(job => {
         const items = highlightsFor(job, targetRole);

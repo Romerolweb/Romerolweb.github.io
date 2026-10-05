@@ -181,10 +181,17 @@ class Trie {
         if (searchIndex === 0 && currentSearchPath.length === 0) {
             if (dictionary.length === 0) return;
 
+            const role = getRoleFromUrl();
+            if (role && !dictionary.includes(role)) {
+                dictionary.unshift(role);
+                trie.insert(role);
+                handleResize();
+                searchWordIndex = 0;
+            }
             const rawWord = dictionary[searchWordIndex];
             const cleanWord = rawWord.toUpperCase().replace(/[^A-Z0-9]/g, '');
-            
-            if (activeWordEl) activeWordEl.textContent = `Scanning: ${rawWord}`;
+
+            if (activeWordEl) activeWordEl.textContent = `${role ? `${role} · ` : ''}Scanning: ${rawWord}`;
 
             let node = trie.root;
             const path = [node];

@@ -53,6 +53,7 @@ function populateCV(data) {
     byId('contact').innerHTML = contact.join('<span class="sep"> · </span>');
 
     renderRoleChips(byId('role-filters'), collectRoles(data.work), targetRole, () => populateCV(data));
+    syncRoleLinks();
 
     const jobs = data.work
         .map(job => ({ job, items: highlightsFor(job, targetRole) }))

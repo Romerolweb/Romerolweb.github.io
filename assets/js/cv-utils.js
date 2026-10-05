@@ -69,3 +69,17 @@ function renderRoleChips(container, roles, currentRole, onSelect) {
         button.addEventListener('click', () => updateUrlRole(button.dataset.role || null, onSelect));
     });
 }
+
+// Carries the active role on links between the portfolio and the CV view.
+function syncRoleLinks() {
+    const role = getRoleFromUrl();
+    document.querySelectorAll('a[data-role-link]').forEach(a => {
+        const url = new URL(a.getAttribute('href'), globalThis.location.href);
+        if (role) {
+            url.searchParams.set('role', role);
+        } else {
+            url.searchParams.delete('role');
+        }
+        a.href = url;
+    });
+}
