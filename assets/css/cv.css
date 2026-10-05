@@ -1,323 +1,267 @@
+/* Printable CV. Single column, plain text, standard fonts: built for ATS and OCR parsers first. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 15px;
-    font-size: 10pt;
+  margin: 0;
+  padding: var(--space-5) var(--space-4);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.45;
+  color: #111;
+  background: var(--color-surface-alt);
 }
 
-.container {
-    max-width: 800px;
-    margin: auto;
-    background: #fff;
-    padding: 25px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 5px;
+h1, h2, h3, p, ul {
+  margin: 0;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-bottom: 2px solid #333;
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-    flex-wrap: wrap;
+a {
+  color: var(--color-brand-strong);
+  text-decoration: none;
 }
 
-.header-left h1 {
-    margin: 0;
-    font-size: 2em;
-    color: #333;
+a:hover {
+  text-decoration: underline;
 }
 
-.header-left p {
-    margin: 0;
-    font-size: 1.3em;
-    font-weight: 300;
-    color: #555;
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  max-width: 800px;
+  margin: 0 auto var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
 }
 
-.header-right {
-    text-align: right;
-    font-size: 0.9em;
-    font-style: normal;
+.toolbar .chip-row {
+  margin: 0;
+  justify-content: flex-start;
 }
 
-.header-right a {
-    color: #333;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 4px;
+.toolbar button.print {
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--color-brand);
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.header-right a:hover {
-    text-decoration: underline;
+.cv {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-7);
+  background: #fff;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
 }
 
-.header-right .profile-item i {
-    margin-right: 6px;
+.cv-header {
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-5);
+  border-bottom: 2px solid #111;
+}
+
+.cv-header h1 {
+  font-size: 20pt;
+  line-height: 1.2;
+}
+
+.cv-header #label {
+  margin-top: 2pt;
+  font-size: 12pt;
+  color: #444;
+}
+
+.cv-contact {
+  margin-top: var(--space-2);
+  font-style: normal;
+  font-size: 9.5pt;
+  color: #333;
+}
+
+.cv-contact .sep {
+  color: #999;
+}
+
+section {
+  margin-bottom: var(--space-5);
+}
+
+section[hidden] {
+  display: none;
 }
 
 h2 {
-    font-size: 1.2em;
-    color: #333;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 8px;
-    margin-top: 0;
-    margin-bottom: 15px;
+  padding-bottom: 3pt;
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid #bbb;
+  font-size: 12pt;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 h3 {
-    font-size: 1.05em;
-    margin: 0;
+  font-size: 10.5pt;
+  font-weight: 700;
 }
 
-p {
-    margin-top: 0;
+.entry {
+  margin-bottom: var(--space-4);
 }
 
-.cv-main section {
-    margin-bottom: 20px;
+.entry:last-child {
+  margin-bottom: 0;
 }
 
-#summary-content {
-    font-size: 1em;
-    text-align: justify;
+.entry header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
 }
 
-.job, .education-item, .project, .publication, .award, .certificate {
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #f0f0f0;
+.entry time,
+.entry .keywords {
+  flex-shrink: 0;
+  font-size: 9.5pt;
+  color: #555;
 }
 
-.job:last-child, .education-item:last-child, .project:last-child, .publication:last-child, .award:last-child, .certificate:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
+.entry .keywords {
+  text-align: right;
 }
 
-.job-header, .education-header, .project-header, .publication-header, .award-header, .certificate-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 4px;
+.entry .org {
+  font-weight: 600;
+  color: #333;
 }
 
-.job-title, .education-study-type, .project-name, .publication-name, .award-title, .certificate-name {
-    font-weight: bold;
-    color: #444;
+.entry .lede {
+  margin-top: 2pt;
+  color: #333;
 }
 
-.job-date, .education-date, .publication-date, .award-date, .certificate-date {
-    font-size: 0.85em;
-    color: #666;
-    font-style: italic;
-    white-space: nowrap;
-    margin-left: 10px;
+.entry ul,
+#certificates-container,
+#languages-container {
+  margin-top: 3pt;
+  padding-left: 1.1em;
 }
 
-.job-company, .education-institution {
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #555;
+li {
+  margin-bottom: 2pt;
 }
 
-.job-company a, .education-institution a, .project-url a, .publication-website a {
-    color: #007bff;
-    text-decoration: none;
+.skill-line {
+  margin-bottom: 3pt;
 }
 
-.job-company a:hover, .education-institution a:hover, .project-url a:hover, .publication-website a:hover {
-    text-decoration: underline;
-}
+@media (max-width: 600px) {
+  .cv {
+    padding: var(--space-5) var(--space-4);
+  }
 
-.job-summary, .project-description, .publication-summary, .award-summary {
-    font-style: italic;
-    margin-bottom: 8px;
-    color: #555;
-}
+  .entry header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
 
-ul {
-    padding-left: 18px;
-    margin: 0;
-}
-
-ul li {
-    margin-bottom: 4px;
-}
-
-#skills-container .skill-category {
-    margin-bottom: 10px;
-}
-
-#skills-container h3 {
-    margin: 0 0 5px 0;
-    font-size: 1em;
-    color: #555;
-    display: inline;
-}
-
-.keywords {
-    display: inline;
-    font-size: 0.95em;
-}
-
-.language-item {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 8px;
-}
-
-.language-item dt {
-    font-weight: bold;
-}
-
-.language-item dd {
-    margin: 0;
-    font-style: italic;
-    color: #666;
-}
-
-.print-button-container {
-    text-align: center;
-    margin-top: 25px;
-    border: none;
-}
-
-.print-button-container button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.print-button-container button:hover {
-    background-color: #0056b3;
-}
-
-/* Mobile Responsiveness */
-@media screen and (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-
-    .container {
-        padding: 15px;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .header-right {
-        text-align: center;
-    }
-
-    .job-header, .education-header, .project-header, .publication-header, .award-header, .certificate-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .job-date, .education-date, .publication-date, .award-date, .certificate-date {
-        margin-left: 0;
-        margin-top: 2px;
-        font-size: 0.85em;
-    }
+  .entry .keywords {
+    text-align: left;
+  }
 }
 
 @media print {
-    @page {
-        size: A4;
-        margin: 16mm 14mm;
-    }
+  @page {
+    size: A4;
+    margin: 12mm 14mm;
+  }
 
-    body {
-        background-color: #fff;
-        padding: 0;
-        font-size: 9pt;
-        line-height: 1.4;
-    }
+  body {
+    padding: 0;
+    font-size: 9.5pt;
+    line-height: 1.3;
+    background: #fff;
+  }
 
-    .container {
-        box-shadow: none;
-        padding: 0;
-        max-width: 100%;
-        border-radius: 0;
-    }
+  .toolbar {
+    display: none;
+  }
 
-    .print-button-container {
-        display: none;
-    }
+  .cv {
+    max-width: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
 
-    a {
-        text-decoration: none;
-        color: #000;
-    }
+  .cv-header {
+    margin-bottom: var(--space-4);
+  }
 
-    header {
-        border-bottom: 2px solid #000;
-        flex-direction: row !important;
-        align-items: flex-start !important;
-        text-align: left !important;
-        margin-bottom: 12pt;
-        padding-bottom: 8pt;
-    }
+  section {
+    margin-bottom: var(--space-4);
+  }
 
-    .header-right {
-        text-align: right !important;
-    }
+  .entry {
+    margin-bottom: var(--space-3);
+  }
 
-    .job-header,
-    .education-header,
-    .certificate-header,
-    .project-header,
-    .award-header {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: baseline !important;
-    }
+  a {
+    color: #111;
+  }
 
-    .job-date, .education-date, .certificate-date,
-    .publication-date, .award-date {
-        margin-left: auto;
-    }
+  /* Keep headings with what follows, and never split a single line item, but let long entries flow across pages. */
+  h2,
+  .entry header,
+  .entry .org {
+    break-after: avoid;
+  }
 
-    /* Prevent orphaned headers */
-    article, .job, .education-item, .project, .award {
-        break-inside: avoid;
-    }
+  .cv-header,
+  .entry header,
+  li,
+  .skill-line {
+    break-inside: avoid;
+  }
 
-    h2 {
-        break-after: avoid;
-    }
+  p {
+    orphans: 2;
+    widows: 2;
+  }
+}
 
-    h1 { font-size: 18pt; margin-bottom: 2pt; }
-    .header-left p { font-size: 11pt; }
-    h2 {
-        font-size: 10.5pt;
-        border-bottom: 1px solid #ccc;
-        margin-top: 10pt;
-        margin-bottom: 6pt;
-    }
-    h3 { font-size: 9.5pt; }
+/* Screen-only role filter chips in the toolbar */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
 
-    ul { margin-top: 3pt; }
-    ul li { margin-bottom: 2pt; }
+.chip {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: var(--color-ink-soft);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
 
-    .cv-main section { margin-bottom: 10pt; }
-    .job, .education-item, .project, .publication, .award, .certificate {
-        margin-bottom: 8pt;
-        padding-bottom: 8pt;
-    }
+.chip[aria-pressed="true"] {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: #fff;
 }

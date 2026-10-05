@@ -2,25 +2,24 @@
 
 [![Live Site](https://img.shields.io/badge/Live-Site-purple)](https://romerolweb.github.io/)
 [![Built with HTML/JS](https://img.shields.io/badge/Built%20with-HTML%2FJS-yellow)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![Styled with Tailwind](https://img.shields.io/badge/Styled%20with-Tailwind-38B2AC)](https://tailwindcss.com/)
 
-Modern, responsive resume/portfolio website built with vanilla HTML, JavaScript, and **Tailwind CSS**.
+Responsive resume/portfolio website built with vanilla HTML, CSS, and JavaScript. No build step.
 
 ## 🚀 Features
 
-- **Modern Stack**: Built with vanilla HTML/JS and Tailwind CSS v3
+- **No dependencies**: Vanilla HTML/CSS/JS with a small token-based design system (`assets/css/tokens.css`)
 - **Responsive Design**: Perfect on desktop, tablet, and mobile devices
 - **Data Driven**: All content is loaded dynamically from `cv.json`
 - **Role-Based CV**: Dynamically filter resume content based on target role
 - **Interactive Components**: Dynamic navigation, hero animation
+- **ATS-friendly CV**: `views/cv.html` renders a single-column, icon-free, printable CV for applicant tracking systems and OCR
 - **Professional Sections**: About, Experience, Skills, Education, Services, Contact
 
 ## 🛠️ Technologies Used
 
-- **Tailwind CSS v3** - Utility-first CSS framework (via CDN)
-- **Font Awesome 6** - Icon library (via CDN)
-- **Day.js** - Date formatting
-- **Vanilla JavaScript** - Core logic
+- **Vanilla HTML/CSS/JavaScript** - no framework, no build step
+- **Font Awesome 6** - social icons on the portfolio page only (via CDN)
+- **Design tokens** - colours, type scale, spacing, radii and shadows live in `assets/css/tokens.css` and are consumed by `assets/css/site.css` (portfolio) and `assets/css/cv.css` (printable CV)
 
 ## 🎯 Role-Based Resume Generation
 
@@ -84,7 +83,7 @@ To support this feature, the `work` entries in `cv.json` use a `categorized_high
 
 ## 👨‍💻 About Me
 
-Software Engineer with 6+ years of experience in full-stack development, cloud architecture (AWS, Azure), and AI/ML technologies. Currently pursuing Master's in Information Technology at CQUniversity, Australia.
+Software Engineer with professional experience since 2017 across full-stack development, application security, and cloud infrastructure. Master of Information Technology (Cybersecurity), CQUniversity, Australia (2025). Currently a Software Developer at PRX Vault, Brisbane, and a part-time Software Engineer at Let's Lyric.
 
 ### Connect With Me
 
@@ -92,8 +91,7 @@ Software Engineer with 6+ years of experience in full-stack development, cloud a
 - 💼 LinkedIn: [sebastian-romerol](https://www.linkedin.com/in/sebastian-romerol/)
 - 🐙 GitHub: [Romerolweb](https://github.com/Romerolweb)
 - 🏆 Torre: [Romerolweb](https://torre.co/Romerolweb)
-- 📧 Email: [email-removed]
 
 ## 📄 License
 
-© 2025 Sebastian Romero Laguna. All Rights Reserved.
+© 2026 Sebastian Romero Laguna. All Rights Reserved.

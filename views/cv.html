@@ -3,78 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV - Sebastian Romero Laguna</title>
-    <meta
-      name="description"
-      content="Printable CV for Sebastian Romero Laguna - Software Engineer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <title>Sebastian Romero Laguna - CV</title>
+    <meta name="description" content="Printable CV of Sebastian Romero Laguna, Software Engineer (Full-Stack and Security)" />
+    <link rel="icon" href="../assets/img/favicon.png" />
+    <link rel="stylesheet" href="../assets/css/tokens.css" />
     <link rel="stylesheet" href="../assets/css/cv.css" />
   </head>
   <body>
-    <article class="container" itemscope itemtype="https://schema.org/Person">
-      <header>
-        <div class="header-left">
-          <h1 id="name" itemprop="name" aria-label="Name">Developer</h1>
-          <p id="label" itemprop="jobTitle"></p>
-        </div>
-        <address class="header-right" id="contact"></address>
+    <nav class="toolbar" aria-label="CV tools">
+      <a href="../">← Portfolio</a>
+      <div id="role-filters" class="chip-row" aria-label="Filter highlights by role"></div>
+      <button type="button" class="print" onclick="window.print()">Print / Save as PDF</button>
+    </nav>
+
+    <article class="cv" itemscope itemtype="https://schema.org/Person">
+      <header class="cv-header">
+        <h1 id="name" itemprop="name">Sebastian Romero Laguna</h1>
+        <p id="label" itemprop="jobTitle"></p>
+        <address id="contact" class="cv-contact"></address>
       </header>
 
-      <main class="cv-main">
-        <section id="summary" aria-label="Professional Summary">
-          <h2>Summary</h2>
+      <main>
+        <section id="summary" aria-labelledby="summary-h">
+          <h2 id="summary-h">Summary</h2>
           <p id="summary-content" itemprop="description"></p>
         </section>
 
-        <section id="skills" aria-label="Skills">
-          <h2>Skills</h2>
+        <section id="skills" aria-labelledby="skills-h">
+          <h2 id="skills-h">Skills</h2>
           <div id="skills-container"></div>
         </section>
 
-        <section id="work" aria-label="Work Experience">
-          <h2>Work Experience</h2>
+        <section id="work" aria-labelledby="work-h">
+          <h2 id="work-h">Work Experience</h2>
           <div id="work-container"></div>
         </section>
 
-        <section id="projects" aria-label="Projects">
-          <h2>Projects</h2>
-          <div id="projects-container"></div>
-        </section>
-
-        <section id="education" aria-label="Education">
-          <h2>Education</h2>
+        <section id="education" aria-labelledby="education-h">
+          <h2 id="education-h">Education</h2>
           <div id="education-container"></div>
         </section>
 
-        <section id="publications" aria-label="Publications">
-          <h2>Publications</h2>
+        <section id="projects" aria-labelledby="projects-h">
+          <h2 id="projects-h">Projects</h2>
+          <div id="projects-container"></div>
+        </section>
+
+        <section id="publications" aria-labelledby="publications-h">
+          <h2 id="publications-h">Publications</h2>
           <div id="publications-container"></div>
         </section>
 
-        <section id="certificates" aria-label="Certificates">
-          <h2>Certificates</h2>
-          <div id="certificates-container"></div>
-        </section>
-
-        <section id="awards" aria-label="Awards">
-          <h2>Awards</h2>
+        <section id="awards" aria-labelledby="awards-h">
+          <h2 id="awards-h">Awards</h2>
           <div id="awards-container"></div>
         </section>
 
-        <section id="languages" aria-label="Languages">
-          <h2>Languages</h2>
-          <div id="languages-container"></div>
+        <section id="certificates" aria-labelledby="certificates-h">
+          <h2 id="certificates-h">Certifications</h2>
+          <ul id="certificates-container"></ul>
+        </section>
+
+        <section id="languages" aria-labelledby="languages-h">
+          <h2 id="languages-h">Languages</h2>
+          <ul id="languages-container"></ul>
         </section>
       </main>
-
-      <footer class="print-button-container">
-        <button type="button" onclick="window.print()">Print CV</button>
-      </footer>
     </article>
+
     <script src="../assets/js/cv-utils.js"></script>
     <script src="../assets/js/cv.js"></script>
   </body>

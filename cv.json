@@ -2,11 +2,10 @@
   "basics": {
     "name": "Sebastian Romero Laguna",
     "label": "Software Engineer | Full-Stack & Security",
-    "image": "https://media.licdn.com/dms/image/v2/D5603AQEf3t0_kqNRqw/profile-displayphoto-shrink_800_800/B56ZcFk.3LHgAc-/0/1748145272620?e=1777507200&v=beta&t=8R9268rQp03rOzlayDJRuMhvA2_wlE3UOoOXh8Szkow",
     "email": "",
     "phone": "",
     "url": "https://romerolweb.github.io",
-    "summary": "Software Engineer with professional experience since 2017, working across full-stack web development, application security, and cloud infrastructure. Holds a Master of Information Technology (Cybersecurity) from CQUniversity, Australia (graduated 2025, GPA 5.786/7.0). Has worked across startup, enterprise, and academic settings in Colombia, the United States, and Australia. Currently working as a Software Developer (contractor) at PRX Vault, Brisbane.",
+    "summary": "Software Engineer with professional experience since 2017, working across full-stack web development, application security, and cloud infrastructure. Holds a Master of Information Technology (Cybersecurity) from CQUniversity, Australia (graduated 2025, GPA 5.786/7.0). Has worked across startup, enterprise, and academic settings in Colombia, the United States, and Australia. Currently a Software Developer (contractor) at PRX Vault, Brisbane, and a part-time Software Engineer at Let's Lyric.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -54,23 +53,56 @@
       "url": "https://prxvault.com",
       "startDate": "2026-01",
       "endDate": "Present",
-      "summary": "Full-stack development on a consumer cashback and rewards platform.",
+      "summary": "Full-stack development on a consumer cashback and rewards platform (Next.js, TypeScript, Supabase, PostgreSQL, Deno Edge Functions).",
       "location": "Brisbane, Australia (Remote)",
       "categorized_highlights": {
         "Software Engineer": [
-          "Migrated merchant search from a client-side JavaScript implementation to a server-side PostgreSQL Full-Text Search system (BM25 ranking, GIN index), eliminating full dataset downloads on page load and improving multi-word query accuracy by approximately 40%.",
-          "Built a cashback merchant detail page with a visual timeline, tips grid, and a collapsible exclusions accordion backed by a keyword scoring heuristic.",
-          "Reduced session-level image resolution failures per user by redesigning the logo resolution strategy from a multi-candidate cascade to a two-step fallback.",
+          "Made cashback search 89% faster for members by replacing client-side filtering with ranked PostgreSQL full-text search (BM25-style ranking, GIN index), building the query and view model on the Next.js server, cutting front-end re-renders, and moving infrastructure to a better-placed availability zone; later unified the Wildfire and PokitPal catalogues behind one search RPC.",
+          "Designed Baker, an internal automation tool that lets the team record repetitive operational tasks and replay them securely without storing credentials, turning a three-hour manual job into a 15-minute one.",
+          "Integrated the PokitPal cashback partner end to end with Supabase Edge Functions (Deno, Hono): two-phase offer catalogue sync, idempotent user provisioning for AU/NZ members, transaction sync, and HubSpot notifications, with zod-validated boundaries and fixture-driven unit tests.",
+          "Designed a merchant-to-category many-to-many model with bulk-replace RPCs and canonical category keys, feeding catalogue filters and Customer.io events.",
+          "Built the cashback merchant detail page (timeline, tips, exclusions accordion backed by a keyword-scoring heuristic) and hardened signup with country-anchored phone validation, reCAPTCHA host verification, and PII-redacted logs.",
+          "Decommissioned the legacy PRX token and giveaway subsystems (Edge Functions, pg_cron jobs, pgmq queues, schema, and UI) through staged, reviewed migrations.",
           "Achieved front-end accessibility compliance across interactive components (keyboard navigation, prefers-reduced-motion, eslint-plugin-jsx-a11y)."
         ],
         "DevOps": [
-          "Improved mobile page load performance by converting production images to WebP format; conducted Next.js bundle analysis to identify and scope performance bottlenecks.",
-          "Designed the architectural blueprint for standardising Supabase Edge Functions with consistent middleware, authentication, and validation patterns."
+          "Added Sentry Crons heartbeats to every scheduled Edge Function (Wildfire sync, PokitPal sync, logo sync) and made self-chained batch runs retry, so a single upstream 503 no longer stalls a run.",
+          "Scheduled daily merchant-logo reconciliation via pg_cron and an Edge Function, and migrated cashback graphics to Supabase Storage.",
+          "Centralised environment-variable handling behind a schema-validated, lazily evaluated accessor shared by all Edge Functions, and enabled Row Level Security on client-facing tables.",
+          "Improved mobile performance by converting production images to WebP, splitting bundles with @next/bundle-analyzer, and coalescing concurrent Supabase fetches.",
+          "Introduced conditional CI gates and a minimum pull-request test checklist."
         ],
         "Leadership": [
           "Conducted a platform security audit identifying vulnerabilities across authentication and data access layers; authored a remediation report and security roadmap presented to engineering leadership.",
-          "Authored Architecture Decision Records (ADRs) for major platform changes, documenting rationale, trade-offs, and implementation plans.",
+          "Authored Architecture Decision Records (ADRs) for full-text search, server-resolved merchant logos, and Edge Function standards.",
           "Delivered features under agile methodologies using Jira and Confluence."
+        ],
+        "Data": [
+          "Analysed platform data with SQL to explain merchant, category, and offer behaviour to product and leadership, turning questions into decisions on the catalogue and search."
+        ]
+      }
+    },
+    {
+      "name": "Let's Lyric",
+      "position": "Software Engineer (Part-time)",
+      "url": "https://letslyric.app",
+      "startDate": "2026-04",
+      "endDate": "Present",
+      "summary": "Real-time collaborative worship presentation platform (Next.js, Go, Spring Boot, Supabase, Redis, Fly.io).",
+      "location": "Remote",
+      "categorized_highlights": {
+        "Software Engineer": [
+          "Built the Bible module end to end: a Go (Gin) API with multi-version passage lookup, cross-version equivalences, ETag caching and gzip, plus the web reference parser and version picker supporting English and Spanish book names.",
+          "Delivered the stage-monitor feature: typed layout contracts, WebSocket transport with inbound reconciliation, a read-only stage route, and a layout editor with aspect-ratio templates.",
+          "Shipped the medley editor, song likes, and a first-run onboarding wizard, routing write paths through the catalog API.",
+          "Moved song search to a ranked lexical query ordered by title, author, then lyrics."
+        ],
+        "DevOps": [
+          "Replaced the multi-step local setup with a one-command Docker Compose environment (self-hosted Supabase, Redis, all services) and a GitHub Actions gate running typecheck, lint, i18n, and tests on every pull request.",
+          "Tuned Fly.io deployments (scale-to-zero, gateway header buffers) and gated every analytics provider behind explicit user consent."
+        ],
+        "Leadership": [
+          "Reviewed and merged pull requests across the web, infrastructure, and gateway repositories, and recorded Architecture Decision Records for the medley write contract and Bible schedule recovery."
         ]
       }
     },
@@ -315,11 +347,11 @@
     {
       "institution": "CQUniversity",
       "url": "https://www.cqu.edu.au",
-      "area": "Information Systems and Technology",
+      "area": "Information Technology",
       "studyType": "Master",
       "startDate": "2023-11",
       "endDate": "2025-11",
-      "score": "5.786 GPA",
+      "score": "5.786/7.0 GPA",
       "courses": [
         "Networks and Information Security Major",
         "Artificial Intelligence Minor"
@@ -442,7 +474,7 @@
   "certificates": [
     {
       "name": "Introduction to AWS Course: Fundamentals of Cloud Computing",
-      "issuer": "AWS / Educational Provider",
+      "issuer": "",
       "date": "2021-01"
     },
     {
@@ -477,17 +509,17 @@
     },
     {
       "name": "Introduction to Data Science",
-      "issuer": "Provider",
+      "issuer": "",
       "date": "2021-01"
     },
     {
       "name": "Work Smarter, Not Harder: Time Management for Personal & Professional Productivity",
-      "issuer": "Provider",
+      "issuer": "",
       "date": "2021-01"
     },
     {
       "name": "Certification of Completion: The Green Zone",
-      "issuer": "Provider",
+      "issuer": "",
       "date": "2021-01"
     }
   ],
@@ -517,11 +549,27 @@
       "name": "Machine Learning Analysis of COVID-19 Mortality Risk Factors",
       "publisher": "International Conference (Participation)",
       "releaseDate": "2021-07",
-      "website": "https://github.com/Python-Neiva/risk-factors-covid19",
-      "summary": "Research identifying risk factors for COVID-19 mortality in Colombia using Python and graph clustering on official public health data."
+      "summary": "Research identifying risk factors for COVID-19 mortality in Colombia using Python and graph clustering on official public health data.",
+      "url": "https://github.com/Python-Neiva/risk-factors-covid19"
     }
   ],
   "projects": [
+    {
+      "name": "Koala for Markdown",
+      "description": "Desktop Markdown reader and editor built with Wails (Go) and React/TypeScript: gitignore-aware directory scanning, native .md file handler, .docx/.odt import, and rendered Mermaid and D2 previews.",
+      "highlights": [
+        "Implemented hierarchical .gitignore matching with negation support.",
+        "Native macOS integration: file handler, menu shortcuts, and a single-instance lock."
+      ],
+      "keywords": [
+        "Go",
+        "Wails",
+        "React",
+        "TypeScript",
+        "Desktop"
+      ],
+      "url": "https://www.platform.recipes"
+    },
     {
       "name": "IoT Classroom Moisture Sensors System",
       "description": "IoT system connected to physical moisture sensors deployed across CQUniversity campuses in Rockhampton, Brisbane, Melbourne, and Sydney. Used Docker to run a cloud broker with secure data transmission.",
@@ -635,13 +683,17 @@
       "keywords": [
         "AWS (EC2, S3, Route 53, Security Groups)",
         "Supabase",
+        "PostgreSQL (Full-Text Search, RLS, pg_cron)",
+        "Redis",
+        "Fly.io",
         "Azure",
         "GCP",
         "Terraform",
         "Docker",
         "Kubernetes (EKS, AKS, kubectl)",
         "GitHub Actions",
-        "CI/CD"
+        "CI/CD",
+        "Sentry"
       ]
     },
     {
@@ -652,6 +704,8 @@
         "Hono",
         "Node.js",
         "Deno",
+        "Zod",
+        "Vitest",
         "Laravel",
         "Vue.js",
         "Tailwind CSS"
@@ -705,6 +759,6 @@
   "meta": {
     "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json",
     "version": "v1.0.0",
-    "lastModified": "2026-04-22"
+    "lastModified": "2026-10-05"
   }
 }

@@ -64,8 +64,8 @@ class Trie {
 
     // Color Palette Integration
     const rootStyles = getComputedStyle(document.documentElement);
-    const primaryColor = rootStyles.getPropertyValue('--primary').trim();
-    const accentColor = rootStyles.getPropertyValue('--accent').trim();
+    const primaryColor = rootStyles.getPropertyValue('--color-brand').trim();
+    const accentColor = rootStyles.getPropertyValue('--color-accent').trim();
 
     function hexToRgb(hex) {
         const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);

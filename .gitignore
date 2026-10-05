@@ -19,4 +19,5 @@ Thumbs.db
 .claude/*
 
 # Local working docs (not published)
-docs/
+docs/*
+!docs/ADR/
